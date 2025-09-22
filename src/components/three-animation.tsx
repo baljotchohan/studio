@@ -22,14 +22,14 @@ const ThreeAnimation = () => {
     camera.lookAt(scene.position);
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
     
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+    const pointLight = new THREE.PointLight(0xffffff, 1.5, 100);
     pointLight.position.set(0, 5, 5);
     scene.add(pointLight);
 
-    const pointLight2 = new THREE.PointLight(0x0000ff, 0.7, 100);
+    const pointLight2 = new THREE.PointLight(0x0000ff, 1, 100);
     pointLight2.position.set(-5, -2, 5);
     scene.add(pointLight2);
     
@@ -39,13 +39,13 @@ const ThreeAnimation = () => {
 
       const head = new THREE.Mesh(
         new THREE.BoxGeometry(0.8, 0.8, 0.8),
-        new THREE.MeshStandardMaterial({ color: 0xcccccc, roughness: 0.3, metalness: 0.8 })
+        new THREE.MeshStandardMaterial({ color: 0xeeeeee, roughness: 0.3, metalness: 0.8 })
       );
       head.position.y = 1.4;
 
       const body = new THREE.Mesh(
         new THREE.BoxGeometry(1, 1.5, 0.5),
-        new THREE.MeshStandardMaterial({ color: 0x999999, roughness: 0.4, metalness: 0.6 })
+        new THREE.MeshStandardMaterial({ color: 0xbbbbbb, roughness: 0.4, metalness: 0.6 })
       );
       
       group.add(head);
@@ -78,7 +78,7 @@ const ThreeAnimation = () => {
     // Floor
     const floor = new THREE.Mesh(
         new THREE.PlaneGeometry(20, 20),
-        new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.8, metalness: 0.2 })
+        new THREE.MeshStandardMaterial({ color: 0x222222, roughness: 0.8, metalness: 0.2 })
     );
     floor.rotation.x = -Math.PI / 2;
     floor.position.y = 0;
