@@ -7,19 +7,19 @@ import { cn } from "@/lib/utils";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-secondary">
+    <section id="pricing" className="py-16 md:py-24 bg-primary text-primary-foreground">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             Find the Right Plan
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
             Choose the perfect plan to meet your project's needs and budget.
           </p>
         </div>
         <div className="mt-12 grid max-w-md grid-cols-1 gap-8 mx-auto lg:max-w-none lg:grid-cols-3">
           {pricingPlans.map((plan) => (
-            <Card key={plan.name} className={cn("flex flex-col", plan.popular && "border-primary ring-2 ring-primary")}>
+            <Card key={plan.name} className={cn("flex flex-col bg-card text-card-foreground", plan.popular && "border-accent ring-2 ring-accent")}>
               <CardHeader className="relative">
                 {plan.popular && (
                   <div className="absolute top-0 -translate-y-1/2 w-full flex justify-center">
