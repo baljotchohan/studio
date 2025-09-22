@@ -15,27 +15,50 @@ const WebDevAnimation = () => {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
-    camera.position.z = 10;
+    camera.position.z = 12;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
+    renderer.setClearColor(0x0a0a1a); // Dark blue background
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    pointLight.position.set(0, 10, 10);
-    scene.add(pointLight);
+    const pointLight1 = new THREE.PointLight(0x61dafb, 1.5, 200);
+    pointLight1.position.set(10, 10, 10);
+    scene.add(pointLight1);
+
+    const pointLight2 = new THREE.PointLight(0xffd700, 1, 200);
+    pointLight2.position.set(-15, -5, 5);
+    scene.add(pointLight2);
+    
+    const pointLight3 = new THREE.PointLight(0xe34f26, 1, 200);
+    pointLight3.position.set(0, -10, -10);
+    scene.add(pointLight3);
+
+    // Add stars
+    const starsGeometry = new THREE.BufferGeometry();
+    const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
+    const starVertices = [];
+    for (let i = 0; i < 500; i++) {
+        const x = (Math.random() - 0.5) * 50;
+        const y = (Math.random() - 0.5) * 50;
+        const z = (Math.random() - 0.5) * 50;
+        starVertices.push(x, y, z);
+    }
+    starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+    const stars = new THREE.Points(starsGeometry, starsMaterial);
+    scene.add(stars);
 
     const icons: THREE.Mesh[] = [];
     const fontLoader = new FontLoader();
-    const fontUrl = 'https://threejs.org/examples/fonts/helvetiker_regular.typeface.json';
+    const fontUrl = 'https://threejs.org/examples/fonts/helvetiker_bold.typeface.json';
 
     fontLoader.load(fontUrl, (font) => {
       const languages = ['JS', 'React', 'Next.js', 'HTML', 'CSS', 'TS', 'Node'];
-      const colors = [0xffd700, 0x61dafb, 0x000000, 0xe34f26, 0x1572b6, 0x3178c6, 0x339933];
+      const colors = [0xffd700, 0x61dafb, 0xffffff, 0xe34f26, 0x1572b6, 0x3178c6, 0x68a063];
       
       languages.forEach((lang, index) => {
         const textGeometry = new TextGeometry(lang, {
@@ -44,32 +67,32 @@ const WebDevAnimation = () => {
           height: 0.2,
           curveSegments: 12,
           bevelEnabled: true,
-          bevelThickness: 0.03,
-          bevelSize: 0.02,
+          bevelThickness: 0.05,
+          bevelSize: 0.04,
           bevelOffset: 0,
-          bevelSegments: 5,
+          bevelSegments: 8,
         });
         textGeometry.center();
 
         const textMaterial = new THREE.MeshStandardMaterial({
           color: colors[index % colors.length],
-          metalness: 0.7,
-          roughness: 0.2,
+          metalness: 0.8,
+          roughness: 0.1,
+          emissive: colors[index % colors.length],
+          emissiveIntensity: 0.1,
         });
 
         const textMesh = new THREE.Mesh(textGeometry, textMaterial);
         
         textMesh.position.set(
-          (Math.random() - 0.5) * 15,
-          (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 8
+          Math.cos(index * (Math.PI * 2) / languages.length) * 5,
+          Math.sin(index * (Math.PI * 2) / languages.length) * 3,
+          (Math.random() - 0.5) * 4
         );
+        
         textMesh.userData = {
-            velocity: new THREE.Vector3(
-                (Math.random() - 0.5) * 0.01,
-                (Math.random() - 0.5) * 0.01,
-                (Math.random() - 0.5) * 0.01
-            )
+            basePosition: textMesh.position.clone(),
+            angle: index * (Math.PI * 2) / languages.length
         };
 
         icons.push(textMesh);
@@ -79,8 +102,9 @@ const WebDevAnimation = () => {
 
     const mouse = new THREE.Vector2();
     const handleMouseMove = (event: MouseEvent) => {
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        const rect = currentMount.getBoundingClientRect();
+        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
     }
     window.addEventListener('mousemove', handleMouseMove);
 
@@ -90,20 +114,17 @@ const WebDevAnimation = () => {
       frameId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
-      icons.forEach(icon => {
-        icon.position.add(icon.userData.velocity);
+      icons.forEach((icon, index) => {
+        icon.rotation.y += 0.005 + (index % 3) * 0.002;
+        icon.rotation.x += 0.002;
         
-        // Bounce off the walls
-        if (Math.abs(icon.position.x) > 8) icon.userData.velocity.x *= -1;
-        if (Math.abs(icon.position.y) > 5) icon.userData.velocity.y *= -1;
-        if (Math.abs(icon.position.z) > 4) icon.userData.velocity.z *= -1;
-
-        icon.rotation.x += 0.005;
-        icon.rotation.y += 0.005;
+        icon.position.y = icon.userData.basePosition.y + Math.sin(elapsedTime * 0.5 + icon.userData.angle) * 0.5;
       });
 
-      camera.position.x += (mouse.x * 2 - camera.position.x) * 0.02;
-      camera.position.y += (-mouse.y * 1 - camera.position.y) * 0.02;
+      stars.rotation.y = elapsedTime * 0.05;
+
+      camera.position.x += (mouse.x * 3 - camera.position.x) * 0.03;
+      camera.position.y += (mouse.y * 2 - camera.position.y) * 0.03;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
@@ -128,12 +149,9 @@ const WebDevAnimation = () => {
         currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
-      // Dispose geometries and materials
       scene.traverse(object => {
         if (object instanceof THREE.Mesh) {
-          if (object.geometry) {
-            object.geometry.dispose();
-          }
+          if (object.geometry) object.geometry.dispose();
           if (object.material) {
              if (Array.isArray(object.material)) {
                 object.material.forEach(material => material.dispose());
@@ -143,6 +161,8 @@ const WebDevAnimation = () => {
           }
         }
       });
+      if (starsGeometry) starsGeometry.dispose();
+      if (starsMaterial) starsMaterial.dispose();
     };
   }, []);
 
