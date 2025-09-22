@@ -26,7 +26,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-header-background/95 text-header-foreground backdrop-blur-sm">
-      <div className="container flex h-16 max-w-7xl items-center justify-between">
+      <div className="container flex h-16 max-w-7xl items-center justify-between px-4">
         <Link href="/" className="font-headline text-xl font-bold">
           Elara Tech Labs
         </Link>
