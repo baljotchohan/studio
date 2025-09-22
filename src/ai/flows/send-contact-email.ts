@@ -34,8 +34,8 @@ const sendContactEmailFlow = ai.defineFlow(
     // Make sure you have GMAIL_EMAIL and GMAIL_APP_PASSWORD in your .env file
     if (!process.env.GMAIL_EMAIL || !process.env.GMAIL_APP_PASSWORD) {
       console.error("Gmail credentials are not set in environment variables.");
-      // In a real app, you might throw an error or handle this differently
-      return; 
+      // Throw an error to notify the calling function
+      throw new Error("Server is not configured to send emails. Missing credentials.");
     }
     
     // Create a transporter object using the default SMTP transport
@@ -70,7 +70,8 @@ const sendContactEmailFlow = ai.defineFlow(
       console.log('Message sent: %s', info.messageId);
     } catch (error) {
       console.error('Error sending email:', error);
-      // In a real app, you might want to throw an error to let the caller know something went wrong.
+      // Throw an error to let the caller know something went wrong.
+      throw new Error('Failed to send the email. Please check server logs for details.');
     }
   }
 );

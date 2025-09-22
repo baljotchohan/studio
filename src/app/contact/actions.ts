@@ -35,7 +35,8 @@ export async function handleContactForm(
   }
 
   try {
-    const [result] = await Promise.all([
+    // Both flows will run in parallel. If one fails, Promise.all will reject.
+    const [suggestionResult] = await Promise.all([
       suggestBestRepresentative({ inquiry: validatedFields.data.message }),
       sendContactEmail(validatedFields.data),
     ]);
@@ -43,13 +44,21 @@ export async function handleContactForm(
     return {
       success: true,
       message: `Thank you, ${validatedFields.data.name}! Your message has been received.`,
-      suggestion: result,
+      suggestion: suggestionResult,
     };
   } catch (error) {
     console.error("Error in contact form action:", error);
+    // Provide a more specific error message if possible
+    let errorMessage = "An unexpected error occurred on the server. Please try again later.";
+    if (error instanceof Error && error.message.includes('credentials')) {
+      errorMessage = "The server is not configured to send emails.";
+    } else if (error instanceof Error && error.message.includes('Failed to send')) {
+      errorMessage = "There was a problem sending your message. Please try again later.";
+    }
+
     return {
       success: false,
-      message: "An unexpected error occurred on the server. Please try again later.",
+      message: errorMessage,
     };
   }
 }
