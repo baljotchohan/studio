@@ -13,64 +13,72 @@ const DAnimationExample = () => {
 
     // Scene setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1a1a2a);
     const camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
+    camera.position.z = 25;
+
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
-
-    camera.position.set(0, 1.5, 8);
+    scene.background = new THREE.Color(0x050515);
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
+    const pointLight1 = new THREE.PointLight(0xff00ff, 1, 100);
+    pointLight1.position.set(10, 10, 10);
+    scene.add(pointLight1);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, 10, 7.5);
-    scene.add(directionalLight);
+    const pointLight2 = new THREE.PointLight(0x00ffff, 1, 100);
+    pointLight2.position.set(-10, -10, 5);
+    scene.add(pointLight2);
     
-    // Character
-    const character = new THREE.Group();
-    const material = new THREE.MeshStandardMaterial({ color: 0x0077ff, roughness: 0.5, metalness: 0.2 });
+    // Particle System
+    const particleCount = 5000;
+    const particles = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
 
-    const head = new THREE.Mesh(new THREE.SphereGeometry(0.5, 32, 32), material);
-    head.position.y = 2;
+    const color = new THREE.Color();
 
-    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.5, 1.5, 32), material);
-    body.position.y = 1;
+    for (let i = 0; i < particleCount; i++) {
+        const x = (Math.random() - 0.5) * 30;
+        const y = (Math.random() - 0.5) * 30;
+        const z = (Math.random() - 0.5) * 30;
 
-    const leftArm = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 1, 32), material);
-    leftArm.position.set(-0.7, 1.3, 0);
-    leftArm.rotation.z = -Math.PI / 4;
+        positions[i * 3] = x;
+        positions[i * 3 + 1] = y;
+        positions[i * 3 + 2] = z;
+
+        // Color based on position
+        color.setHSL((x / 30) + 0.5, 0.7, (y / 30) + 0.5);
+        colors[i * 3] = color.r;
+        colors[i * 3 + 1] = color.g;
+        colors[i * 3 + 2] = color.b;
+    }
+
+    particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     
-    const rightArm = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 1, 32), material);
-    rightArm.position.set(0.7, 1.3, 0);
-    rightArm.rotation.z = Math.PI / 4;
+    const particleMaterial = new THREE.PointsMaterial({
+        size: 0.1,
+        vertexColors: true,
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+        depthWrite: false,
+    });
     
-    const leftLeg = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.1, 1, 32), material);
-    leftLeg.position.set(-0.25, 0, 0);
+    const particleSystem = new THREE.Points(particles, particleMaterial);
+    scene.add(particleSystem);
 
-    const rightLeg = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.1, 1, 32), material);
-    rightLeg.position.set(0.25, 0, 0);
 
-    character.add(head);
-    character.add(body);
-    character.add(leftArm);
-    character.add(rightArm);
-    character.add(leftLeg);
-    character.add(rightLeg);
-    
-    scene.add(character);
+    const mouse = new THREE.Vector2();
 
-    // Floor
-    const floor = new THREE.Mesh(
-        new THREE.PlaneGeometry(20, 20),
-        new THREE.MeshStandardMaterial({ color: 0x111122, roughness: 0.8 })
-    );
-    floor.rotation.x = -Math.PI / 2;
-    floor.position.y = -0.5;
-    scene.add(floor);
+    const handleMouseMove = (event: MouseEvent) => {
+        const rect = currentMount.getBoundingClientRect();
+        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    }
+    window.addEventListener('mousemove', handleMouseMove);
+
 
     const clock = new THREE.Clock();
 
@@ -78,14 +86,12 @@ const DAnimationExample = () => {
       frameId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
-      // Simple wave animation
-      rightArm.rotation.z = Math.PI / 4 + Math.sin(elapsedTime * 5) * 0.5;
-
-      // Bobbing motion
-      character.position.y = Math.sin(elapsedTime * 2) * 0.1;
+      particleSystem.rotation.y = elapsedTime * 0.1;
       
-      // Gentle rotation of the whole character
-      character.rotation.y = elapsedTime * 0.2;
+      camera.position.x += (mouse.x * 5 - camera.position.x) * 0.05;
+      camera.position.y += (-mouse.y * 5 - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+
 
       renderer.render(scene, camera);
     };
@@ -103,23 +109,17 @@ const DAnimationExample = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(frameId);
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
-      scene.traverse(object => {
-        if (object instanceof THREE.Mesh) {
-          if (object.geometry) object.geometry.dispose();
-          if (object.material) {
-             if (Array.isArray(object.material)) {
-                object.material.forEach(material => material.dispose());
-             } else {
-                object.material.dispose();
-             }
-          }
-        }
-      });
+      particles.dispose();
+      particleMaterial.dispose();
+      scene.remove(particleSystem);
+      scene.remove(pointLight1);
+      scene.remove(pointLight2);
     };
   }, []);
 
