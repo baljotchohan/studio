@@ -55,15 +55,15 @@ export const testimonials = [
 export const pricingPlans = [
   {
     name: "Starter",
-    price: "₹999",
+    price: "₹1799",
     description: "For individuals and small teams getting started.",
-    features: ["1 Core Service (e.g., UI/UX)", "Basic 3D Asset", "2 Rounds of Revisions", "Email Support"],
+    features: ["2 Core Services", "Basic 3D Asset", "2 Rounds of Revisions", "Email Support"],
     icon: Award,
     popular: false,
   },
   {
     name: "Pro",
-    price: "₹1,999",
+    price: "₹2499",
     description: "For growing businesses that need more power.",
     features: ["2 Core Services", "Complex 3D Animation (15s)", "5 Rounds of Revisions", "Priority Email Support", "Source Files"],
     icon: Zap,
