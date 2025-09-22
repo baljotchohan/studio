@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import ThreeAnimation from "@/components/three-animation";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import WebDevAnimation from "@/components/web-dev-animation";
 
 type ServicePageProps = {
   params: {
@@ -37,6 +38,7 @@ export default function ServicePage({ params }: ServicePageProps) {
   const image = PlaceHolderImages.find((img) => img.id === imageId);
 
   const is3DAnimation = service.slug === '3d-animation';
+  const isWebDevelopment = service.slug === 'web-development';
 
   return (
     <div className="bg-secondary">
@@ -68,6 +70,10 @@ export default function ServicePage({ params }: ServicePageProps) {
             {is3DAnimation ? (
               <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
                 <ThreeAnimation />
+              </Card>
+            ) : isWebDevelopment ? (
+              <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
+                <WebDevAnimation />
               </Card>
             ) : (
               <Card className="overflow-hidden shadow-xl">
