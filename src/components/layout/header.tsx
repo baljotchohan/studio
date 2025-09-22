@@ -19,7 +19,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-header-background/95 text-header-foreground backdrop-blur-sm">
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="font-headline text-xl font-bold">
           Elara Tech Labs
@@ -30,8 +30,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                pathname === link.href ? "text-primary" : "text-muted-foreground"
+                "text-sm font-medium transition-colors hover:text-header-foreground/80",
+                pathname === link.href ? "text-header-foreground" : "text-header-foreground/60"
               )}
             >
               {link.label}
@@ -39,12 +39,12 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-            <Button asChild className="hidden md:flex">
+            <Button asChild className="hidden md:flex bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                 <Link href="/contact">Get a Quote</Link>
             </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild className="md:hidden">
-                    <Button variant="outline" size="icon">
+                    <Button variant="outline" size="icon" className="border-header-foreground/50 text-header-foreground hover:bg-header-foreground/10 hover:text-header-foreground">
                         <Menu className="h-4 w-4" />
                         <span className="sr-only">Open menu</span>
                     </Button>
