@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -22,9 +21,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
       <div className="container flex h-16 max-w-7xl items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold">
-          <Image src="/logo.svg" alt="Elara Tech Labs Logo" width={28} height={28} />
-          Elara Tech
+        <Link href="/" className="font-headline text-xl font-bold">
+          Elara Tech Labs
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -52,9 +50,8 @@ export function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
-                    <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold mb-8">
-                      <Image src="/logo.svg" alt="Elara Tech Labs Logo" width={28} height={28} />
-                      Elara Tech
+                    <Link href="/" className="font-headline text-xl font-bold mb-8">
+                      Elara Tech Labs
                     </Link>
                     <div className="flex flex-col gap-4">
                     {navLinks.map((link) => (
