@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-primary text-primary-foreground">
+    <section id="pricing" className="py-16 md:py-24 bg-primary/10 text-primary-foreground">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Find the Right Plan
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Choose the perfect plan to meet your project's needs and budget.
           </p>
         </div>
@@ -34,7 +34,7 @@ export function Pricing() {
               </CardHeader>
               <CardContent className="flex-1">
                 <div className="text-center">
-                  <span className="text-4xl font-bold">{plan.price}</span>
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
                   {plan.name !== "Enterprise" && <span className="text-muted-foreground">/project</span>}
                 </div>
                 <ul className="mt-8 space-y-4">
