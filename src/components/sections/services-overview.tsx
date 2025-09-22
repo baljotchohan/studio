@@ -19,13 +19,13 @@ export function ServicesOverview() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <Link href={`/services/${service.slug}`} key={service.slug} className="group">
-              <Card className="h-full overflow-hidden transition-all duration-300 group-hover:border-primary group-hover:shadow-lg group-hover:-translate-y-1">
+              <Card className="h-full overflow-hidden transition-all duration-300 group-hover:border-primary group-hover:shadow-lg group-hover:-translate-y-1 bg-primary/10 text-primary-foreground">
                 <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <CardTitle className="font-headline text-xl">{service.title}</CardTitle>
-                  <CardDescription className="pt-2">{service.description}</CardDescription>
+                  <CardTitle className="font-headline text-xl text-primary">{service.title}</CardTitle>
+                  <CardDescription className="pt-2 text-primary/80">{service.description}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-primary/10 text-primary-foreground">
+    <section id="pricing" className="py-16 md:py-24 bg-primary/5 text-primary-foreground">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -19,7 +19,7 @@ export function Pricing() {
         </div>
         <div className="mt-12 grid max-w-md grid-cols-1 gap-8 mx-auto lg:max-w-none lg:grid-cols-3">
           {pricingPlans.map((plan) => (
-            <Card key={plan.name} className={cn("flex flex-col bg-card text-card-foreground", plan.popular && "border-accent ring-2 ring-accent")}>
+            <Card key={plan.name} className={cn("flex flex-col bg-primary/10 text-card-foreground", plan.popular && "border-accent ring-2 ring-accent")}>
               <CardHeader className="relative">
                 {plan.popular && (
                   <div className="absolute top-0 -translate-y-1/2 w-full flex justify-center">
@@ -29,8 +29,8 @@ export function Pricing() {
                   </div>
                 )}
                 <plan.icon className="h-10 w-10 text-primary mx-auto" />
-                <CardTitle className="font-headline text-2xl text-center pt-4">{plan.name}</CardTitle>
-                <CardDescription className="text-center">{plan.description}</CardDescription>
+                <CardTitle className="font-headline text-2xl text-center pt-4 text-primary">{plan.name}</CardTitle>
+                <CardDescription className="text-center text-primary/80">{plan.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
                 <div className="text-center">
@@ -47,7 +47,7 @@ export function Pricing() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button asChild className={cn("w-full", plan.popular ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-primary/10 text-primary hover:bg-primary/20")}>
+                <Button asChild className={cn("w-full", plan.popular ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-primary/20 text-primary hover:bg-primary/30")}>
                   <Link href="/contact">
                     {plan.name === "Enterprise" ? "Contact Us" : "Get Started"}
                   </Link>
