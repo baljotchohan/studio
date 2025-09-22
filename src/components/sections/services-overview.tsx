@@ -10,7 +10,7 @@ export function ServicesOverview() {
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            What We Do
+            Run Your Business. We’ll Run the Software.
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             From concept to launch, we provide the digital expertise your business needs to succeed.
