@@ -10,7 +10,7 @@ export function Pricing() {
     <section id="pricing" className="py-16 md:py-24 bg-header-background/10 text-primary-foreground">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl" style={{color: 'hsl(var(--header-background))'}}>
             Find the Right Plan
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -41,7 +41,7 @@ export function Pricing() {
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-3">
                       <Check className="h-5 w-5 text-header-foreground/80" />
-                      <span className="text-primary">{feature}</span>
+                      <span className="text-header-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
