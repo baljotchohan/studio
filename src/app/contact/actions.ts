@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { suggestBestRepresentative, SuggestBestRepresentativeOutput } from "@/ai/flows/suggest-best-representative";
+import { sendContactEmail } from "@/ai/flows/send-contact-email";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -34,7 +35,10 @@ export async function handleContactForm(
   }
 
   try {
-    const result = await suggestBestRepresentative({ inquiry: validatedFields.data.message });
+    const [result] = await Promise.all([
+      suggestBestRepresentative({ inquiry: validatedFields.data.message }),
+      sendContactEmail(validatedFields.data),
+    ]);
 
     return {
       success: true,
