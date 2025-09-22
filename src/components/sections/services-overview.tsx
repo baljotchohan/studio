@@ -9,7 +9,7 @@ export function ServicesOverview() {
     <section id="services" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             What We Do
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
