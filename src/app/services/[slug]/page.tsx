@@ -66,7 +66,7 @@ export default function ServicePage({ params }: ServicePageProps) {
           </div>
           <div className="flex items-center justify-center">
             {is3DAnimation ? (
-              <Card className="overflow-hidden shadow-xl w-full h-[400px]">
+              <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
                 <ThreeAnimation />
               </Card>
             ) : (
