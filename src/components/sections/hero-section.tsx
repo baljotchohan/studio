@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import ThreeAnimation from "@/components/three-animation";
+import DAnimationExample from "@/components/d-animation-example";
 
 export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-background">
       <Link href="/services/3d-animation" className="absolute inset-0 z-0" aria-label="View 3D Animation Service">
-          <ThreeAnimation />
+          <DAnimationExample />
       </Link>
       <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center justify-center px-4 text-center">
         <div className="flex flex-col items-center">
