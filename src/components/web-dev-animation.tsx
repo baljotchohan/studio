@@ -21,7 +21,7 @@ const WebDevAnimation = () => {
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
-    renderer.setClearColor(0x0a0a1a); // Dark blue background
+    renderer.setClearColor(0x0a0a1a);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
@@ -38,7 +38,6 @@ const WebDevAnimation = () => {
     pointLight3.position.set(0, -10, -10);
     scene.add(pointLight3);
 
-    // Add stars
     const starsGeometry = new THREE.BufferGeometry();
     const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
     const starVertices = [];
@@ -53,6 +52,8 @@ const WebDevAnimation = () => {
     scene.add(stars);
 
     const icons: THREE.Mesh[] = [];
+    const codeElements: THREE.Mesh[] = [];
+
     const fontLoader = new FontLoader();
     const fontUrl = 'https://threejs.org/examples/fonts/helvetiker_bold.typeface.json';
 
@@ -90,13 +91,36 @@ const WebDevAnimation = () => {
           (Math.random() - 0.5) * 4
         );
         
-        textMesh.userData = {
-            basePosition: textMesh.position.clone(),
-            angle: index * (Math.PI * 2) / languages.length
-        };
-
         icons.push(textMesh);
         scene.add(textMesh);
+      });
+      
+      const codeSnippets = ['</>', '{}', '() =>', 'const', 'import', '<div>', 'useEffect'];
+      codeSnippets.forEach((snippet) => {
+        const snippetGeometry = new TextGeometry(snippet, {
+            font: font,
+            size: 0.5,
+            height: 0.1,
+        });
+        snippetGeometry.center();
+        const snippetMaterial = new THREE.MeshStandardMaterial({
+            color: 0xaaaaaa,
+            metalness: 0.5,
+            roughness: 0.5
+        });
+        const snippetMesh = new THREE.Mesh(snippetGeometry, snippetMaterial);
+        snippetMesh.position.set(
+            (Math.random() - 0.5) * 20,
+            (Math.random() - 0.5) * 10,
+            (Math.random() - 0.5) * 10
+        );
+        snippetMesh.rotation.set(
+            Math.random() * Math.PI,
+            Math.random() * Math.PI,
+            Math.random() * Math.PI
+        );
+        codeElements.push(snippetMesh);
+        scene.add(snippetMesh);
       });
     });
 
@@ -114,11 +138,9 @@ const WebDevAnimation = () => {
       frameId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
-      icons.forEach((icon, index) => {
-        icon.rotation.y += 0.005 + (index % 3) * 0.002;
-        icon.rotation.x += 0.002;
-        
-        icon.position.y = icon.userData.basePosition.y + Math.sin(elapsedTime * 0.5 + icon.userData.angle) * 0.5;
+      codeElements.forEach((el, index) => {
+        el.rotation.x += 0.001 * (index % 5 + 1);
+        el.rotation.y += 0.001 * (index % 3 + 1);
       });
 
       stars.rotation.y = elapsedTime * 0.05;
