@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import ThreeAnimation from "@/components/three-animation";
+import DAnimationExample from "@/components/d-animation-example";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import WebDevAnimation from "@/components/web-dev-animation";
 import UiUxAnimation from "@/components/ui-ux-animation";
@@ -69,7 +69,7 @@ export default function ServicePage({ params }: ServicePageProps) {
           <div className="flex items-center justify-center">
             <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
               {is3DAnimation ? (
-                <ThreeAnimation />
+                <DAnimationExample />
               ) : isWebDevelopment ? (
                 <WebDevAnimation />
               ) : isUiUxDesign ? (
