@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { Loader2, Sparkles, UserCheck } from "lucide-react";
+import { Loader2, CheckCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -50,22 +50,13 @@ export function ContactForm() {
     });
   };
 
-  if (formState?.success && formState.suggestion) {
+  if (formState?.success) {
     return (
       <Alert variant="default" className="border-primary/50 bg-primary/10">
-        <Sparkles className="h-4 w-4 text-primary" />
-        <AlertTitle className="font-headline text-lg text-primary">{formState.message}</AlertTitle>
+        <CheckCircle className="h-4 w-4 text-primary" />
+        <AlertTitle className="font-headline text-lg text-primary">Success!</AlertTitle>
         <AlertDescription className="mt-2 text-foreground">
-          <div className="flex items-center gap-2 font-semibold">
-            <UserCheck className="h-5 w-5" />
-            <span>AI-Powered Routing Suggestion:</span>
-          </div>
-          <p className="mt-1">
-            Your inquiry has been forwarded to <strong>{formState.suggestion.representativeName}</strong> ({formState.suggestion.representativeEmail}).
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground italic">
-            <strong>Reason:</strong> {formState.suggestion.reason}
-          </p>
+          <p>{formState.message}</p>
           <Button onClick={() => setFormState(null)} className="mt-4">Send another message</Button>
         </AlertDescription>
       </Alert>

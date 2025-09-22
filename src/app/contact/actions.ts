@@ -1,7 +1,6 @@
 "use server";
 
 import { z } from "zod";
-import { suggestBestRepresentative, SuggestBestRepresentativeOutput } from "@/ai/flows/suggest-best-representative";
 import { sendContactEmail } from "@/ai/flows/send-contact-email";
 
 const formSchema = z.object({
@@ -13,7 +12,6 @@ const formSchema = z.object({
 export type FormState = {
   success: boolean;
   message: string;
-  suggestion?: SuggestBestRepresentativeOutput;
   errors?: {
     name?: string[];
     email?: string[];
@@ -35,16 +33,11 @@ export async function handleContactForm(
   }
 
   try {
-    // Both flows will run in parallel. If one fails, Promise.all will reject.
-    const [suggestionResult] = await Promise.all([
-      suggestBestRepresentative({ inquiry: validatedFields.data.message }),
-      sendContactEmail(validatedFields.data),
-    ]);
+    await sendContactEmail(validatedFields.data);
 
     return {
       success: true,
       message: `Thank you, ${validatedFields.data.name}! Your message has been received.`,
-      suggestion: suggestionResult,
     };
   } catch (error) {
     console.error("Error in contact form action:", error);
