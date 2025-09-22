@@ -63,7 +63,7 @@ export const pricingPlans = [
   },
   {
     name: "Starter",
-    price: "₹1799",
+    price: "₹1999",
     description: "For individuals and small teams getting started.",
     features: ["2 Core Services", "Basic 3D Asset", "2 Rounds of Revisions", "Email Support"],
     icon: Award,
