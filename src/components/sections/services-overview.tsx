@@ -9,7 +9,7 @@ export function ServicesOverview() {
     <section id="services" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl" style={{color: 'hsl(var(--header-background))'}}>
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             What We Do
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -19,13 +19,13 @@ export function ServicesOverview() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <Link href={`/services/${service.slug}`} key={service.slug} className="group">
-              <Card className="h-full overflow-hidden transition-all duration-300 group-hover:border-primary group-hover:shadow-lg group-hover:-translate-y-1 bg-header-background text-header-foreground">
+              <Card className="h-full overflow-hidden transition-all duration-300 group-hover:border-primary group-hover:shadow-lg group-hover:-translate-y-1 bg-card text-card-foreground">
                 <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-header-background/80 text-header-foreground">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <CardTitle className="font-headline text-xl text-header-foreground">{service.title}</CardTitle>
-                  <CardDescription className="pt-2 text-header-foreground/80">{service.description}</CardDescription>
+                  <CardTitle className="font-headline text-xl">{service.title}</CardTitle>
+                  <CardDescription className="pt-2 text-muted-foreground">{service.description}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>

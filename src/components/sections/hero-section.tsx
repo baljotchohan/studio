@@ -17,10 +17,10 @@ export function HeroSection() {
             Elara Tech Labs specializes in crafting breathtaking 3D animations, intuitive user experiences, and powerful web applications.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button asChild size="lg">
               <Link href="/contact">Start Your Project</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:text-primary">
+            <Button asChild size="lg" variant="outline">
               <Link href="/services">Our Services</Link>
             </Button>
           </div>
