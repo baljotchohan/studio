@@ -23,7 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-header-background/95 text-header-foreground backdrop-blur-sm">
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold">
-          <Image src="/logo.svg" alt="Elara Tech Labs Logo" width={28} height={28} className="invert brightness-0" />
+          <Image src="/logo-inverted.svg" alt="Elara Tech Labs Logo" width={28} height={28} />
           Elara Tech
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
