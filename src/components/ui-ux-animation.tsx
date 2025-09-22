@@ -21,16 +21,16 @@ const UiUxAnimation = () => {
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
-    renderer.setClearColor(0x1a1a2a, 1);
+    renderer.setClearColor(0x202030, 1);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
 
-    const pointLight1 = new THREE.PointLight(0xff00ff, 1, 200);
+    const pointLight1 = new THREE.PointLight(0xff00ff, 1.5, 200);
     pointLight1.position.set(10, 10, 10);
     scene.add(pointLight1);
     
-    const pointLight2 = new THREE.PointLight(0x00ffff, 1, 200);
+    const pointLight2 = new THREE.PointLight(0x00ffff, 1.5, 200);
     pointLight2.position.set(-10, -10, 5);
     scene.add(pointLight2);
 
@@ -41,7 +41,7 @@ const UiUxAnimation = () => {
 
     fontLoader.load(fontUrl, (font) => {
       const tools = ['Figma', 'Sketch', 'XD', 'InVision', 'Zeplin', 'Miro'];
-      const colors = [0x1EBEF9, 0xF8C442, 0xFF61F6, 0xFF476C, 0xFFA500, 0x4B89F8];
+      const colors = [0x54d4ff, 0xffe680, 0xffa9ff, 0xff8d9b, 0xffd277, 0x8cb4ff];
       
       tools.forEach((tool, index) => {
         const textGeometry = new TextGeometry(tool, {
@@ -79,7 +79,7 @@ const UiUxAnimation = () => {
     for (let i = 0; i < 20; i++) {
         const isWire = Math.random() > 0.5;
         const geometry = isWire ? new THREE.BoxGeometry(Math.random() * 2, Math.random() * 2, 0.1) : new THREE.PlaneGeometry(Math.random() * 2, Math.random() * 2);
-        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: isWire, transparent: true, opacity: 0.25 });
+        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: isWire, transparent: true, opacity: 0.3 });
         const mesh = new THREE.Mesh(geometry, material);
         mesh.position.set((Math.random() - 0.5) * 30, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 10);
         mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
