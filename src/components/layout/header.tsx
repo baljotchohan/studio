@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -57,9 +57,12 @@ export function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
-                    <Link href="/" className="font-headline text-xl font-bold mb-8">
-                      Elara Tech Labs
-                    </Link>
+                    <SheetHeader>
+                        <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                        <Link href="/" className="font-headline text-xl font-bold mb-8">
+                          Elara Tech Labs
+                        </Link>
+                    </SheetHeader>
                     <div className="flex flex-col gap-4">
                     {navLinks.map((link) => (
                         <Link
