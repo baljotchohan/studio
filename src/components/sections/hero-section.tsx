@@ -5,7 +5,9 @@ import ThreeAnimation from "@/components/three-animation";
 export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-background">
-      <ThreeAnimation />
+      <Link href="/services/3d-animation" className="absolute inset-0 z-0" aria-label="View 3D Animation Service">
+          <ThreeAnimation />
+      </Link>
       <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center justify-center px-4 text-center">
         <div className="flex flex-col items-center">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">

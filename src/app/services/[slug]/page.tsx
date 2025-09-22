@@ -1,11 +1,12 @@
 import { services } from "@/lib/data";
 import { notFound } from "next/navigation";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import ThreeAnimation from "@/components/three-animation";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 type ServicePageProps = {
   params: {
@@ -20,7 +21,6 @@ export function generateStaticParams() {
 }
 
 const serviceImageMap: { [key: string]: string } = {
-  "3d-animation": "service-3d",
   "ui-ux-design": "service-uiux",
   "web-development": "service-webdev",
   "technical-support": "service-support",
@@ -35,6 +35,8 @@ export default function ServicePage({ params }: ServicePageProps) {
 
   const imageId = serviceImageMap[service.slug];
   const image = PlaceHolderImages.find((img) => img.id === imageId);
+
+  const is3DAnimation = service.slug === '3d-animation';
 
   return (
     <div className="bg-secondary">
@@ -63,20 +65,26 @@ export default function ServicePage({ params }: ServicePageProps) {
             </Button>
           </div>
           <div className="flex items-center justify-center">
-            <Card className="overflow-hidden shadow-xl">
-                <CardContent className="p-0">
-                    {image && (
-                        <Image
-                            src={image.imageUrl}
-                            alt={service.title}
-                            width={600}
-                            height={400}
-                            className="w-full h-auto object-cover"
-                            data-ai-hint={image.imageHint}
-                        />
-                    )}
-                </CardContent>
-            </Card>
+            {is3DAnimation ? (
+              <Card className="overflow-hidden shadow-xl w-full h-[400px]">
+                <ThreeAnimation />
+              </Card>
+            ) : (
+              <Card className="overflow-hidden shadow-xl">
+                  <CardContent className="p-0">
+                      {image && (
+                          <Image
+                              src={image.imageUrl}
+                              alt={service.title}
+                              width={600}
+                              height={400}
+                              className="w-full h-auto object-cover"
+                              data-ai-hint={image.imageHint}
+                          />
+                      )}
+                  </CardContent>
+              </Card>
+            )}
           </div>
         </div>
       </div>
