@@ -8,6 +8,7 @@ import { ArrowLeft } from "lucide-react";
 import ThreeAnimation from "@/components/three-animation";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import WebDevAnimation from "@/components/web-dev-animation";
+import UiUxAnimation from "@/components/ui-ux-animation";
 
 type ServicePageProps = {
   params: {
@@ -22,8 +23,6 @@ export function generateStaticParams() {
 }
 
 const serviceImageMap: { [key: string]: string } = {
-  "ui-ux-design": "service-uiux",
-  "web-development": "service-webdev",
   "technical-support": "service-support",
 };
 
@@ -39,6 +38,7 @@ export default function ServicePage({ params }: ServicePageProps) {
 
   const is3DAnimation = service.slug === '3d-animation';
   const isWebDevelopment = service.slug === 'web-development';
+  const isUiUxDesign = service.slug === 'ui-ux-design';
 
   return (
     <div className="bg-secondary">
@@ -74,6 +74,10 @@ export default function ServicePage({ params }: ServicePageProps) {
             ) : isWebDevelopment ? (
               <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
                 <WebDevAnimation />
+              </Card>
+            ) : isUiUxDesign ? (
+              <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
+                <UiUxAnimation />
               </Card>
             ) : (
               <Card className="overflow-hidden shadow-xl">
