@@ -1,9 +1,9 @@
 {
   "placeholderImages": [
     { "id": "service-3d", "imageUrl": "https://picsum.photos/seed/101/600/400", "imageHint": "abstract 3d" },
-    { "id": "service-uiux", "imageUrl": "https://picsum.photos/seed/102/600/400", "imageHint": "design wireframe" },
-    { "id": "service-webdev", "imageUrl": "https://picsum.photos/seed/103/600/400", "imageHint": "code screen" },
-    { "id": "service-support", "imageUrl": "https://picsum.photos/seed/104/600/400", "imageHint": "headset support" },
+    { "id": "service-uiux", "imageUrl": "https://picsum.photos/seed/102/600/400", "imageHint": "user interface" },
+    { "id": "service-webdev", "imageUrl": "https://picsum.photos/seed/103/600/400", "imageHint": "laptop code" },
+    { "id": "service-support", "imageUrl": "https://picsum.photos/seed/104/600/400", "imageHint": "customer service" },
     { "id": "testimonial-1", "imageUrl": "https://picsum.photos/seed/201/100/100", "imageHint": "person portrait" },
     { "id": "testimonial-2", "imageUrl": "https://picsum.photos/seed/202/100/100", "imageHint": "woman smiling" },
     { "id": "testimonial-3", "imageUrl": "https://picsum.photos/seed/203/100/100", "imageHint": "man professional" },
