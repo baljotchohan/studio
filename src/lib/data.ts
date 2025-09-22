@@ -1,4 +1,4 @@
-import { Code, Bot, PenTool, LifeBuoy, Zap, DollarSign, Award } from "lucide-react";
+import { Code, Bot, PenTool, LifeBuoy, Zap, DollarSign, Award, TestTube } from "lucide-react";
 
 export const services = [
   {
@@ -53,6 +53,14 @@ export const testimonials = [
 ];
 
 export const pricingPlans = [
+  {
+    name: "Free Trial",
+    price: "₹0",
+    description: "A preview of our services to get you started.",
+    features: ["1 Core Service (Partial)", "Basic Consultation", "1 Round of Revisions", "Email Support"],
+    icon: TestTube,
+    popular: false,
+  },
   {
     name: "Starter",
     price: "₹1799",
