@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -17,6 +17,12 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-header-background/95 text-header-foreground backdrop-blur-sm">
@@ -31,7 +37,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-header-foreground/80",
-                pathname === link.href ? "text-header-foreground" : "text-header-foreground/60"
+                isClient && pathname === link.href ? "text-header-foreground" : "text-header-foreground/60"
               )}
             >
               {link.label}
