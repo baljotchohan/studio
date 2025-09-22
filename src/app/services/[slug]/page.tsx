@@ -67,34 +67,28 @@ export default function ServicePage({ params }: ServicePageProps) {
             </Button>
           </div>
           <div className="flex items-center justify-center">
-            {is3DAnimation ? (
-              <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
+            <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
+              {is3DAnimation ? (
                 <ThreeAnimation />
-              </Card>
-            ) : isWebDevelopment ? (
-              <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
+              ) : isWebDevelopment ? (
                 <WebDevAnimation />
-              </Card>
-            ) : isUiUxDesign ? (
-              <Card className="relative overflow-hidden shadow-xl w-full h-[400px]">
+              ) : isUiUxDesign ? (
                 <UiUxAnimation />
-              </Card>
-            ) : (
-              <Card className="overflow-hidden shadow-xl">
-                  <CardContent className="p-0">
-                      {image && (
-                          <Image
-                              src={image.imageUrl}
-                              alt={service.title}
-                              width={600}
-                              height={400}
-                              className="w-full h-auto object-cover"
-                              data-ai-hint={image.imageHint}
-                          />
-                      )}
-                  </CardContent>
-              </Card>
-            )}
+              ) : (
+                <CardContent className="p-0">
+                    {image && (
+                        <Image
+                            src={image.imageUrl}
+                            alt={service.title}
+                            width={600}
+                            height={400}
+                            className="w-full h-auto object-cover"
+                            data-ai-hint={image.imageHint}
+                        />
+                    )}
+                </CardContent>
+              )}
+            </Card>
           </div>
         </div>
       </div>

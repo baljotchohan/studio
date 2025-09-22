@@ -21,7 +21,7 @@ const UiUxAnimation = () => {
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
-    renderer.setClearColor(0x1a1a2a, 0);
+    renderer.setClearColor(0x1a1a2a, 1);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
@@ -102,8 +102,8 @@ const UiUxAnimation = () => {
       const elapsedTime = clock.getElapsedTime();
 
       toolLogos.forEach((logo, index) => {
-        logo.rotation.y += 0.005;
-        logo.position.y += Math.sin(elapsedTime + index) * 0.005;
+        logo.rotation.y += 0.002; // Slower rotation
+        logo.position.y += Math.sin(elapsedTime * 0.5 + index) * 0.003; // Slower, more subtle bobbing
       });
 
       uiElements.rotation.y = elapsedTime * 0.05;
