@@ -47,7 +47,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-4">
             <Button asChild className="hidden md:flex bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                <Link href="/contact">Get a Quote</Link>
+                <Link href="/contact">Get Started</Link>
             </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild className="md:hidden">
@@ -76,7 +76,7 @@ export function Header() {
                     ))}
                     </div>
                      <Button asChild className="mt-8 w-full">
-                        <Link href="/contact" onClick={() => setIsOpen(false)}>Get a Quote</Link>
+                        <Link href="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
                     </Button>
                 </SheetContent>
             </Sheet>
