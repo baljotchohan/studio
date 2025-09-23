@@ -42,7 +42,7 @@ const SpaceBackground: React.FC = () => {
     starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
     starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
     
-    const starMaterial = new THREE.PointsMaterial({ size: 0.7, vertexColors: true });
+    const starMaterial = new THREE.PointsMaterial({ size: 1.5, vertexColors: true });
     const stars = new THREE.Points(starGeometry, starMaterial);
     scene.add(stars);
 
