@@ -94,10 +94,27 @@ export default function Home() {
                 An AI tutor app which improves your learning.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/80">Elevate your study sessions with personalized guidance and instant feedback. Test your knowledge with our <span className="animated-gradient-text">AI Quiz</span>, and discover your future path with the <span className="animated-gradient-text">AI Career Finder</span>. Stud IQ is your dedicated partner in academic success.</p>
+            <CardContent className="space-y-4 text-left">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                <p className="text-white/80">
+                  Elevate your study sessions with <span className="font-semibold text-white">personalized guidance</span> and <span className="font-semibold text-white">instant feedback</span>.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                <p className="text-white/80">
+                  Test your knowledge with our interactive <span className="animated-gradient-text">AI Quiz</span>.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                <p className="text-white/80">
+                  Discover your future path with the <span className="animated-gradient-text">AI Career Finder</span>.
+                </p>
+              </div>
             </CardContent>
-            <CardFooter className="justify-center">
+            <CardFooter className="justify-center pt-6">
               <Button asChild size="lg">
                 <Link href="https://studio--learnflow-ai-co3xd.us-central1.hosted.app/dashboard" target="_blank" rel="noopener noreferrer">Start Learning with AI</Link>
               </Button>
