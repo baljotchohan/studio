@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: 'Baljot Singh Chohan',
     role: 'CEO & Founder',
-    bio: 'Creator of StudIQ, Baljot is an 18-year-old BCA student specializing in AI & ML and an accomplished AI Journalist.',
+    bio: <>Creator of StudIQ, Baljot is an 18-year-old BCA student specializing in <span className="animated-gradient-text">AI</span> & ML and an accomplished <span className="animated-gradient-text">AI</span> Journalist.</>,
   },
   {
     name: 'Mankirat Singh',
@@ -15,7 +15,7 @@ const teamMembers = [
   {
     name: 'Daman Deep Singh',
     role: 'CFO',
-    bio: 'Daman is an AI & ML student at Chandigarh, managing the financial strategy that fuels our innovation.',
+    bio: <>Daman is an <span className="animated-gradient-text">AI</span> & ML student at Chandigarh, managing the financial strategy that fuels our innovation.</>,
   },
 ];
 
