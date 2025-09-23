@@ -95,7 +95,7 @@ export default function Home() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                 <p className="text-white/80">
-                  Elevate your study sessions with <span className="font-semibold text-white">personalized guidance</span> and <span className="font-semibold text-white">instant feedback</span>.
+                  Elevate your study sessions with <span className="font-semibold text-white animated-gradient-text">personalized guidance</span> and <span className="font-semibold text-white animated-gradient-text">instant feedback</span>.
                 </p>
               </div>
               <div className="flex items-start gap-3">
