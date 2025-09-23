@@ -22,47 +22,34 @@ const SpaceBackground: React.FC = () => {
     
     // Starfield
     const starVertices: number[] = [];
-    for (let i = 0; i < 10000; i++) {
+    const starColors: number[] = [];
+    const starSpeeds: number[] = [];
+
+    for (let i = 0; i < 5000; i++) {
       const x = (Math.random() - 0.5) * 2000;
       const y = (Math.random() - 0.5) * 2000;
       const z = (Math.random() - 0.5) * 2000;
       starVertices.push(x, y, z);
+
+      const color = new THREE.Color();
+      color.setHSL(Math.random(), 1.0, 0.7);
+      starColors.push(color.r, color.g, color.b);
+
+      starSpeeds.push(Math.random() * 0.0002 + 0.0001);
     }
 
     const starGeometry = new THREE.BufferGeometry();
     starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
-    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.7 });
+    starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
+    
+    const starMaterial = new THREE.PointsMaterial({ size: 0.7, vertexColors: true });
     const stars = new THREE.Points(starGeometry, starMaterial);
     scene.add(stars);
 
-    // Moon
-    const textureLoader = new THREE.TextureLoader();
-    const moonTexture = textureLoader.load('https://raw.githubusercontent.com/jeromeetienne/threex.planets/master/images/moonmap1k.jpg');
-    const moonBumpMap = textureLoader.load('https://raw.githubusercontent.com/jeromeetienne/threex.planets/master/images/moonbump1k.jpg');
-    const moonGeometry = new THREE.SphereGeometry(3, 64, 64);
-    const moonMaterial = new THREE.MeshStandardMaterial({
-      map: moonTexture,
-      color: 0xcccccc,
-      bumpMap: moonBumpMap,
-      bumpScale: 0.5,
-    });
-    const moon = new THREE.Mesh(moonGeometry, moonMaterial);
-    moon.position.set(-15, 10, 0);
-    scene.add(moon);
-    
-    const ambientLight = new THREE.AmbientLight(0xffffff, 2.0);
-    scene.add(ambientLight);
-    
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, 3, 5);
-    scene.add(directionalLight);
-
-    const clock = new THREE.Clock();
     const animate = () => {
       requestAnimationFrame(animate);
 
       stars.rotation.y += 0.0001;
-      moon.rotation.y += 0.001;
 
       // Mouse movement
       camera.position.x += (mouse.current.x * 5 - camera.position.x) * 0.05;
@@ -80,33 +67,17 @@ const SpaceBackground: React.FC = () => {
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const scrollMax = 1000; 
-      const scrollFraction = Math.min(scrollY / scrollMax, 1);
-
-      // Animate position
-      moon.position.y = 10 - scrollY * 0.1;
-      moon.position.z = scrollFraction * 40;
-
-      // Animate scale
-      const scale = 1 + scrollFraction * 4;
-      moon.scale.set(scale, scale, scale);
-    };
-
     const handleMouseMove = (event: MouseEvent) => {
       mouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.current.y = (event.clientY / window.innerHeight) * 2 - 1;
     };
 
     window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
 
     const currentMount = mountRef.current;
     return () => {
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
