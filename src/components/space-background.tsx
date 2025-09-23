@@ -34,7 +34,7 @@ const SpaceBackground: React.FC = () => {
     scene.add(stars);
 
     // Sun
-    const sunGeometry = new THREE.SphereGeometry(15, 64, 64);
+    const sunGeometry = new THREE.SphereGeometry(30, 64, 64);
     
     const vertexShader = `
       uniform float uTime;
@@ -154,11 +154,18 @@ const SpaceBackground: React.FC = () => {
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      sun.position.y = -scrollY * 0.1;
+    };
+
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
     const currentMount = mountRef.current;
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
