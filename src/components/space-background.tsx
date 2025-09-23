@@ -54,7 +54,7 @@ const SpaceBackground: React.FC = () => {
     planetData.forEach(data => {
       const planetTexture = textureLoader.load(data.texture);
       const planetGeometry = new THREE.SphereGeometry(data.size, 64, 64);
-      const planetMaterial = new THREE.MeshPhysicalMaterial({ map: planetTexture });
+      const planetMaterial = new THREE.MeshBasicMaterial({ map: planetTexture });
       const planet = new THREE.Mesh(planetGeometry, planetMaterial);
       
       let planetGroup: THREE.Group | THREE.Mesh = planet;
