@@ -5,17 +5,17 @@ const teamMembers = [
   {
     name: 'Baljot Singh Chohan',
     role: 'CEO & Founder',
-    bio: <>Creator of StudIQ, Baljot is an 18-year-old BCA student specializing in <span className="animated-gradient-text">AI</span> & ML and an accomplished <span className="animated-gradient-text">AI</span> Journalist.</>,
+    bio: <>As the creator of StudIQ, Baljot is an 18-year-old BCA student specializing in <span className="animated-gradient-text">AI</span> & ML. He is also an accomplished <span className="animated-gradient-text">AI</span> Journalist, combining technical skill with insightful industry commentary.</>,
   },
   {
     name: 'Mankirat Singh',
     role: 'Content Manager & Co-founder',
-    bio: 'At 18 years old, Mankirat is an engineering student in Canada who brings his strategic vision to our content.',
+    bio: 'At 18 years old, Mankirat is a forward-thinking engineering student in Canada who brings a sharp strategic vision to our content, ensuring it is engaging, informative, and impactful.',
   },
   {
     name: 'Daman Deep Singh',
     role: 'CFO',
-    bio: <>Daman is an <span className="animated-gradient-text">AI</span> & ML student at Chandigarh, managing the financial strategy that fuels our innovation.</>,
+    bio: <>Daman is a dedicated <span className="animated-gradient-text">AI</span> & ML student at Chandigarh, where he skillfully manages the financial strategy that fuels our innovation and growth.</>,
   },
 ];
 
@@ -35,7 +35,16 @@ export default function AboutPage() {
         <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
           <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Mission</h2>
           <p className="text-center text-white/80 md:text-lg">
-            As a future-focused company, our mission is to empower businesses and individuals by providing cutting-edge <span className="animated-gradient-text">AI</span> solutions that drive growth, efficiency, and innovation. We believe in the transformative power of technology and strive to make it accessible to everyone.
+            As a future-focused company, our mission is to empower businesses and individuals by providing cutting-edge <span className="animated-gradient-text">AI</span> solutions that drive growth, efficiency, and innovation. We are committed to demystifying <span className="animated-gradient-text">Artificial Intelligence</span> and making its transformative power accessible to everyone, helping our clients navigate the complexities of the digital age with confidence.
+          </p>
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
+          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Vision</h2>
+          <p className="text-center text-white/80 md:text-lg">
+            We envision a world where intelligent technology seamlessly integrates with human potential. Our goal is to be at the forefront of the <span className="animated-gradient-text">AI</span> revolution, creating innovative solutions that not only solve business challenges but also contribute to a smarter, more connected, and sustainable future for all.
           </p>
         </div>
       </section>
