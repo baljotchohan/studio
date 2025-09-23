@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useRef, useEffect } from 'react';
@@ -5,6 +6,7 @@ import * as THREE from 'three';
 
 const SpaceBackground: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const mouse = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -45,6 +47,7 @@ const SpaceBackground: React.FC = () => {
       bumpScale: 0.5,
     });
     const moon = new THREE.Mesh(moonGeometry, moonMaterial);
+    moon.position.set(-15, 10, 0);
     scene.add(moon);
     
     const ambientLight = new THREE.AmbientLight(0xffffff, 2.0);
@@ -60,6 +63,11 @@ const SpaceBackground: React.FC = () => {
 
       stars.rotation.y += 0.0001;
       moon.rotation.y += 0.001;
+
+      // Mouse movement
+      camera.position.x += (mouse.current.x * 5 - camera.position.x) * 0.05;
+      camera.position.y += (-mouse.current.y * 5 - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
     };
@@ -78,7 +86,7 @@ const SpaceBackground: React.FC = () => {
       const scrollFraction = Math.min(scrollY / scrollMax, 1);
 
       // Animate position
-      moon.position.y = -scrollY * 0.1;
+      moon.position.y = 10 - scrollY * 0.1;
       moon.position.z = scrollFraction * 40;
 
       // Animate scale
@@ -86,13 +94,20 @@ const SpaceBackground: React.FC = () => {
       moon.scale.set(scale, scale, scale);
     };
 
+    const handleMouseMove = (event: MouseEvent) => {
+      mouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.current.y = (event.clientY / window.innerHeight) * 2 - 1;
+    };
+
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
 
     const currentMount = mountRef.current;
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
