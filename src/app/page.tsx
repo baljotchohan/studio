@@ -40,23 +40,23 @@ export default function Home() {
             <Card className="bg-transparent border-white/10">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-orbitron">
-                  AI Automation
+                  <span className="animated-gradient-text">AI</span> Automation
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">We design smart automations to streamline your workflow.</p>
-                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
+                <Button className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-orbitron">
-                  AI Agency
+                  <span className="animated-gradient-text">AI</span> Agency
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
-                <p className="text-white/80">Automate your business with our custom AI-driven solutions.</p>
-                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
+                <p className="text-white/80">Automate your business with our custom <span className="animated-gradient-text">AI</span>-driven solutions.</p>
+                <Button className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
@@ -67,7 +67,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Software as a Service solutions tailored for your needs.</p>
-                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
+                <Button className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
@@ -78,7 +78,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Custom software development to deliver on your unique vision.</p>
-                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
+                <Button className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
           </div>
