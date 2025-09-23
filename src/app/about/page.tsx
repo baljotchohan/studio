@@ -14,7 +14,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-16">
-        <div className="bg-black/40 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
+        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
           <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Mission</h2>
           <p className="text-center text-white/80 md:text-lg">
             Our mission is to empower businesses and individuals by providing cutting-edge AI solutions that drive growth, efficiency, and innovation. We believe in the transformative power of technology and strive to make it accessible to everyone.

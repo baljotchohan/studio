@@ -57,7 +57,7 @@ export default function Home() {
       </main>
 
       <section id="services" className="w-full max-w-5xl px-4 py-16">
-        <div className="bg-black/40 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
+        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
           <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service) => (
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
       </section>
       <section id="live-product" className="w-full max-w-5xl px-4 py-16">
-        <div className="bg-black/40 border border-white/10 rounded-2xl p-8 shadow-lg text-center">
+        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-center">
           <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Live AI Product</h2>
           <Card className="bg-transparent border-white/10 max-w-2xl mx-auto">
             <CardHeader>

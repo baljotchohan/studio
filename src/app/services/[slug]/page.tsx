@@ -93,7 +93,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </section>
       
       <div className="w-full max-w-4xl mx-auto space-y-8">
-        <Card className="bg-black/40 border-white/10">
+        <Card className="bg-black/60 border-white/10">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">What's Included</CardTitle>
           </CardHeader>
@@ -109,7 +109,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </CardContent>
         </Card>
 
-        <Card className="bg-black/40 border-white/10">
+        <Card className="bg-black/60 border-white/10">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">How It Works</CardTitle>
           </CardHeader>
@@ -118,7 +118,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </CardContent>
         </Card>
 
-        <Card className="bg-black/40 border-white/10">
+        <Card className="bg-black/60 border-white/10">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">How It Helps You</CardTitle>
           </CardHeader>
@@ -127,7 +127,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </CardContent>
         </Card>
 
-        <Card className="bg-black/40 border-white/10">
+        <Card className="bg-black/60 border-white/10">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">Pricing</CardTitle>
           </CardHeader>

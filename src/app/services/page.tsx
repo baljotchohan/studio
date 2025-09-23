@@ -41,7 +41,7 @@ export default function ServicesPage() {
 
       <section className="mt-16 grid gap-8 md:grid-cols-2">
         {services.map((service) => (
-          <Card key={service.slug} className="bg-black/40 border-white/10 flex flex-col">
+          <Card key={service.slug} className="bg-black/60 border-white/10 flex flex-col">
             <CardHeader>
               <CardTitle className="font-orbitron text-2xl animated-gradient-text">{service.title}</CardTitle>
             </CardHeader>

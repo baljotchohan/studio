@@ -16,7 +16,7 @@ export default function PricingPage() {
       </section>
 
       <section className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="bg-black/40 border-white/10 flex flex-col">
+        <Card className="bg-black/60 border-white/10 flex flex-col">
           <CardHeader>
             <CardTitle className="font-orbitron">Starter</CardTitle>
             <CardDescription className="text-white/70">For individuals and small teams getting started.</CardDescription>
@@ -33,7 +33,7 @@ export default function PricingPage() {
           </CardFooter>
         </Card>
         
-        <Card className="bg-black/60 border-primary shadow-2xl shadow-primary/20 flex flex-col">
+        <Card className="bg-black/80 border-primary shadow-2xl shadow-primary/20 flex flex-col">
           <CardHeader>
             <CardTitle className="font-orbitron">Pro</CardTitle>
             <CardDescription className="text-white/70">For growing businesses that need more power.</CardDescription>
@@ -51,7 +51,7 @@ export default function PricingPage() {
           </CardFooter>
         </Card>
         
-        <Card className="bg-black/40 border-white/10 flex flex-col">
+        <Card className="bg-black/60 border-white/10 flex flex-col">
           <CardHeader>
             <CardTitle className="font-orbitron">Enterprise</CardTitle>
             <CardDescription className="text-white/70">For large-scale applications and custom needs.</CardDescription>
