@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">We design smart automations to streamline your workflow.</p>
-                <Button className="mt-auto w-fit">Get Service</Button>
+                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
@@ -56,7 +56,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Automate your business with our custom <span className="animated-gradient-text">AI</span>-driven solutions.</p>
-                <Button className="mt-auto w-fit">Get Service</Button>
+                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
@@ -67,7 +67,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Software as a Service solutions tailored for your needs.</p>
-                <Button className="mt-auto w-fit">Get Service</Button>
+                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
@@ -78,10 +78,31 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Custom software development to deliver on your unique vision.</p>
-                <Button className="mt-auto w-fit">Get Service</Button>
+                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+      <section id="live-product" className="w-full max-w-5xl px-4 py-16">
+        <div className="bg-black/40 border border-white/10 rounded-2xl p-8 shadow-lg text-center">
+          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Live AI Product</h2>
+          <Card className="bg-transparent border-white/10 max-w-2xl mx-auto">
+            <CardHeader>
+              <CardTitle className="font-orbitron text-2xl animated-gradient-text">Stud IQ</CardTitle>
+              <CardDescription className="text-white/80 text-lg">
+                An AI tutor app which improves your learning.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-white/80">Elevate your study sessions with personalized guidance and instant feedback. Stud IQ is your dedicated partner in academic success.</p>
+            </CardContent>
+            <CardFooter className="justify-center">
+              <Button asChild size="lg">
+                <Link href="https://studio--learnflow-ai-co3xd.us-central1.hosted.app/dashboard" target="_blank" rel="noopener noreferrer">Start Learning with AI</Link>
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
       </section>
     </div>
