@@ -1,6 +1,8 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { CheckCircle } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -22,7 +24,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col gap-4 pt-4 sm:flex-row">
             <Button asChild size="lg">
-              <Link href="/#projects">Explore Our Work</Link>
+              <Link href="/#services">Explore Our Services</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link href="/contact">Contact Us</Link>
@@ -31,12 +33,55 @@ export default function Home() {
         </section>
       </main>
 
-      <section id="projects" className="w-full max-w-5xl px-4 py-16">
+      <section id="services" className="w-full max-w-5xl px-4 py-16">
         <div className="bg-black/10 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg text-left">
-          <h2 className="text-3xl font-bold mb-4 font-orbitron animated-gradient-text">Our Projects</h2>
-          <p className="text-white/80">
-            Here you can showcase your innovative projects. Each project can be displayed in a card with a brief description and a link to learn more. This glass effect will make your portfolio stand out.
-          </p>
+          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="bg-transparent border-white/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-orbitron">
+                  <CheckCircle className="text-primary" />
+                  AI Automation
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/80">We design smart automations to streamline your workflow.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-transparent border-white/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-orbitron">
+                  <CheckCircle className="text-primary" />
+                  AI Agency
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/80">Automate your business with our custom AI-driven solutions.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-transparent border-white/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-orbitron">
+                  <CheckCircle className="text-primary" />
+                  SaaS
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/80">Software as a Service solutions tailored for your needs.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-transparent border-white/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-orbitron">
+                  <CheckCircle className="text-primary" />
+                  Personalized Software
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/80">Custom software development to deliver on your unique vision.</p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
