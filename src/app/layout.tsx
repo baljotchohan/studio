@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
-import GalaxyBackground from '@/components/galaxy-background';
 
 export const metadata: Metadata = {
   title: 'Elara',
@@ -22,10 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('min-h-screen bg-background font-sans antialiased')}>
-        <GalaxyBackground />
-        <div className="relative z-10">
-          {children}
-        </div>
+        {children}
         <Toaster />
       </body>
     </html>
