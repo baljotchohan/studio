@@ -14,6 +14,7 @@ export default function GalaxyBackground() {
   
   return (
     <div className="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
+      <div className="nebula"></div>
       <div className="stars"></div>
       <div className="stars2"></div>
       <div className="stars3"></div>
@@ -26,6 +27,16 @@ export default function GalaxyBackground() {
           className="opacity-20 animate-pulse-slow"
           data-ai-hint="jupiter planet"
         />
+        <div className="absolute top-0 left-0 w-full h-full animate-orbit">
+            <Image
+            src="https://picsum.photos/seed/elara/100/100"
+            alt="Elara"
+            width={100}
+            height={100}
+            className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-50 rounded-full shadow-[0_0_20px_5px_rgba(255,255,220,0.5)]"
+            data-ai-hint="moon rock"
+            />
+        </div>
       </div>
       <style jsx>{`
         .animate-pulse-slow {
@@ -40,6 +51,17 @@ export default function GalaxyBackground() {
             opacity: 0.25;
             transform: scale(1.05);
           }
+        }
+        .animate-orbit {
+            animation: orbit 45s linear infinite;
+        }
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg) translateX(300px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(300px) rotate(-360deg);
+            }
         }
       `}</style>
     </div>
