@@ -32,7 +32,7 @@ export default function Home() {
       </main>
 
       <section id="projects" className="w-full max-w-5xl px-4 py-16">
-        <div className="bg-black/20 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-lg text-left">
+        <div className="bg-black/10 backdrop-blur-md border border-white/10 rounded-2xl p-8 shadow-lg text-left">
           <h2 className="text-3xl font-bold mb-4 font-orbitron animated-gradient-text">Our Projects</h2>
           <p className="text-white/80">
             Here you can showcase your innovative projects. Each project can be displayed in a card with a brief description and a link to learn more. This glass effect will make your portfolio stand out.
