@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import SpaceBackground from '@/components/space-background';
+import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
   title: 'Elara',
@@ -22,10 +23,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('min-h-screen bg-background font-sans antialiased')}>
+      <body className={cn('min-h-screen bg-background font-sans antialiased flex flex-col')}>
         <SpaceBackground />
         <Header />
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10 flex-grow">{children}</main>
+        <Footer />
         <Toaster />
       </body>
     </html>
