@@ -1,15 +1,20 @@
 import Link from "next/link";
 import { Twitter, Linkedin, Github } from "lucide-react";
+import { BrainCircuit } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="border-t">
       <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-8 sm:flex-row">
         <div className="flex items-center gap-2">
-          <p className="text-sm font-semibold">
-            &copy; {new Date().getFullYear()} All rights reserved.
+          <BrainCircuit className="h-6 w-6 text-primary" />
+          <p className="font-headline text-lg font-bold">
+            Elara Tech Labs
           </p>
         </div>
+        <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} All rights reserved.
+          </p>
         <div className="flex items-center gap-4">
           <Link href="#" aria-label="Twitter">
             <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
