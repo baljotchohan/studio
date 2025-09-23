@@ -40,18 +40,20 @@ const SpaceBackground: React.FC = () => {
     scene.add(directionalLight);
 
     // Planets
+    const textureLoader = new THREE.TextureLoader();
     const planets: { mesh: THREE.Mesh; distance: number; speed: number; offset: number }[] = [];
     const planetData = [
-      { color: 0xaaaaaa, distance: 10, speed: 0.01, size: 0.8 }, // Mercury
-      { color: 0xffa500, distance: 15, speed: 0.008, size: 1.2 }, // Venus
-      { color: 0x0000ff, distance: 22, speed: 0.006, size: 1.3 }, // Earth
-      { color: 0xff4500, distance: 30, speed: 0.005, size: 1.0 }, // Mars
-      { color: 0xffd700, distance: 45, speed: 0.003, size: 2.5 }, // Jupiter
+      { texture: 'https://www.solarsystemscope.com/textures/download/2k_mercury.jpg', distance: 10, speed: 0.01, size: 1.8 },
+      { texture: 'https://www.solarsystemscope.com/textures/download/2k_venus_surface.jpg', distance: 15, speed: 0.008, size: 2.2 },
+      { texture: 'https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg', distance: 22, speed: 0.006, size: 2.3 },
+      { texture: 'https://www.solarsystemscope.com/textures/download/2k_mars.jpg', distance: 30, speed: 0.005, size: 2.0 },
+      { texture: 'https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg', distance: 45, speed: 0.003, size: 4.5 },
     ];
 
     planetData.forEach(data => {
+      const planetTexture = textureLoader.load(data.texture);
       const planetGeometry = new THREE.SphereGeometry(data.size, 32, 32);
-      const planetMaterial = new THREE.MeshStandardMaterial({ color: data.color });
+      const planetMaterial = new THREE.MeshStandardMaterial({ map: planetTexture });
       const planet = new THREE.Mesh(planetGeometry, planetMaterial);
       scene.add(planet);
       planets.push({ mesh: planet, distance: data.distance, speed: data.speed, offset: Math.random() * Math.PI * 2 });
@@ -69,6 +71,7 @@ const SpaceBackground: React.FC = () => {
         const angle = elapsedTime * p.speed + p.offset;
         p.mesh.position.x = Math.cos(angle) * p.distance;
         p.mesh.position.z = Math.sin(angle) * p.distance;
+        p.mesh.rotation.y += 0.001;
       });
 
       stars.rotation.y += 0.0001;
