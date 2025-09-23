@@ -16,7 +16,7 @@ export function HeroSection() {
             for the <span className="text-primary">Digital Age</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
-            Elara Tech Labs specializes in crafting breathtaking 3D animations, intuitive user experiences, and powerful web applications.
+            We specialize in crafting breathtaking 3D animations, intuitive user experiences, and powerful web applications.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
             <Button asChild size="lg">

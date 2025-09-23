@@ -24,7 +24,7 @@ export function Testimonials() {
             Trusted by Innovators
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Hear what our clients have to say about their experience with Elara Tech Labs.
+            Hear what our clients have to say about their experience with us.
           </p>
         </div>
 

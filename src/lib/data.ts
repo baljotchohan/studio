@@ -33,13 +33,13 @@ export const services = [
 
 export const testimonials = [
   {
-    quote: "The team at Elara Tech Labs transformed our vision into a stunning reality. Their creativity and technical expertise are unmatched.",
+    quote: "The team transformed our vision into a stunning reality. Their creativity and technical expertise are unmatched.",
     name: "Alex Chen",
     company: "CEO of Nova Dynamics",
     image: "testimonial-1"
   },
   {
-    quote: "Working with Elara has been a game-changer for our brand. The 3D animations they produced are simply breathtaking.",
+    quote: "Working with them has been a game-changer for our brand. The 3D animations they produced are simply breathtaking.",
     name: "Samantha Reed",
     company: "Marketing Director at Starlight Inc.",
     image: "testimonial-2"

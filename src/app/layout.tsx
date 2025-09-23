@@ -6,11 +6,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Elara Tech Labs',
+  title: 'My App',
   description: 'Innovative Solutions for the Digital Age',
-  icons: {
-    icon: '/logo.svg',
-  }
 };
 
 export default function RootLayout({

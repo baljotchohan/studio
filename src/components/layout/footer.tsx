@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-8 sm:flex-row">
         <div className="flex items-center gap-2">
           <p className="text-sm font-semibold">
-            &copy; {new Date().getFullYear()} Elara Tech Labs. All rights reserved.
+            &copy; {new Date().getFullYear()} All rights reserved.
           </p>
         </div>
         <div className="flex items-center gap-4">

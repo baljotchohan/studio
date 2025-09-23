@@ -31,7 +31,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-header-background text-header-foreground backdrop-blur-sm">
       <div className="container flex h-16 max-w-7xl items-center justify-between px-4">
         <Link href="/" className="font-headline text-xl font-bold">
-          Elara Tech Labs
+          
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -63,7 +63,7 @@ export function Header() {
                     <SheetTitle className="sr-only">Menu</SheetTitle>
                   </SheetHeader>
                   <Link href="/" className="font-headline text-xl font-bold mb-8 block">
-                    Elara Tech Labs
+                    
                   </Link>
                   <div className="flex flex-col gap-4">
                   {navLinks.map((link) => (
