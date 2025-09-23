@@ -4,8 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -18,7 +16,6 @@ const navLinks = [
 ];
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
 
@@ -29,11 +26,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-header-background text-header-foreground backdrop-blur-sm">
-      <div className="container flex h-16 max-w-7xl items-center justify-between px-4">
+      <div className="container flex h-auto min-h-16 flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-3">
         <Link href="/" className="font-headline text-xl font-bold">
           
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="flex items-center gap-x-4 gap-y-2 flex-wrap justify-center">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -48,43 +45,9 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-            <Button asChild className="hidden md:flex bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+            <Button asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                 <Link href="/contact">Get Started</Link>
             </Button>
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                <SheetTrigger asChild className="md:hidden">
-                    <Button variant="outline" size="icon" className="border-header-foreground/50 text-header-foreground hover:bg-header-foreground/10 hover:text-header-foreground">
-                        <Menu className="h-4 w-4" />
-                        <span className="sr-only">Open menu</span>
-                    </Button>
-                </SheetTrigger>
-                <SheetContent side="right">
-                  <SheetHeader>
-                    <SheetTitle className="sr-only">Menu</SheetTitle>
-                  </SheetHeader>
-                  <Link href="/" className="font-headline text-xl font-bold mb-8 block">
-                    
-                  </Link>
-                  <div className="flex flex-col gap-4">
-                  {navLinks.map((link) => (
-                      <Link
-                          key={link.href}
-                          href={link.href}
-                          onClick={() => setIsOpen(false)}
-                          className={cn(
-                              "text-lg font-medium transition-colors hover:text-primary",
-                              pathname === link.href ? "text-primary" : "text-foreground"
-                          )}
-                      >
-                          {link.label}
-                      </Link>
-                  ))}
-                  </div>
-                    <Button asChild className="mt-8 w-full">
-                      <Link href="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
-                  </Button>
-                </SheetContent>
-            </Sheet>
         </div>
       </div>
     </header>
