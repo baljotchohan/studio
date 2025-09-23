@@ -33,8 +33,8 @@ export function ServicesOverview() {
         </div>
         <div className="mt-12 text-center">
           <Button asChild variant="link" className="text-primary text-lg">
-            <Link href="/services">
-              Explore All Services <ArrowRight className="ml-2 h-5 w-5" />
+            <Link href="/contact">
+              Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

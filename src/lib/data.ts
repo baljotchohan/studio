@@ -1,33 +1,33 @@
-import { Code, Bot, PenTool, LifeBuoy, Zap, DollarSign, Award, TestTube } from "lucide-react";
+import { Code, Bot, PenTool, LifeBuoy, Zap, DollarSign, Award, TestTube, Rocket, BrainCircuit } from "lucide-react";
 
 export const services = [
   {
-    slug: "3d-animation",
-    title: "3D Animation",
-    description: "Bringing your ideas to life with stunning 3D animations, from character design to architectural visualization.",
+    slug: "saas",
+    title: "SAAS",
+    description: "Scalable and robust Software as a Service solutions to grow your business.",
+    icon: Rocket,
+    details: "We build custom SAAS platforms from the ground up, focusing on user experience, scalability, and security. Our team works with you to bring your vision to life and support your growth."
+  },
+  {
+    slug: "ai-automation",
+    title: "AI Automation",
+    description: "Leverage artificial intelligence to automate and optimize your business processes.",
+    icon: Bot,
+    details: "Our AI automation services help you streamline operations, reduce costs, and improve efficiency. We specialize in developing custom AI models and integrating them into your existing workflows."
+  },
+  {
+    slug: "ai-agency",
+    title: "AI Agency",
+    description: "A dedicated team of AI experts to act as your strategic partner for innovation.",
+    icon: BrainCircuit,
+    details: "Partner with our AI agency to unlock the full potential of artificial intelligence. We provide strategic consulting, development, and implementation services to help you stay ahead of the curve."
+  },
+  {
+    slug: "personal-software",
+    title: "Personal Software",
+    description: "Custom software solutions tailored to meet your unique personal or business needs.",
     icon: Code,
-    details: "Our 3D animation service covers the full production pipeline. We start with conceptualization and storyboarding, then move to modeling, texturing, rigging, animation, and final rendering. We use industry-standard software to deliver high-quality results for films, games, advertisements, and more."
-  },
-  {
-    slug: "ui-ux-design",
-    title: "UI/UX Design",
-    description: "Crafting intuitive and beautiful user interfaces that provide a seamless user experience.",
-    icon: PenTool,
-    details: "We believe that great design is not just about aesthetics, but about creating an experience that is both enjoyable and efficient for the user. Our UI/UX process involves user research, wireframing, prototyping, and user testing to ensure the final product is both user-friendly and visually appealing."
-  },
-  {
-    slug: "web-development",
-    title: "Web Development",
-    description: "Building responsive, high-performance websites and web applications tailored to your needs.",
-    icon: Zap,
-    details: "Our web development team specializes in modern technologies to build fast, secure, and scalable web solutions. From custom e-commerce platforms to corporate websites and complex web applications, we provide end-to-end development services that align with your business goals."
-  },
-  {
-    slug: "technical-support",
-    title: "Technical Support",
-    description: "Providing reliable technical support to ensure your digital products run smoothly.",
-    icon: LifeBuoy,
-    details: "Our dedicated support team is here to help you with any technical issues you may encounter. We offer various levels of support packages, from basic troubleshooting to 24/7 monitoring and maintenance, ensuring your systems are always up and running."
+    details: "From custom productivity tools to specialized applications, we create personal software that works exactly the way you want. Tell us your idea, and we'll build it for you."
   },
 ];
 

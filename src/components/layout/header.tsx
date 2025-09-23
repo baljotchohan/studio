@@ -9,8 +9,10 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/services/saas", label: "SAAS" },
+  { href: "/services/ai-automation", label: "AI Automation" },
+  { href: "/services/ai-agency", label: "AI Agency" },
+  { href: "/services/personal-software", label: "Personal Software" },
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
 ];
@@ -57,30 +59,30 @@ export function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
-                    <SheetHeader>
-                        <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                        <Link href="/" className="font-headline text-xl font-bold mb-8">
-                          Elara Tech Labs
-                        </Link>
-                    </SheetHeader>
-                    <div className="flex flex-col gap-4">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setIsOpen(false)}
-                            className={cn(
-                                "text-lg font-medium transition-colors hover:text-primary",
-                                pathname === link.href ? "text-primary" : "text-foreground"
-                            )}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
-                    </div>
-                     <Button asChild className="mt-8 w-full">
-                        <Link href="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
-                    </Button>
+                  <SheetHeader>
+                    <SheetTitle className="sr-only">Menu</SheetTitle>
+                  </SheetHeader>
+                  <Link href="/" className="font-headline text-xl font-bold mb-8 block">
+                    Elara Tech Labs
+                  </Link>
+                  <div className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                      <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setIsOpen(false)}
+                          className={cn(
+                              "text-lg font-medium transition-colors hover:text-primary",
+                              pathname === link.href ? "text-primary" : "text-foreground"
+                          )}
+                      >
+                          {link.label}
+                      </Link>
+                  ))}
+                  </div>
+                    <Button asChild className="mt-8 w-full">
+                      <Link href="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
+                  </Button>
                 </SheetContent>
             </Sheet>
         </div>
