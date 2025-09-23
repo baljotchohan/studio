@@ -18,7 +18,7 @@ export default function ServiceDetailPage() {
         <>
             <div className="bg-slate-900 text-gray-200">
                 <div className="container mx-auto max-w-7xl px-4 py-16 md:py-24">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                         <div className="relative pr-8">
                            <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-400 rounded-full mix-blend-lighten filter blur-xl opacity-40 animate-blob"></div>
                            <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-400 rounded-full mix-blend-lighten filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
