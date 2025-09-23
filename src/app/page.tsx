@@ -95,7 +95,7 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-white/80">Elevate your study sessions with personalized guidance and instant feedback. Stud IQ is your dedicated partner in academic success.</p>
+              <p className="text-white/80">Elevate your study sessions with personalized guidance and instant feedback. Test your knowledge with our <span className="animated-gradient-text">AI Quiz</span>, and discover your future path with the <span className="animated-gradient-text">AI Career Finder</span>. Stud IQ is your dedicated partner in academic success.</p>
             </CardContent>
             <CardFooter className="justify-center">
               <Button asChild size="lg">
