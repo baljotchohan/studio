@@ -26,9 +26,9 @@ export default function ServiceDetailPage() {
                                 {service.description}
                             </p>
                             <Button asChild size="lg" className="mt-8">
-                                <Link href="/contact">
+                                <a href="https://elaratechlabs.vercel.app/" target="_blank" rel="noopener noreferrer">
                                     Get Started with {service.title} <ArrowRight className="ml-2 h-5 w-5" />
-                                </Link>
+                                </a>
                             </Button>
                         </div>
                         

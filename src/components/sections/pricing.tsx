@@ -48,9 +48,9 @@ export function Pricing() {
               </CardContent>
               <CardFooter>
                 <Button asChild className={cn("w-full", plan.popular ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-secondary text-secondary-foreground hover:bg-secondary/80")}>
-                  <Link href="/contact">
+                  <a href="https://elaratechlabs.vercel.app/" target="_blank" rel="noopener noreferrer">
                     {plan.name === "Enterprise" ? "Contact Us" : "Get Started"}
-                  </Link>
+                  </a>
                 </Button>
               </CardFooter>
             </Card>

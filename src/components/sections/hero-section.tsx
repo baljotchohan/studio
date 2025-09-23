@@ -16,7 +16,7 @@ export function HeroSection() {
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
             <Button asChild size="lg">
-              <Link href="/contact">Start Your Project</Link>
+              <a href="https://elaratechlabs.vercel.app/" target="_blank" rel="noopener noreferrer">Start Your Project</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white bg-transparent hover:bg-white hover:text-primary">
               <Link href="/services/saas">Our Services</Link>
