@@ -17,13 +17,6 @@ export default function Home() {
             </span>
             .
           </p>
-          <p className="max-w-[800px] text-base text-white/70 md:text-lg">
-            We design smart automations, build custom AI-driven software, and
-            deliver solutions that simplify your work, grow your business, and
-            prepare you for the future. From personalized digital tools to
-            intelligent trading insights, Elara Tech is where innovation meets
-            reliability.
-          </p>
           <p className="max-w-[800px] text-lg text-white/80 md:text-xl font-medium">
             Let’s build what’s next—together.
           </p>
