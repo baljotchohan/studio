@@ -11,7 +11,6 @@ const navLinks = [
   { href: "/services/ai-automation", label: "AI Automation" },
   { href: "/services/ai-agency", label: "AI Agency" },
   { href: "/services/personal-software", label: "Personal Software" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
