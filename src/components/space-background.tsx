@@ -46,7 +46,7 @@ const SpaceBackground: React.FC = () => {
     const moon = new THREE.Mesh(moonGeometry, moonMaterial);
     scene.add(moon);
     
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
     scene.add(ambientLight);
     
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
