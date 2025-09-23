@@ -11,7 +11,6 @@ const navLinks = [
   { href: "/services/ai-automation", label: "AI Automation" },
   { href: "/services/ai-agency", label: "AI Agency" },
   { href: "/services/personal-software", label: "Personal Software" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -45,9 +44,6 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-            <Button asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                <Link href="/contact">Get Started</Link>
-            </Button>
         </div>
       </div>
     </header>
