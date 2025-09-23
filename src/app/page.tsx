@@ -4,9 +4,32 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
 import { Bot, CheckCircle } from 'lucide-react';
 
+const services = [
+  {
+    slug: 'ai-automation',
+    title: 'AI Automation',
+    description: 'We design smart automations to streamline your workflow.',
+  },
+  {
+    slug: 'ai-agency',
+    title: 'AI Agency',
+    description: 'Automate your business with our custom AI-driven solutions.',
+  },
+  {
+    slug: 'saas',
+    title: 'SaaS',
+    description: 'Software as a Service solutions tailored for your needs.',
+  },
+  {
+    slug: 'personalized-software',
+    title: 'Personalized Software',
+    description: 'Custom software development to deliver on your unique vision.',
+  },
+];
+
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen">
+    <div className="flex flex-col items-center justify-start min-h-screen pt-32">
       <main className="flex flex-col items-center justify-center p-12 text-center">
         <section className="relative z-10 flex flex-col items-center justify-center space-y-6 pt-16">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
@@ -37,50 +60,21 @@ export default function Home() {
         <div className="bg-black/40 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
           <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-transparent border-white/10">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-orbitron">
-                  <span className="animated-gradient-text">AI</span> Automation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-4">
-                <p className="text-white/80">We design smart automations to streamline your workflow.</p>
-                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
-              </CardContent>
-            </Card>
-            <Card className="bg-transparent border-white/10">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-orbitron">
-                  <span className="animated-gradient-text">AI</span> Agency
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-4">
-                <p className="text-white/80">Automate your business with our custom <span className="animated-gradient-text">AI</span>-driven solutions.</p>
-                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
-              </CardContent>
-            </Card>
-            <Card className="bg-transparent border-white/10">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-orbitron">
-                  SaaS
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-4">
-                <p className="text-white/80">Software as a Service solutions tailored for your needs.</p>
-                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
-              </CardContent>
-            </Card>
-            <Card className="bg-transparent border-white/10">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-orbitron">
-                  Personalized Software
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-4">
-                <p className="text-white/80">Custom software development to deliver on your unique vision.</p>
-                <Button className="mt-auto w-fit" variant="default">Get Service</Button>
-              </CardContent>
-            </Card>
+            {services.map((service) => (
+              <Card key={service.slug} className="bg-transparent border-white/10">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 font-orbitron">
+                    <span className="animated-gradient-text">{service.title.split(' ')[0]}</span> {service.title.split(' ').slice(1).join(' ')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-4">
+                  <p className="text-white/80">{service.description}</p>
+                   <Button className="mt-auto w-fit" variant="default" asChild>
+                    <Link href={`/services/${service.slug}`}>Get Service</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -101,7 +95,7 @@ export default function Home() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                 <p className="text-white/80">
-                  Elevate your study sessions with <span className="font-semibold text-white">personalized guidance</span> and <span className="font-semibold text-white">instant feedback</span>.
+                  Elevate your study sessions with personalized guidance and instant feedback.
                 </p>
               </div>
               <div className="flex items-start gap-3">
