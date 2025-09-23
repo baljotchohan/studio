@@ -35,8 +35,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-header-foreground/80",
-                isClient && pathname === link.href ? "text-header-foreground" : "text-header-foreground/60"
+                "text-sm font-medium transition-colors hover:text-header-foreground",
+                isClient && pathname === link.href ? "text-header-foreground" : "text-header-foreground/80"
               )}
             >
               {link.label}
