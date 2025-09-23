@@ -19,7 +19,7 @@ export default function ServiceDetailPage() {
             <div className="relative overflow-hidden bg-background">
                  <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                  <div className="relative container mx-auto max-w-7xl px-4 py-16 md:py-24">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                         <div>
                              <div className="p-4 bg-primary/10 rounded-full w-24 h-24 flex items-center justify-center mb-4 ring-4 ring-primary/20">
                                 <service.icon className="h-16 w-16 text-primary" />
