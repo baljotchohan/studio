@@ -40,45 +40,45 @@ export default function Home() {
             <Card className="bg-transparent border-white/10">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-orbitron">
-                  <CheckCircle className="text-primary" />
                   AI Automation
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">We design smart automations to streamline your workflow.</p>
+                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-orbitron">
-                  <CheckCircle className="text-primary" />
                   AI Agency
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Automate your business with our custom AI-driven solutions.</p>
+                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-orbitron">
-                  <CheckCircle className="text-primary" />
                   SaaS
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Software as a Service solutions tailored for your needs.</p>
+                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
             <Card className="bg-transparent border-white/10">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-orbitron">
-                  <CheckCircle className="text-primary" />
                   Personalized Software
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col gap-4">
                 <p className="text-white/80">Custom software development to deliver on your unique vision.</p>
+                <Button variant="outline" className="mt-auto w-fit">Get Service</Button>
               </CardContent>
             </Card>
           </div>
