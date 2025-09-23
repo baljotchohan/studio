@@ -36,9 +36,12 @@ const SpaceBackground: React.FC = () => {
     // Moon
     const textureLoader = new THREE.TextureLoader();
     const moonTexture = textureLoader.load('https://raw.githubusercontent.com/jeromeetienne/threex.planets/master/images/moon.jpg');
+    const moonBumpMap = textureLoader.load('https://raw.githubusercontent.com/jeromeetienne/threex.planets/master/images/moonbump1k.jpg');
     const moonGeometry = new THREE.SphereGeometry(30, 64, 64);
     const moonMaterial = new THREE.MeshStandardMaterial({
       map: moonTexture,
+      bumpMap: moonBumpMap,
+      bumpScale: 0.5,
     });
     const moon = new THREE.Mesh(moonGeometry, moonMaterial);
     scene.add(moon);
