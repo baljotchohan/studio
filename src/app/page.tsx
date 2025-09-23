@@ -9,7 +9,11 @@ export default function Home() {
           Welcome to Elara Tech
         </h1>
         <p className="max-w-[800px] text-lg text-white/80 md:text-xl">
-          Your partner in unlocking the full power of Artificial Intelligence.
+          Your partner in unlocking the full power of{' '}
+          <span className="animated-gradient-text">
+            Artificial Intelligence
+          </span>
+          .
         </p>
         <p className="max-w-[800px] text-base text-white/70 md:text-lg">
           We design smart automations, build custom AI-driven software, and
