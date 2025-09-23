@@ -29,7 +29,7 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen pt-32">
+    <div className="flex flex-col items-center justify-start min-h-screen">
       <main className="flex flex-col items-center justify-center p-12 text-center">
         <section className="relative z-10 flex flex-col items-center justify-center space-y-6 pt-16">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
