@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 const navLinks = [
@@ -38,6 +38,9 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-black/80 backdrop-blur-lg">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+              </SheetHeader>
               <nav className="flex flex-col items-start space-y-4 pt-8">
                 {navLinks.map((link) => (
                   <Button key={link.href} asChild variant="ghost" className="w-full justify-start text-lg">
