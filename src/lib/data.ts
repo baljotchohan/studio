@@ -6,28 +6,28 @@ export const services = [
     title: "SAAS",
     description: "Scalable and robust Software as a Service solutions to grow your business.",
     icon: Rocket,
-    details: "We build custom SAAS platforms from the ground up, focusing on user experience, scalability, and security. Our team works with you to bring your vision to life and support your growth."
+    details: "Our SAAS (Software as a Service) solution is designed to provide you with a ready-to-use, scalable, and powerful platform. We handle all the complexities of development, hosting, and maintenance, so you can focus on your business. We build our SAAS products using modern, robust technologies, ensuring high performance and security. This service is incredibly useful for you because it gives you access to powerful software without the large upfront investment in custom development or the hassle of managing infrastructure."
   },
   {
     slug: "ai-automation",
     title: "AI Automation",
     description: "Leverage artificial intelligence to automate and optimize your business processes.",
     icon: Bot,
-    details: "Our AI automation services help you streamline operations, reduce costs, and improve efficiency. We specialize in developing custom AI models and integrating them into your existing workflows."
+    details: "Our AI Automation service works by identifying repetitive, manual tasks within your business and developing intelligent systems to perform them automatically. We create custom AI models and integrate them seamlessly into your existing workflows. This could involve anything from automating data entry and customer support responses to optimizing your supply chain. This is useful for you because it frees up valuable time for your team, reduces human error, and provides significant cost savings, allowing you to focus on strategic growth."
   },
   {
     slug: "ai-agency",
     title: "AI Agency",
     description: "A dedicated team of AI experts to act as your strategic partner for innovation.",
     icon: BrainCircuit,
-    details: "Partner with our AI agency to unlock the full potential of artificial intelligence. We provide strategic consulting, development, and implementation services to help you stay ahead of the curve."
+    details: "Think of our AI Agency as your in-house team of AI specialists. We work with you to understand your business goals and identify opportunities where AI can create a competitive advantage. We then design, build, and deploy custom AI solutions, from predictive analytics to natural language processing. This partnership is invaluable because it allows you to leverage the transformative power of AI without the need to hire a full team of expensive, specialized talent, ensuring you stay at the forefront of innovation."
   },
   {
     slug: "personal-software",
     title: "Personal Software",
     description: "Custom software solutions tailored to meet your unique personal or business needs.",
     icon: Code,
-    details: "From custom productivity tools to specialized applications, we create personal software that works exactly the way you want. Tell us your idea, and we'll build it for you."
+    details: "Our Personal Software service is all about creating a solution that is perfectly tailored to your individual or business needs. We start with a deep dive into your requirements and design a custom application from the ground up. Whether it's a unique productivity app, a specialized management tool, or a personal project, we build it to your exact specifications. This is incredibly useful as it provides you with a tool that works exactly how you think, improving efficiency and solving problems that off-the-shelf software simply can't address."
   },
 ];
 
