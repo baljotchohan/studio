@@ -64,8 +64,10 @@ const SpaceBackground: React.FC = () => {
       }
 
       varying float vNoise;
+      varying vec2 vUv;
 
       void main() {
+        vUv = uv;
         vec3 pos = position;
         vNoise = noise(pos.xy * 2.0 + uTime * 0.1);
         pos += normal * vNoise * uNoiseAmount;
@@ -76,6 +78,7 @@ const SpaceBackground: React.FC = () => {
     const fragmentShader = `
       uniform float uTime;
       varying float vNoise;
+      varying vec2 vUv;
 
       // 2D Random
       float random (vec2 st) {
@@ -102,7 +105,11 @@ const SpaceBackground: React.FC = () => {
 
       void main() {
         vec2 uv = gl_FragCoord.xy/vec2(1000.0, 1000.0);
-        float n = noise(uv * 5.0 + vNoise + uTime * 0.2);
+        float n = noise(vUv * 5.0 + vNoise + uTime * 0.2);
+
+        // Wave effect
+        float wave = sin(distance(vUv, vec2(0.5)) * 20.0 - uTime * 2.0) * 0.1 + 0.9;
+        n *= wave;
         
         vec3 color1 = vec3(1.0, 0.8, 0.0); // Orange
         vec3 color2 = vec3(1.0, 0.2, 0.0); // Red
