@@ -32,14 +32,12 @@ const SpaceBackground: React.FC = () => {
     const stars = new THREE.Points(starGeometry, starMaterial);
     scene.add(stars);
 
-    // Sun
-    const sunGeometry = new THREE.SphereGeometry(5, 32, 32);
-    const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffdd00, emissive: 0xffdd00, emissiveIntensity: 1 });
-    const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-    scene.add(sun);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
     
-    const pointLight = new THREE.PointLight(0xffffff, 3, 300);
-    sun.add(pointLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(5, 3, 5);
+    scene.add(directionalLight);
 
     // Planets
     const planets: { mesh: THREE.Mesh; distance: number; speed: number; offset: number }[] = [];
