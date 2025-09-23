@@ -37,7 +37,7 @@ const SpaceBackground: React.FC = () => {
     const textureLoader = new THREE.TextureLoader();
     const moonTexture = textureLoader.load('https://raw.githubusercontent.com/jeromeetienne/threex.planets/master/images/moonmap1k.jpg');
     const moonBumpMap = textureLoader.load('https://raw.githubusercontent.com/jeromeetienne/threex.planets/master/images/moonbump1k.jpg');
-    const moonGeometry = new THREE.SphereGeometry(10, 64, 64);
+    const moonGeometry = new THREE.SphereGeometry(3, 64, 64);
     const moonMaterial = new THREE.MeshStandardMaterial({
       map: moonTexture,
       color: 0xcccccc,
@@ -74,7 +74,16 @@ const SpaceBackground: React.FC = () => {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
+      const scrollMax = 1000; 
+      const scrollFraction = Math.min(scrollY / scrollMax, 1);
+
+      // Animate position
       moon.position.y = -scrollY * 0.1;
+      moon.position.z = scrollFraction * 40;
+
+      // Animate scale
+      const scale = 1 + scrollFraction * 4;
+      moon.scale.set(scale, scale, scale);
     };
 
     window.addEventListener('resize', handleResize);
