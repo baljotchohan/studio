@@ -1,7 +1,7 @@
+
 import { services } from "@/lib/data";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -14,11 +14,14 @@ export default function ServiceDetailPage() {
 
     return (
         <>
-            <div className="bg-background">
-                <div className="container mx-auto max-w-7xl px-4 py-16 md:py-24">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                        <div>
-                            <service.icon className="h-16 w-16 text-primary mb-4" />
+            <div className="relative overflow-hidden bg-background">
+                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                 <div className="relative container mx-auto max-w-7xl px-4 py-16 md:py-24">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                        <div className="md:col-span-2">
+                             <div className="p-4 bg-primary/10 rounded-full w-24 h-24 flex items-center justify-center mb-4 ring-4 ring-primary/20">
+                                <service.icon className="h-16 w-16 text-primary" />
+                            </div>
                             <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                                 {service.title}
                             </h1>
@@ -27,16 +30,18 @@ export default function ServiceDetailPage() {
                             </p>
                             <Button asChild size="lg" className="mt-8">
                                 <a href="https://elaratechlabs.vercel.app/" target="_blank" rel="noopener noreferrer">
-                                    Get Started with {service.title} <ArrowRight className="ml-2 h-5 w-5" />
+                                    Automate Now <ArrowRight className="ml-2 h-5 w-5" />
                                 </a>
                             </Button>
                         </div>
                         
-                        <div className="space-y-8">
+                        <div className="md:col-span-3 space-y-8">
                            {Array.isArray(service.details) && service.details.map((section, index) => (
-                               <Card key={index} className="overflow-hidden">
+                               <Card key={index} className="border-primary/20 shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
                                    <CardHeader>
-                                       <CardTitle className="font-headline text-2xl text-primary">{section.title}</CardTitle>
+                                       <CardTitle className="font-headline text-2xl text-primary flex items-center gap-3">
+                                            <span>{section.title}</span>
+                                       </CardTitle>
                                    </CardHeader>
                                    <CardContent className="space-y-4">
                                        <p className="text-muted-foreground">{section.description}</p>
@@ -55,6 +60,14 @@ export default function ServiceDetailPage() {
                     </div>
                 </div>
             </div>
+            <style jsx>{`
+                .bg-grid-pattern {
+                    background-image:
+                        linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+                        linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+                    background-size: 40px 40px;
+                }
+            `}</style>
         </>
     );
 }
