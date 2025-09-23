@@ -6,8 +6,8 @@ export function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center px-4">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold sm:inline-block">
-              Elara
+            <span className="font-bold sm:inline-block animated-gradient-text">
+              ElaraTechLabs
             </span>
           </Link>
         </div>
