@@ -23,10 +23,10 @@ export function Header() {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-header-background text-header-foreground backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-700/50 bg-slate-900/50 backdrop-blur-sm">
       <div className="container flex h-auto min-h-16 flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-3">
-        <Link href="/" className="font-headline text-xl font-bold">
-          
+        <Link href="/" className="font-headline text-xl font-bold text-white">
+          ElaraTech
         </Link>
         <nav className="flex items-center gap-x-4 gap-y-2 flex-wrap justify-center">
           {navLinks.map((link) => (
@@ -34,8 +34,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-header-foreground",
-                isClient && pathname === link.href ? "text-header-foreground" : "text-header-foreground/80"
+                "text-sm font-medium transition-colors hover:text-white",
+                isClient && pathname === link.href ? "text-white" : "text-slate-400"
               )}
             >
               {link.label}
