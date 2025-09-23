@@ -75,7 +75,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradient-animation 5s linear infinite;
+    animation: gradient-animation 10s linear infinite;
   }
 
   @keyframes gradient-animation {
