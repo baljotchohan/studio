@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen">
       <main className="flex flex-col items-center justify-center p-12 text-center">
-        <section className="relative z-10 flex flex-col items-center justify-center space-y-6 pt-16">
+        <section className="relative z-10 flex flex-col items-center justify-center space-y-6">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
             Welcome to Elara Tech
           </h1>
@@ -63,8 +63,8 @@ export default function Home() {
             {services.map((service) => (
               <Card key={service.slug} className="bg-transparent border-white/10">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 font-orbitron">
-                    <span className="animated-gradient-text">{service.title.split(' ')[0]}</span> {service.title.split(' ').slice(1).join(' ')}
+                  <CardTitle className="font-orbitron animated-gradient-text">
+                    {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-4">
@@ -95,7 +95,7 @@ export default function Home() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                 <p className="text-white/80">
-                  Elevate your study sessions with personalized guidance and instant feedback.
+                  Elevate your study sessions with <span className="font-semibold text-white">personalized guidance</span> and <span className="font-semibold text-white">instant feedback</span>.
                 </p>
               </div>
               <div className="flex items-start gap-3">
