@@ -6,28 +6,76 @@ export const services = [
     title: "SAAS",
     description: "Scalable and robust Software as a Service solutions to grow your business.",
     icon: Rocket,
-    details: "Our SAAS (Software as a Service) solution is designed to provide you with a ready-to-use, scalable, and powerful platform. We handle all the complexities of development, hosting, and maintenance, so you can focus on your business. We build our SAAS products using modern, robust technologies, ensuring high performance and security. This service is incredibly useful for you because it gives you access to powerful software without the large upfront investment in custom development or the hassle of managing infrastructure."
+    details: `
+      **How It Works:** Imagine a powerful software tool you can access from anywhere, anytime, without any installation. That's SAAS. We give you a ready-to-use platform that runs in the cloud.
+
+      **How We Create It:**
+      - **Blueprint & Build:** We design and develop a robust, multi-tenant architecture using cutting-edge tech.
+      - **Cloud Deployment:** We host it on scalable cloud infrastructure, ensuring reliability and speed.
+      - **Continuous Care:** We handle all updates, security, and maintenance behind the scenes.
+
+      **How It's Useful For You:**
+      - **Launch Faster:** Skip the long development cycles and get to market quickly.
+      - **Lower Costs:** Avoid the massive upfront investment in custom software and server hardware.
+      - **Focus on What Matters:** You run your business; we'll run the software.
+    `
   },
   {
     slug: "ai-automation",
     title: "AI Automation",
     description: "Leverage artificial intelligence to automate and optimize your business processes.",
     icon: Bot,
-    details: "Our AI Automation service works by identifying repetitive, manual tasks within your business and developing intelligent systems to perform them automatically. We create custom AI models and integrate them seamlessly into your existing workflows. This could involve anything from automating data entry and customer support responses to optimizing your supply chain. This is useful for you because it frees up valuable time for your team, reduces human error, and provides significant cost savings, allowing you to focus on strategic growth."
+    details: `
+      **How It Works:** We teach robots to do the boring, repetitive parts of your job. Our AI systems can handle tasks from data entry and report generation to complex workflow automations.
+
+      **How We Create It:**
+      - **Discovery:** We analyze your daily operations to find the perfect automation opportunities.
+      - **Custom AI Models:** We build and train intelligent agents tailored to your specific tasks.
+      - **Seamless Integration:** We plug these AI bots directly into your existing software and workflows.
+
+      **How It's Useful For You:**
+      - **Boost Efficiency:** Free up your team to focus on high-impact, creative work.
+      - **Eliminate Errors:** Let the machines handle the details with perfect accuracy, every time.
+      - **Scale with Ease:** Handle a growing workload without a proportional increase in headcount.
+    `
   },
   {
     slug: "ai-agency",
     title: "AI Agency",
     description: "A dedicated team of AI experts to act as your strategic partner for innovation.",
     icon: BrainCircuit,
-    details: "Think of our AI Agency as your in-house team of AI specialists. We work with you to understand your business goals and identify opportunities where AI can create a competitive advantage. We then design, build, and deploy custom AI solutions, from predictive analytics to natural language processing. This partnership is invaluable because it allows you to leverage the transformative power of AI without the need to hire a full team of expensive, specialized talent, ensuring you stay at the forefront of innovation."
+    details: `
+      **How It Works:** Think of us as your on-demand AI department. We partner with you to inject artificial intelligence into the core of your business strategy.
+
+      **How We Create It:**
+      - **Strategic Alignment:** We start with your business goals and work backward to see where AI can make the biggest impact.
+      - **End-to-End Solutions:** From predictive analytics to natural language processing, we design, build, and deploy custom AI systems.
+      - **Expert Guidance:** We provide ongoing consultation to ensure you're always ahead of the curve.
+
+      **How It's Useful For You:**
+      - **Unlock Innovation:** Leverage the transformative power of AI without hiring an expensive, in-house team.
+      - **Gain a Competitive Edge:** Make smarter decisions, create new products, and uncover market insights your competitors can't see.
+      - **Future-Proof Your Business:** Stay relevant and adaptable in an increasingly intelligent world.
+    `
   },
   {
     slug: "personal-software",
     title: "Personal Software",
     description: "Custom software solutions tailored to meet your unique personal or business needs.",
     icon: Code,
-    details: "Our Personal Software service is all about creating a solution that is perfectly tailored to your individual or business needs. We start with a deep dive into your requirements and design a custom application from the ground up. Whether it's a unique productivity app, a specialized management tool, or a personal project, we build it to your exact specifications. This is incredibly useful as it provides you with a tool that works exactly how you think, improving efficiency and solving problems that off-the-shelf software simply can't address."
+    details: `
+      **How It Works:** Off-the-shelf software doesn't fit? We'll build you something that does. This is a bespoke application crafted from scratch, just for you.
+
+      **How We Create It:**
+      - **Deep Dive:** It all starts with a conversation. We listen carefully to your vision and requirements.
+      - **Artisan Coding:** Our developers meticulously craft your application, ensuring every feature works exactly as you imagined.
+      - **You-Centric Design:** The user interface is designed around your specific workflow, making it intuitive and a joy to use.
+
+      **How It's Useful For You:**
+      - **Perfect Fit:** Get a tool that solves your exact problem, without the clutter of features you don't need.
+      - **Own Your Solution:** You get a unique asset that can grow and adapt with you, without being tied to a third-party vendor's roadmap.
+      - **Unleash Productivity:** Stop fighting with your software and get a tool that feels like a natural extension of your own mind.
+    `
   },
 ];
 
