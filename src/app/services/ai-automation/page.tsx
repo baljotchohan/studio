@@ -16,8 +16,7 @@ export default function ServiceDetailPage() {
 
     return (
         <>
-            <div className="relative overflow-hidden bg-background">
-                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div className="bg-background">
                  <div className="relative container mx-auto max-w-7xl px-4 py-16 md:py-24">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                         <div>
@@ -62,14 +61,6 @@ export default function ServiceDetailPage() {
                     </div>
                 </div>
             </div>
-            <style jsx>{`
-                .bg-grid-pattern {
-                    background-image:
-                        linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
-                        linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
-                    background-size: 40px 40px;
-                }
-            `}</style>
         </>
     );
 }
