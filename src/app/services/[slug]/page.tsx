@@ -8,58 +8,58 @@ const services = [
   {
     slug: 'ai-automation',
     title: 'AI Automation',
-    description: 'We design smart automations to streamline your workflow. Our team analyzes your current processes and identifies opportunities for AI-powered automation, from data entry to complex decision-making.',
+    description: 'We design and implement intelligent automation solutions to supercharge your workflow, reduce costs, and minimize human error. Our team identifies key opportunities for AI-powered optimization, transforming your business processes from the ground up.',
     details: [
-        "Workflow analysis and optimization",
-        "Custom AI model development",
-        "Integration with existing systems",
-        "Ongoing support and maintenance"
+        "In-depth analysis and optimization of your existing workflows to identify automation opportunities.",
+        "Development of custom AI and machine learning models tailored to your specific business needs.",
+        "Seamless integration of AI solutions with your existing software and systems, including ERPs and CRMs.",
+        "Continuous monitoring, support, and maintenance to ensure optimal performance and ROI."
     ],
-    howItWorks: "We start with a deep dive into your existing workflows to identify bottlenecks. Then, we design and implement custom AI solutions that integrate seamlessly with your current software stack, automating repetitive tasks and freeing up your team to focus on high-value work.",
-    howItHelps: "By automating routine processes, we help you reduce operational costs, minimize human error, and increase overall efficiency. Your team can dedicate more time to strategic initiatives that drive business growth.",
-    pricing: "Starts from ₹25,000. Pricing varies based on complexity and integration requirements. Contact us for a custom quote."
+    howItWorks: "We begin with a comprehensive discovery phase to map out your current processes and pinpoint inefficiencies. From there, our experts design and build bespoke AI solutions that automate repetitive tasks, streamline data handling, and enhance decision-making capabilities, integrating them smoothly into your technology stack.",
+    howItHelps: "By automating routine tasks, you can significantly lower operational expenses, improve accuracy, and boost overall productivity. This allows your team to shift their focus from mundane work to strategic initiatives that drive innovation and create a competitive advantage for your business.",
+    pricing: "Starts from ₹25,000. Pricing is customized based on the project's complexity, the scale of integration, and the level of ongoing support required. Contact us for a detailed and transparent quote."
   },
   {
     slug: 'ai-agency',
     title: 'AI Agency',
-    description: 'Automate your business with our custom AI-driven solutions. We act as your dedicated AI partner, providing end-to-end services to build, deploy, and manage AI solutions that drive growth.',
+    description: 'Automate your business operations with our comprehensive, custom-built AI-driven solutions. We function as your strategic AI partner, offering end-to-end services to conceptualize, build, deploy, and manage AI systems that fuel sustainable growth.',
      details: [
-        "Strategic AI consulting",
-        "Full-stack development of AI applications",
-        "Chatbot and virtual assistant creation",
-        "Predictive analytics and data science"
+        "Strategic AI consulting to align artificial intelligence with your core business objectives.",
+        "End-to-end development of bespoke AI applications, from backend infrastructure to frontend UI.",
+        "Creation of intelligent chatbots and virtual assistants to enhance customer engagement and support.",
+        "Advanced predictive analytics and data science services to uncover actionable insights from your data."
     ],
-    howItWorks: "Our team partners with you to understand your business goals. We then develop a comprehensive AI strategy, from conceptualization to deployment. We handle everything, including data analysis, model training, and application development, ensuring a turnkey solution.",
-    howItHelps: "Leverage our expertise to unlock new revenue streams, enhance customer engagement with intelligent chatbots, and make data-driven decisions with predictive analytics. We provide the power of an in-house AI team without the overhead.",
-    pricing: "Starts from ₹50,000. We offer flexible engagement models, from project-based work to dedicated team support. Contact us to discuss your needs."
+    howItWorks: "Our collaborative approach starts with understanding your long-term business goals. We then craft a tailored AI strategy and roadmap. Our full-stack team manages the entire lifecycle, from data analysis and model training to application deployment and post-launch support, delivering a turnkey AI solution.",
+    howItHelps: "Unlock new revenue streams and enhance customer loyalty with intelligent, automated systems. Leverage our expertise to implement predictive analytics for data-driven decision-making and gain the capabilities of a dedicated in-house AI team without the associated overhead and recruitment challenges.",
+    pricing: "Starts from ₹50,000. We provide flexible engagement models, including project-based work and dedicated team support, to best suit your needs and budget. Reach out to us to discuss your project in detail."
   },
   {
     slug: 'saas',
     title: 'SaaS',
-    description: 'Software as a Service solutions tailored for your needs. We build scalable, cloud-native SaaS products that are ready for market, providing you with a competitive edge.',
+    description: 'We develop scalable, cloud-native Software as a Service (SaaS) products tailored to your market needs. Our solutions are built for performance and growth, providing you with a robust platform to build your business on.',
      details: [
-        "Product discovery and roadmap planning",
-        "Multi-tenant architecture design",
-        "Subscription and billing integration",
-        "Scalable cloud deployment"
+        "Collaborative product discovery, market analysis, and strategic roadmap planning.",
+        "Robust, secure, and scalable multi-tenant architecture design to support a growing user base.",
+        "Seamless integration with leading subscription management and billing platforms like Stripe and Razorpay.",
+        "Deployment on scalable cloud infrastructure (AWS, Google Cloud, Azure) with CI/CD pipelines."
     ],
-    howItWorks: "We follow a product-centric approach, starting with market research and roadmap planning. Our developers build robust, multi-tenant SaaS applications on scalable cloud infrastructure, complete with subscription management and billing systems.",
-    howItHelps: "Launch your own SaaS product without the technical hassle. Our solutions are designed for growth, allowing you to scale your user base and revenue. We provide a market-ready product that you can take to your customers with confidence.",
-    pricing: "Custom pricing based on scope. The cost depends on the feature set, complexity, and scalability requirements. Let's talk about your vision."
+    howItWorks: "We adopt a product-centric methodology, beginning with in-depth market research and feature planning. Our development team builds high-performance, multi-tenant SaaS applications, ensuring they are equipped with all necessary features like user authentication, subscription management, and secure payment processing.",
+    howItHelps: "Bring your SaaS vision to life without getting bogged down in technical complexities. Our solutions are engineered for scalability, allowing you to expand your customer base and revenue streams with confidence. We deliver a market-ready product that positions you for long-term success.",
+    pricing: "Custom pricing based on project scope. The final cost depends on feature complexity, scalability requirements, and third-party integrations. Let's connect to discuss your idea and provide a detailed estimate."
   },
   {
     slug: 'personalized-software',
     title: 'Personalized Software',
-    description: 'Custom software development to deliver on your unique vision. Our team works closely with you to understand your requirements and build a solution that is perfectly suited to your business.',
+    description: 'We create custom software solutions designed to meet your unique business challenges and goals. Our team collaborates closely with you to understand your vision and build a product that perfectly aligns with your operational needs.',
      details: [
-        "Bespoke application development",
-        "Mobile and web application solutions",
-        "UI/UX design and prototyping",
-        "Agile development methodology"
+        "Development of bespoke web and mobile applications from the ground up.",
+        "Intuitive UI/UX design, wireframing, and interactive prototyping to ensure a user-centric final product.",
+        "Agile development methodology with transparent communication and regular feedback loops.",
+        "API development and third-party service integrations to extend software functionality."
     ],
-    howItWorks: "Our process is collaborative. We begin with in-depth consultations and UI/UX prototyping to ensure we capture your vision. Using an agile methodology, we develop and iterate on your software, providing regular updates and incorporating your feedback.",
-    howItHelps: "Get a software solution that is built to your exact specifications. A custom application can improve productivity, solve unique business challenges, and provide a seamless experience for your users and customers.",
-    pricing: "Custom pricing based on project scope. We provide detailed quotes after an initial consultation to understand your specific requirements. Get in touch for a free estimate."
+    howItWorks: "Our process is built on collaboration and transparency. We start with in-depth consultations to define requirements, followed by UI/UX design and prototyping. Using an agile approach, we develop your software in iterative sprints, ensuring you are involved at every stage and the final product meets your expectations.",
+    howItHelps: "Address your unique business challenges with a software solution built to your exact specifications. A custom application can streamline workflows, boost employee productivity, and provide a superior, seamless experience for your customers, giving you a distinct competitive edge in the market.",
+    pricing: "Custom pricing based on project scope. We offer a free initial consultation to understand your requirements and provide a detailed, no-obligation quote. Get in touch with us for an estimate."
   },
 ];
 
@@ -81,14 +81,26 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
     );
   }
 
+  const highlightAI = (text: string) => {
+    return text.split('AI').map((part, index) => (
+      <span key={index}>
+        {part}
+        {index < text.split('AI').length - 1 && <span className="animated-gradient-text">AI</span>}
+      </span>
+    ));
+  };
+
   return (
     <div className="container mx-auto px-4 py-16">
       <section className="flex flex-col items-center justify-center text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
-          {service.title}
+          {service.title.includes('AI') ? 
+            <>{highlightAI(service.title)}</> : 
+            service.title
+          }
         </h1>
         <p className="mt-6 max-w-[800px] text-lg text-white/80 md:text-xl">
-          {service.description}
+          {highlightAI(service.description)}
         </p>
       </section>
       
@@ -102,7 +114,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                 {service.details.map((detail, index) => (
                     <li key={index} className="flex items-start gap-3">
                         <span className="text-primary mt-1">&#10003;</span>
-                        <span>{detail}</span>
+                        <span>{highlightAI(detail)}</span>
                     </li>
                 ))}
             </ul>
@@ -114,7 +126,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">How It Works</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-lg text-white/80 text-center">{service.howItWorks}</p>
+            <p className="text-lg text-white/80 text-center">{highlightAI(service.howItWorks)}</p>
           </CardContent>
         </Card>
 
@@ -123,7 +135,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">How It Helps You</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-lg text-white/80 text-center">{service.howItHelps}</p>
+            <p className="text-lg text-white/80 text-center">{highlightAI(service.howItHelps)}</p>
           </CardContent>
         </Card>
 

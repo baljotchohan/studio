@@ -80,7 +80,7 @@ export default function Home() {
       </section>
       <section id="live-product" className="w-full max-w-5xl px-4 py-16">
         <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-center">
-          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Live AI Product</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron">Our Live <span className="animated-gradient-text">AI</span> Product</h2>
           <Card className="bg-transparent border-white/10 max-w-2xl mx-auto">
             <CardHeader>
               <CardTitle className="font-orbitron text-2xl animated-gradient-text flex items-center justify-center gap-3">
@@ -88,7 +88,7 @@ export default function Home() {
                 Stud IQ
               </CardTitle>
               <CardDescription className="text-white/80 text-lg">
-                An AI tutor app which improves your learning.
+                An <span className="animated-gradient-text">AI</span> tutor app which improves your learning.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 text-left">
@@ -113,7 +113,7 @@ export default function Home() {
             </CardContent>
             <CardFooter className="justify-center pt-6">
               <Button asChild size="lg">
-                <Link href="https://studio--learnflow-ai-co3xd.us-central1.hosted.app/dashboard" target="_blank" rel="noopener noreferrer">Start Learning with AI</Link>
+                <Link href="https://studio--learnflow-ai-co3xd.us-central1.hosted.app/dashboard" target="_blank" rel="noopener noreferrer">Start Learning with <span className="animated-gradient-text">AI</span></Link>
               </Button>
             </CardFooter>
           </Card>

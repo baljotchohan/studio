@@ -35,7 +35,7 @@ export default function ServicesPage() {
           Our Services
         </h1>
         <p className="mt-6 max-w-[800px] text-lg text-white/80 md:text-xl">
-          We offer a range of services to help you leverage the power of AI.
+          We offer a range of services to help you leverage the power of <span className="animated-gradient-text">AI</span>.
         </p>
       </section>
 

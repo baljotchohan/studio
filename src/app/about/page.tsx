@@ -9,7 +9,7 @@ export default function AboutPage() {
           About Elara Tech
         </h1>
         <p className="mt-6 max-w-[800px] text-lg text-white/80 md:text-xl">
-          Pioneering the future of Artificial Intelligence.
+          Pioneering the future of <span className="animated-gradient-text">Artificial Intelligence</span>.
         </p>
       </section>
 
@@ -17,7 +17,7 @@ export default function AboutPage() {
         <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
           <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Mission</h2>
           <p className="text-center text-white/80 md:text-lg">
-            Our mission is to empower businesses and individuals by providing cutting-edge AI solutions that drive growth, efficiency, and innovation. We believe in the transformative power of technology and strive to make it accessible to everyone.
+            Our mission is to empower businesses and individuals by providing cutting-edge <span className="animated-gradient-text">AI</span> solutions that drive growth, efficiency, and innovation. We believe in the transformative power of technology and strive to make it accessible to everyone.
           </p>
         </div>
       </section>

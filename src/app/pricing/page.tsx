@@ -24,7 +24,7 @@ export default function PricingPage() {
           </CardHeader>
           <CardContent className="flex-grow space-y-4">
             <ul className="space-y-3">
-              <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />AI Automation Tools</li>
+              <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" /><span className="animated-gradient-text">AI</span> Automation Tools</li>
               <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />Basic Support</li>
             </ul>
           </CardContent>
@@ -42,7 +42,7 @@ export default function PricingPage() {
           <CardContent className="flex-grow space-y-4">
             <ul className="space-y-3">
               <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />Everything in Starter</li>
-              <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />AI Agency Services</li>
+              <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" /><span className="animated-gradient-text">AI</span> Agency Services</li>
               <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />Priority Support</li>
             </ul>
           </CardContent>
