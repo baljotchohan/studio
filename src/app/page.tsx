@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
-import { CheckCircle } from 'lucide-react';
+import { Bot, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -89,7 +89,10 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Live AI Product</h2>
           <Card className="bg-transparent border-white/10 max-w-2xl mx-auto">
             <CardHeader>
-              <CardTitle className="font-orbitron text-2xl animated-gradient-text">Stud IQ</CardTitle>
+              <CardTitle className="font-orbitron text-2xl animated-gradient-text flex items-center justify-center gap-3">
+                <Bot className="h-8 w-8" />
+                Stud IQ
+              </CardTitle>
               <CardDescription className="text-white/80 text-lg">
                 An AI tutor app which improves your learning.
               </CardDescription>
