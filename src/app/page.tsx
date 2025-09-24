@@ -110,10 +110,22 @@ export default function Home() {
                   Discover your future path with the <span className="animated-gradient-text">AI Career Finder</span>.
                 </p>
               </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                <p className="text-white/80">
+                  Discuss any topic with our <span className="animated-gradient-text">AI</span> tutor to deepen your understanding.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                <p className="text-white/80">
+                  Generate new topics and ideas to explore with the power of <span className="animated-gradient-text">AI</span>.
+                </p>
+              </div>
             </CardContent>
             <CardFooter className="justify-center pt-6">
               <Button asChild size="lg">
-                <Link href="https://studio--learnflow-ai-co3xd.us-central1.hosted.app/dashboard" target="_blank" rel="noopener noreferrer">Start Learning with <span className="animated-gradient-text">AI</span></Link>
+                <Link href="https://studiq.elara-tech.co" target="_blank" rel="noopener noreferrer">Start Learning with <span className="animated-gradient-text">AI</span></Link>
               </Button>
             </CardFooter>
           </Card>
