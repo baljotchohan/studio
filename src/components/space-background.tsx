@@ -71,14 +71,23 @@ const SpaceBackground: React.FC = () => {
       mouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.current.y = (event.clientY / window.innerHeight) * 2 - 1;
     };
+    
+    const handleTouchMove = (event: TouchEvent) => {
+      if (event.touches.length > 0) {
+        mouse.current.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+        mouse.current.y = (event.touches[0].clientY / window.innerHeight) * 2 - 1;
+      }
+    };
 
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove);
 
     const currentMount = mountRef.current;
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
