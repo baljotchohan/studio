@@ -1,7 +1,11 @@
+
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import { useState } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -12,6 +16,8 @@ const navLinks = [
 ];
 
 export function Header() {
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/20 backdrop-blur-lg">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between px-4">
@@ -30,7 +36,7 @@ export function Header() {
           </nav>
         </div>
         <div className="flex items-center md:hidden">
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu />
@@ -44,7 +50,7 @@ export function Header() {
               <nav className="flex flex-col items-start space-y-4 pt-8">
                 {navLinks.map((link) => (
                   <Button key={link.href} asChild variant="ghost" className="w-full justify-start text-lg">
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href} onClick={() => setIsSheetOpen(false)}>{link.label}</Link>
                   </Button>
                 ))}
               </nav>
