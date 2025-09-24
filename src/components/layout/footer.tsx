@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Instagram, Twitter, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -9,17 +9,11 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ];
 
-const socialLinks = [
-    { href: 'https://www.instagram.com/elaratechlabs/', icon: Instagram, label: 'Instagram' },
-    { href: 'https://twitter.com/elaratechlabs', icon: Twitter, label: 'Twitter' },
-    { href: 'https://www.linkedin.com/company/elaratechlabs', icon: Linkedin, label: 'Linkedin' },
-];
-
 export function Footer() {
   return (
     <footer className="relative z-10 w-full border-t border-white/10 bg-background/50 backdrop-blur-lg mt-16">
       <div className="container mx-auto px-4 py-6 text-sm">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left">
           <div>
             <h3 className="font-bold sm:inline-block animated-gradient-text">
               ElaraTechLabs
@@ -37,19 +31,6 @@ export function Footer() {
                 </Button>
               ))}
             </nav>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-2">Connect</h4>
-            <div className="flex justify-center md:justify-start space-x-2">
-              {socialLinks.map((social) => (
-                <Button key={social.label} asChild variant="ghost" size="icon" className="h-8 w-8">
-                  <Link href={social.href} target="_blank" rel="noopener noreferrer">
-                    <social.icon className="h-4 w-4" />
-                    <span className="sr-only">{social.label}</span>
-                  </Link>
-                </Button>
-              ))}
-            </div>
           </div>
         </div>
         <div className="mt-6 pt-6 border-t border-white/10 text-center text-xs text-white/50">
