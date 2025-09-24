@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -10,9 +10,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { href: 'https://github.com', icon: Github, label: 'Github' },
-    { href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-    { href: 'https://linkedin.com', icon: Linkedin, label: 'Linkedin' },
+    { href: 'https://www.instagram.com/elaratechlabs/', icon: Instagram, label: 'Instagram' },
+    { href: 'https://twitter.com/elaratechlabs', icon: Twitter, label: 'Twitter' },
+    { href: 'https://www.linkedin.com/company/elaratechlabs', icon: Linkedin, label: 'Linkedin' },
 ];
 
 export function Footer() {

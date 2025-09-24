@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
-import { Bot, CheckCircle } from 'lucide-react';
+import { Bot, CheckCircle, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 const services = [
   {
@@ -117,6 +117,53 @@ export default function Home() {
               </Button>
             </CardFooter>
           </Card>
+        </div>
+      </section>
+       <section className="w-full max-w-5xl px-4 py-16">
+        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg">
+          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Connect With Our Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center text-center">
+              <h3 className="font-bold text-lg font-orbitron">Baljot Singh Chohan</h3>
+              <div className="flex space-x-4 mt-2">
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://www.instagram.com/baljotchohan_01" target="_blank" rel="noopener noreferrer">
+                    <Instagram />
+                    <span className="sr-only">Instagram</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://twitter.com/baljotchohan" target="_blank" rel="noopener noreferrer">
+                    <Twitter />
+                    <span className="sr-only">Twitter</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://www.linkedin.com/in/baljot-chohan-866ba6356" target="_blank" rel="noopener noreferrer">
+                    <Linkedin />
+                    <span className="sr-only">LinkedIn</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <h3 className="font-bold text-lg font-orbitron">Daman Deep Singh</h3>
+              <div className="flex space-x-4 mt-2">
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://www.instagram.com/x7_daman" target="_blank" rel="noopener noreferrer">
+                    <Instagram />
+                    <span className="sr-only">Instagram</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://twitter.com/Damandeep018" target="_blank" rel="noopener noreferrer">
+                    <Twitter />
+                    <span className="sr-only">Twitter</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
