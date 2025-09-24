@@ -1,11 +1,13 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { Instagram, Twitter, Linkedin } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ContactPage() {
   const { toast } = useToast();
@@ -53,6 +55,56 @@ export default function ContactPage() {
                 Send Message
               </Button>
             </form>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="mt-16 w-full max-w-2xl mx-auto">
+        <Card className="bg-black/60 border-white/10">
+          <CardHeader>
+            <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">Connect With Our Team</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col items-center text-center">
+              <h3 className="font-bold text-lg font-orbitron">Baljot Singh Chohan</h3>
+              <div className="flex space-x-4 mt-2">
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://www.instagram.com/baljotchohan_01" target="_blank" rel="noopener noreferrer">
+                    <Instagram />
+                    <span className="sr-only">Instagram</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://twitter.com/baljotchohan" target="_blank" rel="noopener noreferrer">
+                    <Twitter />
+                    <span className="sr-only">Twitter</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://www.linkedin.com/in/baljot-chohan-866ba6356" target="_blank" rel="noopener noreferrer">
+                    <Linkedin />
+                    <span className="sr-only">LinkedIn</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <h3 className="font-bold text-lg font-orbitron">Daman Deep Singh</h3>
+              <div className="flex space-x-4 mt-2">
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://www.instagram.com/x7_daman" target="_blank" rel="noopener noreferrer">
+                    <Instagram />
+                    <span className="sr-only">Instagram</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://twitter.com/Damandeep018" target="_blank" rel="noopener noreferrer">
+                    <Twitter />
+                    <span className="sr-only">Twitter</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </section>
