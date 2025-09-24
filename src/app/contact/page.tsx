@@ -59,15 +59,20 @@ export default function ContactPage() {
         </Card>
       </section>
 
-      <section className="mt-16 w-full max-w-2xl mx-auto">
+      <section className="mt-16 w-full max-w-4xl mx-auto">
         <Card className="bg-black/60 border-white/10">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">Connect With Our Team</CardTitle>
+            <CardDescription className="text-center text-white/70">
+              Meet the minds behind the innovation. Reach out to our leadership team directly.
+            </CardDescription>
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col items-center text-center">
               <h3 className="font-bold text-lg font-orbitron">Baljot Singh Chohan</h3>
-              <div className="flex space-x-4 mt-2">
+              <p className="text-primary mb-2">CEO & Founder</p>
+              <p className="text-white/70 mb-4 max-w-xs">The visionary leader driving our mission to innovate with <span className="animated-gradient-text">AI</span>.</p>
+              <div className="flex space-x-4 mt-auto">
                 <Button asChild variant="ghost" size="icon">
                   <Link href="https://www.instagram.com/baljotchohan_01" target="_blank" rel="noopener noreferrer">
                     <Instagram />
@@ -90,7 +95,9 @@ export default function ContactPage() {
             </div>
             <div className="flex flex-col items-center text-center">
               <h3 className="font-bold text-lg font-orbitron">Daman Deep Singh</h3>
-              <div className="flex space-x-4 mt-2">
+               <p className="text-primary mb-2">CFO</p>
+               <p className="text-white/70 mb-4 max-w-xs">The financial strategist ensuring our growth and stability in the <span className="animated-gradient-text">AI</span> landscape.</p>
+              <div className="flex space-x-4 mt-auto">
                 <Button asChild variant="ghost" size="icon">
                   <Link href="https://www.instagram.com/x7_daman" target="_blank" rel="noopener noreferrer">
                     <Instagram />
