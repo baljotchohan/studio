@@ -42,7 +42,17 @@ const SpaceBackground: React.FC = () => {
     starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
     starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
     
-    const starMaterial = new THREE.PointsMaterial({ size: 1.5, vertexColors: true });
+    const sprite = new THREE.TextureLoader().load(
+      'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiLz48L3N2Zz4='
+    );
+
+    const starMaterial = new THREE.PointsMaterial({ 
+      size: 1.5, 
+      vertexColors: true,
+      map: sprite,
+      alphaTest: 0.5,
+      transparent: true,
+    });
     const stars = new THREE.Points(starGeometry, starMaterial);
     scene.add(stars);
 
