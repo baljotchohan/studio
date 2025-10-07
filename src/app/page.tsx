@@ -78,59 +78,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="live-product" className="w-full max-w-5xl px-4 py-16">
-        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-center">
-          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron">Our Live <span className="animated-gradient-text">AI</span> Product</h2>
-          <Card className="bg-transparent border-white/10 max-w-2xl mx-auto">
-            <CardHeader>
-              <CardTitle className="font-orbitron text-2xl animated-gradient-text flex items-center justify-center gap-3">
-                <Bot className="h-8 w-8" />
-                Stud IQ
-              </CardTitle>
-              <CardDescription className="text-white/80 text-lg">
-                An <span className="animated-gradient-text">AI</span> tutor app which improves your learning.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4 text-left">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <p className="text-white/80">
-                  Elevate your study sessions with <span className="font-semibold text-white animated-gradient-text">personalized guidance</span> and <span className="font-semibold text-white animated-gradient-text">instant feedback</span>.
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <p className="text-white/80">
-                  Test your knowledge with our interactive <span className="animated-gradient-text">AI Quiz</span>.
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <p className="text-white/80">
-                  Discover your future path with the <span className="animated-gradient-text">AI Career Finder</span>.
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <p className="text-white/80">
-                  Discuss any topic with our <span className="animated-gradient-text">AI</span> tutor to deepen your understanding.
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <p className="text-white/80">
-                  Generate new topics and ideas to explore with the power of <span className="animated-gradient-text">AI</span>.
-                </p>
-              </div>
-            </CardContent>
-            <CardFooter className="justify-center pt-6">
-              <Button asChild size="lg">
-                <Link href="https://studiq.elara-tech.co" target="_blank" rel="noopener noreferrer">Start Learning with <span className="animated-gradient-text">AI</span></Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        </div>
-      </section>
        <section className="w-full max-w-5xl px-4 py-16">
         <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg">
           <CardHeader className="p-0 mb-6">
