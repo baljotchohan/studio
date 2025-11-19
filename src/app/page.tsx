@@ -79,19 +79,44 @@ export default function Home() {
         </div>
       </section>
       <section id="live-product" className="w-full max-w-5xl px-4 py-16">
-        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-center">
-          <h2 className="text-3xl font-bold mb-4 font-orbitron animated-gradient-text">
+        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
+          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">
             Our Live Product: StudIQ
           </h2>
-          <p className="text-lg text-white/80 md:text-xl mb-6">
-            World's first AI-based personalized platform.
+          <p className="text-lg text-white/80 md:text-xl mb-6 text-center">
+            World's first AI-based personalized platform, designed to revolutionize your learning experience.
           </p>
-          <div className="flex justify-center">
-            <Button asChild size="lg">
-              <Link href="https://studio--studiq-ai.us-central1.hosted.app" target="_blank">
-                Check it out
-              </Link>
-            </Button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="flex flex-col gap-4 text-white/90">
+                <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                        <h4 className="font-bold">Personalized Learning Paths</h4>
+                        <p className="text-white/70">StudIQ adapts to your learning style, creating custom study plans to help you master any subject at your own pace.</p>
+                    </div>
+                </div>
+                 <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                        <h4 className="font-bold">AI-Powered Quizzes & Feedback</h4>
+                        <p className="text-white/70">Test your knowledge with intelligent quizzes that provide instant, detailed feedback to pinpoint your strengths and weaknesses.</p>
+                    </div>
+                </div>
+                 <div className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                        <h4 className="font-bold">AI-Driven Career Suggestions</h4>
+                        <p className="text-white/70">Based on your skills and interests, StudIQ suggests potential career paths and provides resources to help you achieve your goals.</p>
+                    </div>
+                </div>
+            </div>
+             <div className="flex justify-center items-center">
+                <Button asChild size="lg" className="w-fit">
+                  <Link href="https://studio--studiq-ai.us-central1.hosted.app" target="_blank">
+                    Check it out
+                  </Link>
+                </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -154,3 +179,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
