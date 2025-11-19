@@ -11,6 +11,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
+  { href: 'https://studio--studiq-ai.us-central1.hosted.app', label: 'Live Product', target: '_blank' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
@@ -29,7 +30,7 @@ export function Header() {
           <nav className="flex items-center space-x-2">
             {navLinks.map((link) => (
               <Button key={link.href} asChild variant="ghost">
-                <Link href={link.href}>{link.label}</Link>
+                <Link href={link.href} target={link.target}>{link.label}</Link>
               </Button>
             ))}
           </nav>
@@ -49,7 +50,7 @@ export function Header() {
               <nav className="flex flex-col items-start space-y-4 pt-8">
                 {navLinks.map((link) => (
                   <Button key={link.href} asChild variant="ghost" className="w-full justify-start text-lg">
-                    <Link href={link.href} onClick={() => setIsSheetOpen(false)}>{link.label}</Link>
+                    <Link href={link.href} onClick={() => setIsSheetOpen(false)} target={link.target}>{link.label}</Link>
                   </Button>
                 ))}
               </nav>

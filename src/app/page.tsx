@@ -78,6 +78,23 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section id="live-product" className="w-full max-w-5xl px-4 py-16">
+        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-center">
+          <h2 className="text-3xl font-bold mb-4 font-orbitron animated-gradient-text">
+            Our Live Product: StudIQ
+          </h2>
+          <p className="text-lg text-white/80 md:text-xl mb-6">
+            World's first AI-based personalized platform.
+          </p>
+          <div className="flex justify-center">
+            <Button asChild size="lg">
+              <Link href="https://studio--studiq-ai.us-central1.hosted.app" target="_blank">
+                Check it out
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
        <section className="w-full max-w-5xl px-4 py-16">
         <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg">
           <CardHeader className="p-0 mb-6">
