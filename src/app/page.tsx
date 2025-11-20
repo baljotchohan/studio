@@ -88,10 +88,10 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">
               Our Live Product: StudIQ
             </h2>
-            <p className="text-lg text-white/80 md:text-xl mb-6 text-center">
+            <p className="text-lg text-white/80 md:text-xl mb-8 text-center">
               World's first AI-based personalized platform, designed to revolutionize your learning experience.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-8">
               <div className="flex flex-col gap-4 text-white/90">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
@@ -115,7 +115,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center pt-4">
                 <Button asChild size="lg" className="w-fit">
                   <Link href="https://studio--studiq-ai.us-central1.hosted.app" target="_blank">
                     Check it out
