@@ -7,63 +7,67 @@ import * as THREE from 'three';
 const SpaceBackground: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const mouse = useRef({ x: 0, y: 0 });
+  const animationFrameId = useRef<number>();
 
   useEffect(() => {
     if (!mountRef.current) return;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 50;
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.z = 1;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
     
-    // Starfield
     const starVertices: number[] = [];
-    const starColors: number[] = [];
-    const starSpeeds: number[] = [];
-
-    for (let i = 0; i < 5000; i++) {
+    for (let i = 0; i < 10000; i++) {
       const x = (Math.random() - 0.5) * 2000;
       const y = (Math.random() - 0.5) * 2000;
       const z = (Math.random() - 0.5) * 2000;
       starVertices.push(x, y, z);
-
-      const color = new THREE.Color();
-      color.setHSL(Math.random(), 1.0, 0.7);
-      starColors.push(color.r, color.g, color.b);
-
-      starSpeeds.push(Math.random() * 0.0002 + 0.0001);
     }
 
     const starGeometry = new THREE.BufferGeometry();
     starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
-    starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
     
     const sprite = new THREE.TextureLoader().load(
       'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiLz48L3N2Zz4='
     );
 
     const starMaterial = new THREE.PointsMaterial({ 
-      size: 1.5, 
-      vertexColors: true,
+      color: 0xaaaaaa,
+      size: 0.7,
       map: sprite,
-      alphaTest: 0.5,
       transparent: true,
+      alphaTest: 0.5,
     });
     const stars = new THREE.Points(starGeometry, starMaterial);
     scene.add(stars);
 
-    const animate = () => {
-      requestAnimationFrame(animate);
+    let scrollSpeed = 0;
+    let lastScrollTop = 0;
 
-      stars.rotation.y += 0.0001;
+    const handleScroll = () => {
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+        const delta = st - lastScrollTop;
+        scrollSpeed += delta * 0.0005;
+        lastScrollTop = st <= 0 ? 0 : st;
+    };
+
+    const animate = () => {
+      animationFrameId.current = requestAnimationFrame(animate);
+
+      scrollSpeed *= 0.95; // Damping effect
+      stars.position.z += scrollSpeed;
+      if (stars.position.z > 500) stars.position.z = -500;
+      if (stars.position.z < -500) stars.position.z = 500;
+
 
       // Mouse movement
-      camera.position.x += (mouse.current.x * 5 - camera.position.x) * 0.05;
-      camera.position.y += (-mouse.current.y * 5 - camera.position.y) * 0.05;
+      camera.position.x += (mouse.current.x * 5 - camera.position.x) * 0.02;
+      camera.position.y += (-mouse.current.y * 5 - camera.position.y) * 0.02;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
@@ -89,12 +93,17 @@ const SpaceBackground: React.FC = () => {
       }
     };
 
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchmove', handleTouchMove);
 
     const currentMount = mountRef.current;
     return () => {
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
