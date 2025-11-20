@@ -38,7 +38,7 @@ const SpaceBackground: React.FC = () => {
 
     const starMaterial = new THREE.PointsMaterial({ 
       color: 0xaaaaaa,
-      size: 0.7,
+      size: 0.84,
       map: sprite,
       transparent: true,
       alphaTest: 0.5,
