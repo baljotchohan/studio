@@ -41,21 +41,24 @@ export default function ServicesPage() {
 
       <section className="mt-16 grid gap-8 md:grid-cols-2">
         {services.map((service) => (
-          <Card key={service.slug} className="bg-black/60 border-white/10 flex flex-col">
-            <CardHeader>
-              <CardTitle className="font-orbitron text-2xl animated-gradient-text">{service.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <p className="text-white/80">{service.description}</p>
-            </CardContent>
-            <CardContent>
-              <Button asChild>
-                <Link href={`/services/${service.slug}`}>
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
+          <div key={service.slug} className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <Card className="relative bg-black/60 border-white/10 flex flex-col h-full">
+              <CardHeader>
+                <CardTitle className="font-orbitron text-2xl animated-gradient-text">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-white/80">{service.description}</p>
+              </CardContent>
+              <CardContent>
+                <Button asChild>
+                  <Link href={`/services/${service.slug}`}>
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         ))}
       </section>
     </div>

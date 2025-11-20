@@ -33,23 +33,26 @@ export default function PricingPage() {
           </CardFooter>
         </Card>
         
-        <Card className="bg-black/80 border-primary shadow-2xl shadow-primary/20 flex flex-col">
-          <CardHeader>
-            <CardTitle className="font-orbitron">Pro</CardTitle>
-            <CardDescription className="text-white/70">For growing businesses that need more power.</CardDescription>
-            <p className="text-4xl font-bold animated-gradient-text pt-2">$99<span className="text-lg font-normal text-white/60">/mo</span></p>
-          </CardHeader>
-          <CardContent className="flex-grow space-y-4">
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />Everything in Starter</li>
-              <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" /><span className="animated-gradient-text">AI</span> Agency Services</li>
-              <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />Priority Support</li>
-            </ul>
-          </CardContent>
-          <CardFooter>
-            <Button className="w-full" variant="default">Choose Plan</Button>
-          </CardFooter>
-        </Card>
+        <div className="relative group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <Card className="relative bg-black/80 border-primary shadow-2xl shadow-primary/20 flex flex-col h-full">
+            <CardHeader>
+              <CardTitle className="font-orbitron">Pro</CardTitle>
+              <CardDescription className="text-white/70">For growing businesses that need more power.</CardDescription>
+              <p className="text-4xl font-bold animated-gradient-text pt-2">$99<span className="text-lg font-normal text-white/60">/mo</span></p>
+            </CardHeader>
+            <CardContent className="flex-grow space-y-4">
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />Everything in Starter</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" /><span className="animated-gradient-text">AI</span> Agency Services</li>
+                <li className="flex items-center gap-3"><Check className="h-5 w-5 text-primary" />Priority Support</li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full" variant="default">Choose Plan</Button>
+            </CardFooter>
+          </Card>
+        </div>
         
         <Card className="bg-black/60 border-white/10 flex flex-col">
           <CardHeader>

@@ -32,20 +32,26 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-16">
-        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
-          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Mission</h2>
-          <p className="text-center text-white/80 md:text-lg">
-            As a future-focused company, our mission is to empower businesses and individuals by providing cutting-edge <span className="animated-gradient-text">AI</span> solutions that drive growth, efficiency, and innovation. We are committed to demystifying <span className="animated-gradient-text">Artificial Intelligence</span> and making its transformative power accessible to everyone, helping our clients navigate the complexities of the digital age with confidence.
-          </p>
+        <div className="relative group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+          <div className="relative bg-black/80 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
+            <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Mission</h2>
+            <p className="text-center text-white/80 md:text-lg">
+              As a future-focused company, our mission is to empower businesses and individuals by providing cutting-edge <span className="animated-gradient-text">AI</span> solutions that drive growth, efficiency, and innovation. We are committed to demystifying <span className="animated-gradient-text">Artificial Intelligence</span> and making its transformative power accessible to everyone, helping our clients navigate the complexities of the digital age with confidence.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="mt-16">
-        <div className="bg-black/60 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
-          <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Vision</h2>
-          <p className="text-center text-white/80 md:text-lg">
-            We envision a world where intelligent technology seamlessly integrates with human potential. Our goal is to be at the forefront of the <span className="animated-gradient-text">AI</span> revolution, creating innovative solutions that not only solve business challenges but also contribute to a smarter, more connected, and sustainable future for all.
-          </p>
+        <div className="relative group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+          <div className="relative bg-black/80 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
+            <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Vision</h2>
+            <p className="text-center text-white/80 md:text-lg">
+              We envision a world where intelligent technology seamlessly integrates with human potential. Our goal is to be at the forefront of the <span className="animated-gradient-text">AI</span> revolution, creating innovative solutions that not only solve business challenges but also contribute to a smarter, more connected, and sustainable future for all.
+            </p>
+          </div>
         </div>
       </section>
 
