@@ -92,21 +92,21 @@ export default function Home() {
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                         <h4 className="font-bold">Personalized Learning Paths</h4>
-                        <p className="text-white/70">StudIQ adapts to your learning style, creating custom study plans to help you master any subject at your own pace.</p>
+                        <p className="text-white/70">Our AI analyzes your unique learning style, strengths, and weaknesses to create a fully customized study plan. This adaptive approach ensures you focus on what matters most, helping you master any subject faster and more effectively than ever before.</p>
                     </div>
                 </div>
                  <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                         <h4 className="font-bold">AI-Powered Quizzes & Feedback</h4>
-                        <p className="text-white/70">Test your knowledge with intelligent quizzes that provide instant, detailed feedback to pinpoint areas for improvement and accelerate your growth.</p>
+                        <p className="text-white/70">Test your knowledge with intelligent quizzes that go beyond right or wrong. Receive instant, detailed feedback on your performance, pinpointing specific areas for improvement and providing targeted resources to accelerate your growth and retention.</p>
                     </div>
                 </div>
                  <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                         <h4 className="font-bold">AI-Driven Career Suggestions</h4>
-                        <p className="text-white/70">Based on your skills and interests, StudIQ suggests potential career paths and provides resources to help you achieve your goals.</p>
+                        <p className="text-white/70">Unlock your potential with career suggestions tailored to your skills, interests, and academic performance. StudIQ’s AI provides actionable insights into potential career paths, connecting you with resources and guidance to help you achieve your professional goals.</p>
                     </div>
                 </div>
             </div>
