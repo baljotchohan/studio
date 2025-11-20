@@ -99,7 +99,7 @@ export default function Home() {
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                         <h4 className="font-bold">AI-Powered Quizzes & Feedback</h4>
-                        <p className="text-white/70">Test your knowledge with intelligent quizzes that provide instant, detailed feedback to pinpoint your strengths and weaknesses.</p>
+                        <p className="text-white/70">Test your knowledge with intelligent quizzes that provide instant, detailed feedback to pinpoint areas for improvement and accelerate your growth.</p>
                     </div>
                 </div>
                  <div className="flex items-start gap-3">
@@ -179,5 +179,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
