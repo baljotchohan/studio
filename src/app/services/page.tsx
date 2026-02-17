@@ -1,66 +1,79 @@
 
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Bot, Code, HeartHandshake, MessageSquare, TrendingUp, Zap } from 'lucide-react';
+import Link from 'next/link';
+import React from 'react';
 
 const services = [
   {
-    slug: 'ai-automation',
-    title: 'AI Automation',
-    description: 'We design smart automations to streamline your workflow.',
+    icon: <Bot />,
+    title: 'AI Chatbots for Businesses',
+    description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
   },
   {
-    slug: 'ai-agency',
-    title: 'AI Agency',
-    description: 'Automate your business with our custom AI-driven solutions.',
+    icon: <MessageSquare />,
+    title: 'WhatsApp & Instagram Automation',
+    description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
   },
   {
-    slug: 'saas',
-    title: 'SaaS',
-    description: 'Software as a Service solutions tailored for your needs.',
+    icon: <TrendingUp />,
+    title: 'Lead Generation Automation',
+    description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
   },
   {
-    slug: 'personalized-software',
-    title: 'Personalized Software',
-    description: 'Custom software development to deliver on your unique vision.',
+    icon: <HeartHandshake />,
+    title: 'AI Customer Support Systems',
+    description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
+  },
+  {
+    icon: <Code />,
+    title: 'Custom Automation Tools',
+    description: 'Bespoke AI-powered tools and workflows designed to solve your unique business challenges.',
+  },
+    {
+    icon: <Zap />,
+    title: 'Workflow Automation',
+    description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
   },
 ];
 
+
 export default function ServicesPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <section className="flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
-          Our Services
+    <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="mx-auto max-w-3xl text-center">
+        <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+          My Services
         </h1>
-        <p className="mt-6 max-w-[800px] text-lg text-white/80 md:text-xl">
-          We offer a range of services to help you leverage the power of <span className="animated-gradient-text">AI</span>.
+        <p className="mt-6 text-lg text-gray-300 md:text-xl">
+          From intelligent chatbots to complete automation systems, I create solutions that drive growth and efficiency for your business.
         </p>
-      </section>
+      </div>
 
-      <section className="mt-16 grid gap-8 md:grid-cols-2">
-        {services.map((service) => (
-          <div key={service.slug} className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <Card className="relative bg-black/60 border-white/10 flex flex-col h-full">
-              <CardHeader>
-                <CardTitle className="font-orbitron text-2xl animated-gradient-text">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-white/80">{service.description}</p>
-              </CardContent>
-              <CardContent>
-                <Button asChild>
-                  <Link href={`/services/${service.slug}`}>
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
-      </section>
+      <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+         {services.map((service, index) => (
+            <div key={index} className="relative group h-full">
+              <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-70"></div>
+              <Card className="glass-card relative h-full transform transition-transform duration-300 group-hover:-translate-y-2 flex flex-col">
+                <CardHeader>
+                  <div className="mb-4 text-primary">{React.cloneElement(service.icon, { size: 32 })}</div>
+                  <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-gray-400">{service.description}</p>
+                </CardContent>
+                 <CardContent>
+                  <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
+                    <Link href={`/services/${service.title.toLowerCase().replace(/ /g, '-')}`}>
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

@@ -1,187 +1,312 @@
+'use client'
 
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from '@/components/ui/card';
-import { CheckCircle, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Bot, Code, HeartHandshake, Instagram, Linkedin, MessageSquare, Mic, Send, TrendingUp, Twitter, Zap } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
   {
-    slug: 'ai-automation',
-    title: 'AI Automation',
-    description: 'We design smart automations to streamline your workflow.',
+    icon: <Bot />,
+    title: 'AI Chatbots for Businesses',
+    description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
   },
   {
-    slug: 'ai-agency',
-    title: 'AI Agency',
-    description: 'Automate your business with our custom AI-driven solutions.',
+    icon: <MessageSquare />,
+    title: 'WhatsApp & Instagram Automation',
+    description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
   },
   {
-    slug: 'saas',
-    title: 'SaaS',
-    description: 'Software as a Service solutions tailored for your needs.',
+    icon: <TrendingUp />,
+    title: 'Lead Generation Automation',
+    description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
   },
   {
-    slug: 'personalized-software',
-    title: 'Personalized Software',
-    description: 'Custom software development to deliver on your unique vision.',
+    icon: <HeartHandshake />,
+    title: 'AI Customer Support Systems',
+    description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
+  },
+  {
+    icon: <Code />,
+    title: 'Custom Automation Tools',
+    description: 'Bespoke AI-powered tools and workflows designed to solve your unique business challenges.',
+  },
+    {
+    icon: <Zap />,
+    title: 'Workflow Automation',
+    description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
   },
 ];
 
-export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-start min-h-screen">
-      <main className="flex flex-col items-center justify-center p-12 text-center">
-        <section className="relative z-10 flex flex-col items-center justify-center space-y-6">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
-            Welcome to Elara Tech
-          </h1>
-          <p className="max-w-[800px] text-lg text-white/80 md:text-xl">
-            Your partner in unlocking the full power of{' '}
-            <span className="animated-gradient-text">
-              Artificial Intelligence
-            </span>
-            .
-          </p>
-          <p className="max-w-[800px] text-lg text-white/80 md:text-xl font-medium">
-            Let’s build what’s next—together.
-          </p>
-          <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href="/#services">Explore Our Services</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-          </div>
-        </section>
-      </main>
+const industries = [
+  { icon: <Bot />, name: 'Salons & Spas' },
+  { icon: <Bot />, name: 'Gyms & Fitness' },
+  { icon: <Bot />, name: 'Coaching Centers' },
+  { icon: <Bot />, name: 'Clinics & Doctors' },
+  { icon: <Bot />, name: 'Real Estate' },
+  { icon: <Bot />, name: 'E-commerce' },
+  { icon: <Bot />, name: 'Restaurants' },
+  { icon: <Bot />, name: 'Small Businesses' },
+];
 
-      <section id="services" className="w-full max-w-5xl px-4 py-16">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative bg-black/80 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
-            <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {services.map((service) => (
-                <Card key={service.slug} className="bg-transparent border-white/10">
-                  <CardHeader>
-                    <CardTitle className="font-orbitron animated-gradient-text">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex flex-col gap-4">
-                    <p className="text-white/80">{service.description}</p>
-                    <Button className="mt-auto w-fit" variant="default" asChild>
-                      <Link href={`/services/${service.slug}`}>Get Service</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+function useScrollReveal() {
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    revealElements.forEach(elem => {
+      observer.observe(elem);
+    });
+
+    return () => {
+      revealElements.forEach(elem => {
+        observer.unobserve(elem);
+      });
+    };
+  }, []);
+}
+
+const AnimatedCounter = ({ finalValue, duration = 2000 } : { finalValue: number, duration?: number }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          let start = 0;
+          const end = finalValue;
+          if (start === end) return;
+
+          let startTime = Date.now();
+          const timer = setInterval(() => {
+            const timePassed = Date.now() - startTime;
+            const progress = timePassed / duration;
+            const currentCount = Math.min(Math.floor(progress * end), end);
+            setCount(currentCount);
+
+            if (currentCount === end) {
+              clearInterval(timer);
+            }
+          }, 20);
+
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [finalValue, duration]);
+
+
+  return <span ref={ref}>{count}</span>;
+};
+
+export default function Home() {
+  useScrollReveal();
+
+  return (
+    <div className="flex flex-col items-center overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="flex h-[calc(100vh-56px)] w-full flex-col items-center justify-center text-center">
+        <div className="relative z-10 p-4">
+          <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-6xl md:text-7xl">
+            Automate Your Business with AI
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
+            I build intelligent chatbots and automation systems that save time and increase customer engagement.
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <Button asChild size="lg" className="glow-button transition-shadow">
+              <Link href="#demo">View Demo</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
+              <Link href="#contact">Hire Me</Link>
+            </Button>
           </div>
         </div>
       </section>
-      <section id="live-product" className="w-full max-w-5xl px-4 py-16">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative bg-black/80 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
-            <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">
-              Our Live Product: StudIQ
-            </h2>
-            <p className="text-lg text-white/80 md:text-xl mb-8 text-center">
-              World's first AI-based personalized platform, designed to revolutionize your learning experience.
-            </p>
-            <div className="space-y-8">
-              <div className="flex flex-col gap-4 text-white/90">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold">Personalized Learning Paths</h4>
-                    <p className="text-white/70">Our AI analyzes your unique learning style, strengths, and weaknesses to create a fully customized study plan. This adaptive approach ensures you focus on what matters most, helping you master any subject faster and more effectively than ever before.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold">AI-Powered Quizzes & Feedback</h4>
-                    <p className="text-white/70">Test your knowledge with intelligent quizzes that go beyond right or wrong. Receive instant, detailed feedback on your performance, pinpointing specific areas for improvement and providing targeted resources to accelerate your growth and retention.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold">AI-Driven Career Suggestions</h4>
-                    <p className="text-white/70">Unlock your potential with career suggestions tailored to your skills, interests, and academic performance. StudIQ’s AI provides actionable insights into potential career paths, connecting you with resources and guidance to help you achieve your professional goals.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center items-center pt-4">
-                <Button asChild size="lg" className="w-fit">
-                  <Link href="https://studio--studiq-ai.us-central1.hosted.app" target="_blank">
-                    Check it out
-                  </Link>
-                </Button>
-              </div>
+      
+      {/* Section 2: What I Do */}
+      <section id="services" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
+        <div className="text-center">
+          <h2 className="section-heading">What I Build</h2>
+          <p className="section-subheading mx-auto">From intelligent chatbots to complete automation systems, I create solutions that drive growth.</p>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <div key={index} className="relative group">
+              <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-70"></div>
+              <Card className="glass-card relative h-full transform transition-transform duration-300 group-hover:-translate-y-2">
+                <CardHeader>
+                  <div className="mb-4 text-primary">{React.cloneElement(service.icon, { size: 32 })}</div>
+                  <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-400">{service.description}</p>
+                </CardContent>
+              </Card>
             </div>
-          </div>
+          ))}
         </div>
       </section>
-      <section className="w-full max-w-5xl px-4 py-16">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative bg-black/80 border border-white/10 rounded-2xl p-8 shadow-lg">
-            <CardHeader className="p-0 mb-6">
-              <CardTitle className="text-3xl font-bold text-center font-orbitron animated-gradient-text">Connect With Our Team</CardTitle>
-              <CardDescription className="text-center text-white/70 mt-2">
-                Meet the minds behind the innovation. Reach out to our leadership team directly.
-              </CardDescription>
-            </CardHeader>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center text-center">
-                <h3 className="font-bold text-lg font-orbitron">Baljot Singh Chohan</h3>
-                <p className="text-primary mb-2">CEO & Founder</p>
-                <p className="text-white/70 mb-4 max-w-xs">The visionary leader driving our mission to innovate with <span className="animated-gradient-text">AI</span>.</p>
-                <div className="flex space-x-4 mt-auto">
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://www.instagram.com/baljotchohan_01" target="_blank" rel="noopener noreferrer">
-                      <Instagram />
-                      <span className="sr-only">Instagram</span>
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://twitter.com/baljotchohan" target="_blank" rel="noopener noreferrer">
-                      <Twitter />
-                      <span className="sr-only">Twitter</span>
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://www.linkedin.com/in/baljot-chohan-866ba6356" target="_blank" rel="noopener noreferrer">
-                      <Linkedin />
-                      <span className="sr-only">LinkedIn</span>
-                    </Link>
-                  </Button>
+
+      {/* Section 3: How AI Helps */}
+      <section id="process" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
+        <div className="text-center">
+          <h2 className="section-heading">How AI Helps Your Business</h2>
+          <p className="section-subheading mx-auto">An automated system turns inquiries into opportunities, 24/7.</p>
+        </div>
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-0">
+          {['Message', 'AI Assistant', 'Instant Reply', 'Lead Saved', 'Growth'].map((step, index, arr) => (
+            <React.Fragment key={step}>
+              <div className="flex flex-col items-center gap-3 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary ring-4 ring-primary/20">
+                  <Bot size={28}/>
+                </div>
+                <p className="font-semibold text-white">{step}</p>
+              </div>
+              {index < arr.length - 1 && (
+                <div className="h-0.5 w-1/4 grow rounded-full bg-primary/20 md:h-1 md:w-auto"></div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 4: Live Demo */}
+      <section id="demo" className="w-full max-w-3xl px-4 py-16 md:py-24 scroll-reveal">
+        <div className="text-center">
+          <h2 className="section-heading">Live Demo Experience</h2>
+          <p className="section-subheading mx-auto">See how an AI chatbot can interact with your customers in real-time.</p>
+        </div>
+        <Card className="glass-card mt-12">
+          <CardContent className="p-4 md:p-6">
+            <div className="space-y-4">
+              <div className="flex items-end gap-2">
+                <Avatar className="h-8 w-8"><AvatarFallback>U</AvatarFallback></Avatar>
+                <div className="max-w-xs rounded-2xl rounded-bl-none bg-primary/80 p-3 text-white">
+                  <p className="animate-typing">What are your timings?</p>
                 </div>
               </div>
-              <div className="flex flex-col items-center text-center">
-                <h3 className="font-bold text-lg font-orbitron">Daman Deep Singh</h3>
-                <p className="text-primary mb-2">CFO</p>
-                <p className="text-white/70 mb-4 max-w-xs">The financial strategist ensuring our growth and stability in the <span className="animated-gradient-text">AI</span> landscape.</p>
-                <div className="flex space-x-4 mt-auto">
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://www.instagram.com/x7_daman" target="_blank" rel="noopener noreferrer">
-                      <Instagram />
-                      <span className="sr-only">Instagram</span>
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://twitter.com/Damandeep018" target="_blank" rel="noopener noreferrer">
-                      <Twitter />
-                      <span className="sr-only">Twitter</span>
-                    </Link>
-                  </Button>
+              <div className="flex items-end gap-2 justify-end">
+                <div className="max-w-xs rounded-2xl rounded-br-none bg-muted p-3 text-white">
+                  <p>We are open from 9 AM to 8 PM, Monday to Saturday.</p>
                 </div>
+                 <Avatar className="h-8 w-8"><AvatarFallback>AI</AvatarFallback></Avatar>
+              </div>
+               <div className="flex items-end gap-2">
+                <Avatar className="h-8 w-8"><AvatarFallback>U</AvatarFallback></Avatar>
+                <div className="max-w-xs rounded-2xl rounded-bl-none bg-primary/80 p-3 text-white">
+                  <p>I want to book an appointment.</p>
+                </div>
+              </div>
+              <div className="flex items-end gap-2 justify-end">
+                 <div className="max-w-xs rounded-2xl rounded-br-none bg-muted p-3 text-white">
+                  <p>Great! Please share your name and phone number to proceed.</p>
+                </div>
+                 <Avatar className="h-8 w-8"><AvatarFallback>AI</AvatarFallback></Avatar>
               </div>
             </div>
+            <div className="mt-6 flex items-center rounded-lg border border-primary/20 bg-card/50 p-2">
+              <input type="text" placeholder="Type your message..." className="flex-1 bg-transparent px-2 text-white outline-none" />
+              <Button size="icon" variant="ghost" className="text-primary hover:text-primary/80"><Mic/></Button>
+              <Button size="icon" className="rounded-md"><Send/></Button>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Section 5: Why Choose Me */}
+      <section className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
+         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-center">
+              <h3 className="text-5xl font-bold text-primary"><AnimatedCounter finalValue={24} />/7</h3>
+              <p className="mt-2 text-gray-400">Customer Response</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-5xl font-bold text-primary"><AnimatedCounter finalValue={80} />%</h3>
+              <p className="mt-2 text-gray-400">Time Saved for Businesses</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-5xl font-bold text-primary"><AnimatedCounter finalValue={300} />%</h3>
+              <p className="mt-2 text-gray-400">Increase in Leads</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-5xl font-bold text-primary"><AnimatedCounter finalValue={95} />%</h3>
+              <p className="mt-2 text-gray-400">Client Satisfaction</p>
+            </div>
+        </div>
+      </section>
+
+      {/* Section 6: Industries */}
+      <section className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
+        <div className="text-center">
+          <h2 className="section-heading">Industries I Serve</h2>
+          <p className="section-subheading mx-auto">Providing AI solutions for a wide range of businesses, both big and small.</p>
+        </div>
+        <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
+          {industries.map((industry) => (
+            <div key={industry.name} className="relative group cursor-pointer">
+              <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-70"></div>
+              <div className="glass-card relative flex h-full flex-col items-center justify-center p-6 text-center transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="mb-4 text-primary">{React.cloneElement(industry.icon, { size: 32 })}</div>
+                <p className="font-semibold text-white">{industry.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      {/* Section 7: About Me */}
+      <section id="about" className="w-full max-w-4xl px-4 py-16 md:py-24 scroll-reveal">
+         <div className="flex flex-col items-center gap-8 text-center md:flex-row md:gap-12 md:text-left">
+            <Avatar className="h-32 w-32 flex-shrink-0 border-4 border-primary/20">
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>AI</AvatarFallback>
+            </Avatar>
+            <div>
+              <h2 className="section-heading">About Me</h2>
+              <p className="mt-4 text-lg text-gray-300">
+                I’m a developer specializing in AI automation and smart chat systems. I help businesses save time, capture leads, and grow using intelligent technology.
+              </p>
+               <Button asChild variant="link" className="mt-4 px-0 text-lg text-primary">
+                <Link href="/about">Learn More &rarr;</Link>
+              </Button>
+            </div>
+         </div>
+      </section>
+      
+      {/* Section 8: CTA */}
+      <section id="contact" className="w-full px-4 py-16 md:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="relative mx-auto flex h-20 w-20 items-center justify-center">
+            <div className="absolute h-full w-full rounded-full bg-primary/50 animate-pulse-glow"></div>
+            <Bot size={40} className="relative text-white" />
+          </div>
+          <h2 className="mt-8 section-heading">Ready to automate your business?</h2>
+          <p className="section-subheading mx-auto">Let's discuss how AI can transform your operations and drive growth.</p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <Button size="lg" className="glow-button transition-shadow">Get a Free Demo</Button>
+            <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
+              <Link href="https://wa.me/your-number" target="_blank">Contact on WhatsApp</Link>
+            </Button>
           </div>
         </div>
       </section>

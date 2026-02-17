@@ -1,76 +1,58 @@
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-
-const teamMembers = [
-  {
-    name: 'Baljot Singh Chohan',
-    role: 'CEO & Founder',
-    bio: <>As the creator of StudIQ, Baljot is an 18-year-old BCA student specializing in <span className="animated-gradient-text">AI</span> & ML. He is also an accomplished <span className="animated-gradient-text">AI</span> Journalist, combining technical skill with insightful industry commentary.</>,
-  },
-  {
-    name: 'Mankirat Singh',
-    role: 'Content Manager & Co-founder',
-    bio: 'At 18 years old, Mankirat is a forward-thinking engineering student in Canada who brings a sharp strategic vision to our content, ensuring it is engaging, informative, and impactful.',
-  },
-  {
-    name: 'Daman Deep Singh',
-    role: 'CFO',
-    bio: <>Daman is a dedicated <span className="animated-gradient-text">AI</span> & ML student at Chandigarh, where he skillfully manages the financial strategy that fuels our innovation and growth.</>,
-  },
-];
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <section className="flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
-          About Elara Tech
+    <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="mx-auto max-w-3xl text-center">
+        <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+          About Me
         </h1>
-        <p className="mt-6 max-w-[800px] text-lg text-white/80 md:text-xl">
-          Pioneering the future of <span className="animated-gradient-text">Artificial Intelligence</span>.
+        <p className="mt-6 text-lg text-gray-300 md:text-xl">
+          A passionate developer at the intersection of AI, automation, and user experience.
         </p>
-      </section>
-
-      <section className="mt-16">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative bg-black/80 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
-            <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Mission</h2>
-            <p className="text-center text-white/80 md:text-lg">
-              As a future-focused company, our mission is to empower businesses and individuals by providing cutting-edge <span className="animated-gradient-text">AI</span> solutions that drive growth, efficiency, and innovation. We are committed to demystifying <span className="animated-gradient-text">Artificial Intelligence</span> and making its transformative power accessible to everyone, helping our clients navigate the complexities of the digital age with confidence.
-            </p>
+      </div>
+      <div className="mt-16 flex flex-col items-center gap-12 md:flex-row md:gap-16">
+        <div className="relative flex-shrink-0">
+          <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-primary to-secondary opacity-75 blur"></div>
+          <Avatar className="relative h-40 w-40 border-4 border-background md:h-56 md:w-56">
+            <AvatarImage src="https://github.com/shadcn.png" alt="Developer" />
+            <AvatarFallback>AI</AvatarFallback>
+          </Avatar>
+        </div>
+        <div className="flex-grow text-center md:text-left">
+          <h2 className="text-3xl font-bold text-white">I’m a developer specializing in AI automation and smart chat systems.</h2>
+          <p className="mt-4 text-gray-300">
+            I help businesses save time, capture leads, and grow using intelligent technology. My focus is on building practical, efficient, and scalable AI solutions that deliver real-world results. Whether it's a customer support chatbot that works 24/7 or an automated workflow that eliminates manual tasks, I design systems that empower businesses to do more.
+          </p>
+          <p className="mt-4 text-gray-300">
+            With a deep understanding of modern AI tools and platforms, I create custom solutions tailored to the unique needs of each client. Let's connect and explore how we can build the future of your business, together.
+          </p>
+          <div className="mt-8 flex justify-center gap-4 md:justify-start">
+            <Button asChild variant="ghost" size="icon" className="text-gray-400 hover:text-primary">
+              <Link href="#" target="_blank">
+                <Twitter />
+                <span className="sr-only">Twitter</span>
+              </Link>
+            </Button>
+            <Button asChild variant="ghost" size="icon" className="text-gray-400 hover:text-primary">
+              <Link href="#" target="_blank">
+                <Github />
+                <span className="sr-only">GitHub</span>
+              </Link>
+            </Button>
+            <Button asChild variant="ghost" size="icon" className="text-gray-400 hover:text-primary">
+              <Link href="#" target="_blank">
+                <Linkedin />
+                <span className="sr-only">LinkedIn</span>
+              </Link>
+            </Button>
           </div>
         </div>
-      </section>
-
-      <section className="mt-16">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative bg-black/80 border border-white/10 rounded-2xl p-8 shadow-lg text-left">
-            <h2 className="text-3xl font-bold mb-6 text-center font-orbitron animated-gradient-text">Our Vision</h2>
-            <p className="text-center text-white/80 md:text-lg">
-              We envision a world where intelligent technology seamlessly integrates with human potential. Our goal is to be at the forefront of the <span className="animated-gradient-text">AI</span> revolution, creating innovative solutions that not only solve business challenges but also contribute to a smarter, more connected, and sustainable future for all.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold mb-8 text-center font-orbitron animated-gradient-text">Meet Our Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {teamMembers.map((member) => (
-            <Card key={member.name} className="bg-black/60 border-white/10 text-center flex flex-col items-center">
-              <CardHeader className="items-center">
-                <CardTitle className="font-orbitron pt-6">{member.name}</CardTitle>
-                <CardDescription className="text-primary">{member.role}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-white/80">{member.bio}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

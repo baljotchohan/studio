@@ -2,81 +2,61 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Mail, MessageSquare, Phone } from 'lucide-react';
 import Link from 'next/link';
+
+const contactMethods = [
+  {
+    icon: <MessageSquare />,
+    title: "WhatsApp",
+    description: "For a quick chat or consultation.",
+    href: "https://wa.me/1234567890", // Replace with your WhatsApp link
+    cta: "Chat Now",
+  },
+  {
+    icon: <Mail />,
+    title: "Email",
+    description: "For detailed inquiries and proposals.",
+    href: "mailto:your-email@example.com", // Replace with your email
+    cta: "Send Email",
+  },
+  {
+    icon: <Phone />,
+    title: "Book a Call",
+    description: "Schedule a free discovery call.",
+    href: "#", // Replace with your Calendly or booking link
+    cta: "Schedule Call",
+  },
+];
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <section className="flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-orbitron animated-gradient-text">
-          Contact Us
+    <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="mx-auto max-w-3xl text-center">
+        <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl">
+          Get in Touch
         </h1>
-        <p className="mt-6 max-w-[800px] text-lg text-white/80 md:text-xl">
-          Have a project in mind or just want to say hello? We'd love to hear from you.
+        <p className="mt-6 text-lg text-gray-300 md:text-xl">
+          Ready to automate your business or have a question? Let's talk.
         </p>
-      </section>
+      </div>
 
-      <section className="mt-16 w-full max-w-4xl mx-auto">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-chart-4 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <Card className="relative bg-black/80 border-white/10">
-            <CardHeader>
-              <CardTitle className="text-center text-2xl font-orbitron animated-gradient-text">Connect With Our Team</CardTitle>
-              <CardDescription className="text-center text-white/70">
-                Meet the minds behind the innovation. Reach out to our leadership team directly.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex flex-col items-center text-center">
-                <h3 className="font-bold text-lg font-orbitron">Baljot Singh Chohan</h3>
-                <p className="text-primary mb-2">CEO & Founder</p>
-                <p className="text-white/70 mb-4 max-w-xs">The visionary leader driving our mission to innovate with <span className="animated-gradient-text">AI</span>.</p>
-                <div className="flex space-x-4 mt-auto">
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://www.instagram.com/baljotchohan_01" target="_blank" rel="noopener noreferrer">
-                      <Instagram />
-                      <span className="sr-only">Instagram</span>
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://twitter.com/baljotchohan" target="_blank" rel="noopener noreferrer">
-                      <Twitter />
-                      <span className="sr-only">Twitter</span>
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://www.linkedin.com/in/baljot-chohan-866ba6356" target="_blank" rel="noopener noreferrer">
-                      <Linkedin />
-                      <span className="sr-only">LinkedIn</span>
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <h3 className="font-bold text-lg font-orbitron">Daman Deep Singh</h3>
-                <p className="text-primary mb-2">CFO</p>
-                <p className="text-white/70 mb-4 max-w-xs">The financial strategist ensuring our growth and stability in the <span className="animated-gradient-text">AI</span> landscape.</p>
-                <div className="flex space-x-4 mt-auto">
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://www.instagram.com/x7_daman" target="_blank" rel="noopener noreferrer">
-                      <Instagram />
-                      <span className="sr-only">Instagram</span>
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="icon">
-                    <Link href="https://twitter.com/Damandeep018" target="_blank" rel="noopener noreferrer">
-                      <Twitter />
-                      <span className="sr-only">Twitter</span>
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {contactMethods.map((method) => (
+          <div key={method.title} className="relative group">
+            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-secondary opacity-50 blur transition duration-500 group-hover:opacity-75"></div>
+            <Card className="relative h-full flex flex-col items-center justify-center bg-card/80 p-8 text-center backdrop-blur-sm">
+              <div className="mb-4 text-primary">{React.cloneElement(method.icon, { size: 40 })}</div>
+              <h3 className="mb-2 text-xl font-bold text-white">{method.title}</h3>
+              <p className="mb-6 flex-grow text-gray-400">{method.description}</p>
+              <Button asChild className="w-full">
+                <Link href={method.href} target="_blank">{method.cta}</Link>
+              </Button>
+            </Card>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
