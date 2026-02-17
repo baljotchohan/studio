@@ -22,7 +22,7 @@ export function Footer() {
         </div>
         <nav className="flex items-center gap-2">
           {socialLinks.map((link) => (
-            <Button key={link.href} asChild variant="ghost" size="icon" className="text-gray-400 transition-colors hover:text-primary hover:bg-primary/10">
+            <Button key={link.label} asChild variant="ghost" size="icon" className="text-gray-400 transition-colors hover:text-primary hover:bg-primary/10">
               <Link href={link.href} target="_blank">
                 {link.icon}
                 <span className="sr-only">{link.label}</span>
