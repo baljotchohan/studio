@@ -5,12 +5,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardUser, Dumbbell, Funnel, Headset, Home, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, Utensils, Workflow } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
   {
-    icon: <BrainCircuit />,
+    icon: <Bot />,
     title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
     description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
   },
@@ -20,7 +20,7 @@ const services = [
     description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
   },
   {
-    icon: <Funnel />,
+    icon: <TrendingUp />,
     title: 'Lead Generation Automation',
     description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
   },
@@ -30,26 +30,26 @@ const services = [
     description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
   },
   {
-    icon: <PackagePlus />,
+    icon: <Workflow />,
     title: 'Custom Automation Tools',
     description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
   },
     {
-    icon: <Workflow />,
+    icon: <Zap />,
     title: 'Workflow Automation',
     description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
   },
 ];
 
 const industries = [
-  { icon: <Scissors />, name: 'Salons & Spas' },
-  { icon: <Dumbbell />, name: 'Gyms & Fitness' },
-  { icon: <ClipboardUser />, name: 'Coaching Centers' },
-  { icon: <Stethoscope />, name: 'Clinics & Doctors' },
-  { icon: <Home />, name: 'Real Estate' },
-  { icon: <ShoppingCart />, name: 'E-commerce' },
-  { icon: <Utensils />, name: 'Restaurants' },
-  { icon: <Store />, name: 'Small Businesses' },
+    { icon: <Store />, name: 'Salons & Spas' },
+    { icon: <Dumbbell />, name: 'Gyms & Fitness' },
+    { icon: <ClipboardList />, name: 'Coaching Centers' },
+    { icon: <Stethoscope />, name: 'Clinics & Doctors' },
+    { icon: <HomeIcon />, name: 'Real Estate' },
+    { icon: <ShoppingCart />, name: 'E-commerce' },
+    { icon: <Utensils />, name: 'Restaurants' },
+    { icon: <Code />, name: 'Small Businesses' },
 ];
 
 function useScrollReveal() {
@@ -138,13 +138,13 @@ export default function Home() {
               <Link href="#demo">View Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
-              <Link href="#contact">Hire Me</Link>
+              <Link href="/contact">Hire Me</Link>
             </Button>
           </div>
         </div>
       </section>
       
-      {/* Section 2: What I Do */}
+      {/* Section 2: What I Build */}
       <section id="services" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
           <h2 className="section-heading">What I Build</h2>
@@ -261,7 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6: Industries */}
+      {/* Section 6: Industries I Serve */}
       <section className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
           <h2 className="section-heading">Industries I Serve</h2>
@@ -309,9 +309,11 @@ export default function Home() {
           <h2 className="mt-8 section-heading">Ready to automate your business?</h2>
           <p className="section-subheading mx-auto">Let's discuss how <span className="text-gradient">AI</span> can transform your operations and drive growth.</p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" className="glow-button transition-shadow">Get a Free Demo</Button>
+            <Button asChild size="lg" className="glow-button transition-shadow">
+              <Link href="#demo">Get a Free Demo</Link>
+            </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
-              <Link href="https://wa.me/your-number" target="_blank">Contact on WhatsApp</Link>
+              <Link href="/contact">Contact on WhatsApp</Link>
             </Button>
           </div>
         </div>
