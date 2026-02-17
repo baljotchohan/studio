@@ -1,11 +1,12 @@
 
+
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, FilePlus, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
@@ -176,23 +177,76 @@ export default function Home() {
       {/* Section 3: How AI Helps */}
       <section id="process" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
-          <h2 className="section-heading">How <span className="text-gradient">AI</span> Helps Your Business</h2>
-          <p className="section-subheading mx-auto">An automated system turns inquiries into opportunities, 24/7.</p>
+            <h2 className="section-heading">How <span className="text-gradient">AI</span> Connects Everything</h2>
+            <p className="section-subheading mx-auto">An automated ecosystem turning inquiries into opportunities, 24/7.</p>
         </div>
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-0">
-          {['Message', <><span className="text-gradient">AI</span> Assistant</>, 'Instant Reply', 'Lead Saved', 'Growth'].map((step, index, arr) => (
-            <React.Fragment key={index}>
-              <div className="flex flex-col items-center gap-3 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary ring-4 ring-primary/20">
-                  <Bot size={28}/>
+
+        {/* Desktop View */}
+        <div className="mt-24 hidden md:grid grid-cols-3 grid-rows-3 items-center justify-items-center gap-x-8 gap-y-4 relative">
+            {/* Connecting Lines in background */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-30">
+                <div className="h-[80%] w-px bg-gradient-to-b from-primary/0 via-primary to-primary/0"></div>
+                <div className="w-[60%] h-px bg-gradient-to-r from-secondary/0 via-secondary to-secondary/0"></div>
+            </div>
+            
+            <div className="col-start-1 row-start-1"></div>
+            <div className="col-start-3 row-start-1"></div>
+            <div className="col-start-1 row-start-3"></div>
+            <div className="col-start-3 row-start-3"></div>
+
+            <div className="col-start-2 row-start-2 flex flex-col items-center gap-3 text-center p-4">
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary/20 text-primary ring-8 ring-primary/30 animate-pulse-glow">
+                    <BrainCircuit size={40} />
                 </div>
-                <p className="font-semibold text-white">{step}</p>
-              </div>
-              {index < arr.length - 1 && (
-                <div className="h-0.5 w-1/4 grow rounded-full bg-primary/20 md:h-1 md:w-auto"></div>
-              )}
-            </React.Fragment>
-          ))}
+                <h3 className="text-xl font-bold text-white">AI Assistant</h3>
+            </div>
+
+            <div className="col-start-2 row-start-1 flex flex-col items-center gap-2 text-center group">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <MessageSquare size={28} className="text-primary"/>
+                </div>
+                <p className="font-semibold text-white">Customer Message</p>
+            </div>
+
+            <div className="col-start-2 row-start-3 flex flex-col items-center gap-2 text-center group">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <FilePlus size={28} className="text-primary"/>
+                </div>
+                <p className="font-semibold text-white">Lead Saved</p>
+            </div>
+
+            <div className="col-start-1 row-start-2 flex flex-col items-center gap-2 text-center group">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <Zap size={28} className="text-primary"/>
+                </div>
+                <p className="font-semibold text-white">Instant Reply</p>
+            </div>
+
+            <div className="col-start-3 row-start-2 flex flex-col items-center gap-2 text-center group">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <TrendingUp size={28} className="text-primary"/>
+                </div>
+                <p className="font-semibold text-white">Business Growth</p>
+            </div>
+        </div>
+
+        {/* Mobile View */}
+        <div className="mt-16 flex flex-col items-center gap-12 md:hidden relative">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary/30 via-secondary/30 to-background -z-10"></div>
+            {[
+                { icon: MessageSquare, label: 'Customer Message' },
+                { icon: BrainCircuit, label: 'AI Assistant' },
+                { icon: Zap, label: 'Instant Reply' },
+                { icon: FilePlus, label: 'Lead Saved' },
+                { icon: TrendingUp, label: 'Business Growth' },
+            ].map((item, index) => (
+                <div key={index} className="flex flex-col items-center gap-3 text-center p-2 bg-background z-10">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 text-primary ring-4 ring-border backdrop-blur-sm">
+                        <item.icon size={32} />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">{item.label}</h3>
+                </div>
+            ))}
         </div>
       </section>
 
