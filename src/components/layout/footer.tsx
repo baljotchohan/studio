@@ -12,11 +12,11 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative z-10 w-full border-t border-primary/10 bg-transparent py-8">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-4 md:flex-row">
+    <footer className="relative z-10 w-full border-t border-primary/10 bg-transparent py-6 md:py-8">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row md:gap-6">
         <div>
-          <h3 className="text-lg font-bold text-white">AI Automation</h3>
-          <p className="mt-1 text-sm text-gray-400">
+          <h3 className="text-md font-bold text-white md:text-lg">Elaratech</h3>
+          <p className="mt-1 text-xs text-gray-400 md:text-sm">
             &copy; {new Date().getFullYear()}. Built for the future.
           </p>
         </div>

@@ -20,10 +20,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-background/50 backdrop-blur-lg">
-      <div className="container flex h-14 max-w-screen-2xl items-center justify-between px-4">
+      <div className="container flex h-12 max-w-screen-2xl items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-bold text-lg text-white">
-            AI Automations
+          <span className="font-bold text-lg">
+            <span className="text-gradient">ETLabs</span>
           </span>
         </Link>
         <div className="hidden md:flex items-center space-x-2">

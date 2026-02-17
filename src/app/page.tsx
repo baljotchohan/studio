@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 const services = [
   {
     icon: <Bot />,
-    title: 'AI Chatbots for Businesses',
+    title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
     description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
   },
   {
@@ -25,13 +25,13 @@ const services = [
   },
   {
     icon: <HeartHandshake />,
-    title: 'AI Customer Support Systems',
+    title: <><span className="text-gradient">AI</span> Customer Support Systems</>,
     description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
   },
   {
     icon: <Code />,
     title: 'Custom Automation Tools',
-    description: 'Bespoke AI-powered tools and workflows designed to solve your unique business challenges.',
+    description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
   },
     {
     icon: <Zap />,
@@ -127,7 +127,7 @@ export default function Home() {
       <section className="flex h-[calc(100vh-56px)] w-full flex-col items-center justify-center text-center">
         <div className="relative z-10 p-4">
           <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-6xl md:text-7xl">
-            Automate Your Business with AI
+            Automate Your Business with <span className="text-gradient">AI</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
             I build intelligent chatbots and automation systems that save time and increase customer engagement.
@@ -170,12 +170,12 @@ export default function Home() {
       {/* Section 3: How AI Helps */}
       <section id="process" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
-          <h2 className="section-heading">How AI Helps Your Business</h2>
+          <h2 className="section-heading">How <span className="text-gradient">AI</span> Helps Your Business</h2>
           <p className="section-subheading mx-auto">An automated system turns inquiries into opportunities, 24/7.</p>
         </div>
         <div className="mt-16 flex flex-col items-center justify-between gap-4 md:flex-row md:gap-0">
-          {['Message', 'AI Assistant', 'Instant Reply', 'Lead Saved', 'Growth'].map((step, index, arr) => (
-            <React.Fragment key={step}>
+          {['Message', <><span className="text-gradient">AI</span> Assistant</>, 'Instant Reply', 'Lead Saved', 'Growth'].map((step, index, arr) => (
+            <React.Fragment key={index}>
               <div className="flex flex-col items-center gap-3 text-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary ring-4 ring-primary/20">
                   <Bot size={28}/>
@@ -194,7 +194,7 @@ export default function Home() {
       <section id="demo" className="w-full max-w-3xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
           <h2 className="section-heading">Live Demo Experience</h2>
-          <p className="section-subheading mx-auto">See how an AI chatbot can interact with your customers in real-time.</p>
+          <p className="section-subheading mx-auto">See how an <span className="text-gradient">AI</span> chatbot can interact with your customers in real-time.</p>
         </div>
         <Card className="glass-card mt-12">
           <CardContent className="p-4 md:p-6">
@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="max-w-xs rounded-2xl rounded-br-none bg-muted p-3 text-white">
                   <p>We are open from 9 AM to 8 PM, Monday to Saturday.</p>
                 </div>
-                 <Avatar className="h-8 w-8"><AvatarFallback>AI</AvatarFallback></Avatar>
+                 <Avatar className="h-8 w-8"><AvatarFallback><span className="text-gradient">AI</span></AvatarFallback></Avatar>
               </div>
                <div className="flex items-end gap-2">
                 <Avatar className="h-8 w-8"><AvatarFallback>U</AvatarFallback></Avatar>
@@ -221,7 +221,7 @@ export default function Home() {
                  <div className="max-w-xs rounded-2xl rounded-br-none bg-muted p-3 text-white">
                   <p>Great! Please share your name and phone number to proceed.</p>
                 </div>
-                 <Avatar className="h-8 w-8"><AvatarFallback>AI</AvatarFallback></Avatar>
+                 <Avatar className="h-8 w-8"><AvatarFallback><span className="text-gradient">AI</span></AvatarFallback></Avatar>
               </div>
             </div>
             <div className="mt-6 flex items-center rounded-lg border border-primary/20 bg-card/50 p-2">
@@ -259,7 +259,7 @@ export default function Home() {
       <section className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
           <h2 className="section-heading">Industries I Serve</h2>
-          <p className="section-subheading mx-auto">Providing AI solutions for a wide range of businesses, both big and small.</p>
+          <p className="section-subheading mx-auto">Providing <span className="text-gradient">AI</span> solutions for a wide range of businesses, both big and small.</p>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
           {industries.map((industry) => (
@@ -279,12 +279,12 @@ export default function Home() {
          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:gap-12 md:text-left">
             <Avatar className="h-32 w-32 flex-shrink-0 border-4 border-primary/20">
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>AI</AvatarFallback>
+              <AvatarFallback><span className="text-gradient">AI</span></AvatarFallback>
             </Avatar>
             <div>
               <h2 className="section-heading">About Me</h2>
               <p className="mt-4 text-lg text-gray-300">
-                I’m a developer specializing in AI automation and smart chat systems. I help businesses save time, capture leads, and grow using intelligent technology.
+                I’m a developer specializing in <span className="text-gradient">AI</span> automation and smart chat systems. I help businesses save time, capture leads, and grow using intelligent technology.
               </p>
                <Button asChild variant="link" className="mt-4 px-0 text-lg text-primary">
                 <Link href="/about">Learn More &rarr;</Link>
@@ -301,7 +301,7 @@ export default function Home() {
             <Bot size={40} className="relative text-white" />
           </div>
           <h2 className="mt-8 section-heading">Ready to automate your business?</h2>
-          <p className="section-subheading mx-auto">Let's discuss how AI can transform your operations and drive growth.</p>
+          <p className="section-subheading mx-auto">Let's discuss how <span className="text-gradient">AI</span> can transform your operations and drive growth.</p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" className="glow-button transition-shadow">Get a Free Demo</Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">

@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Bot, Code, HeartHandshake, MessageSquare, TrendingUp, Zap } from 'lucide-react';
@@ -8,7 +7,7 @@ import React from 'react';
 const services = [
   {
     icon: <Bot />,
-    title: 'AI Chatbots for Businesses',
+    title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
     description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
   },
   {
@@ -23,13 +22,13 @@ const services = [
   },
   {
     icon: <HeartHandshake />,
-    title: 'AI Customer Support Systems',
+    title: <><span className="text-gradient">AI</span> Customer Support Systems</>,
     description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
   },
   {
     icon: <Code />,
     title: 'Custom Automation Tools',
-    description: 'Bespoke AI-powered tools and workflows designed to solve your unique business challenges.',
+    description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
   },
     {
     icon: <Zap />,
@@ -65,7 +64,7 @@ export default function ServicesPage() {
                 </CardContent>
                  <CardContent>
                   <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
-                    <Link href={`/services/${service.title.toLowerCase().replace(/ /g, '-')}`}>
+                    <Link href={`/services/${(typeof service.title === 'string' ? service.title : 'ai-service').toLowerCase().replace(/ /g, '-')}`}>
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
