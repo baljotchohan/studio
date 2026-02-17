@@ -1,54 +1,55 @@
+
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Code, HeartHandshake, Instagram, Linkedin, MessageSquare, Mic, Send, TrendingUp, Twitter, Zap } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardUser, Dumbbell, Funnel, Headset, Home, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, Utensils, Workflow } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
   {
-    icon: <Bot />,
+    icon: <BrainCircuit />,
     title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
     description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
   },
   {
-    icon: <MessageSquare />,
+    icon: <MessagesSquare />,
     title: 'WhatsApp & Instagram Automation',
     description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
   },
   {
-    icon: <TrendingUp />,
+    icon: <Funnel />,
     title: 'Lead Generation Automation',
     description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
   },
   {
-    icon: <HeartHandshake />,
+    icon: <Headset />,
     title: <><span className="text-gradient">AI</span> Customer Support Systems</>,
     description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
   },
   {
-    icon: <Code />,
+    icon: <PackagePlus />,
     title: 'Custom Automation Tools',
     description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
   },
     {
-    icon: <Zap />,
+    icon: <Workflow />,
     title: 'Workflow Automation',
     description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
   },
 ];
 
 const industries = [
-  { icon: <Bot />, name: 'Salons & Spas' },
-  { icon: <Bot />, name: 'Gyms & Fitness' },
-  { icon: <Bot />, name: 'Coaching Centers' },
-  { icon: <Bot />, name: 'Clinics & Doctors' },
-  { icon: <Bot />, name: 'Real Estate' },
-  { icon: <Bot />, name: 'E-commerce' },
-  { icon: <Bot />, name: 'Restaurants' },
-  { icon: <Bot />, name: 'Small Businesses' },
+  { icon: <Scissors />, name: 'Salons & Spas' },
+  { icon: <Dumbbell />, name: 'Gyms & Fitness' },
+  { icon: <ClipboardUser />, name: 'Coaching Centers' },
+  { icon: <Stethoscope />, name: 'Clinics & Doctors' },
+  { icon: <Home />, name: 'Real Estate' },
+  { icon: <ShoppingCart />, name: 'E-commerce' },
+  { icon: <Utensils />, name: 'Restaurants' },
+  { icon: <Store />, name: 'Small Businesses' },
 ];
 
 function useScrollReveal() {
@@ -149,20 +150,25 @@ export default function Home() {
           <h2 className="section-heading">What I Build</h2>
           <p className="section-subheading mx-auto">From intelligent chatbots to complete automation systems, I create solutions that drive growth.</p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 flex flex-col items-center gap-y-4 [perspective:1000px] md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {services.map((service, index) => (
-            <div key={index} className="relative group">
-              <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-70"></div>
-              <Card className="glass-card relative h-full transform transition-transform duration-300 group-hover:-translate-y-2">
-                <CardHeader>
-                  <div className="mb-4 text-primary">{React.cloneElement(service.icon, { size: 32 })}</div>
-                  <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-400">{service.description}</p>
-                </CardContent>
-              </Card>
-            </div>
+            <React.Fragment key={index}>
+              <div className="group relative h-full w-full">
+                <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-70"></div>
+                <Card className="glass-card relative h-full transform-gpu transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:translateZ(20px)_rotateY(10deg)]">
+                  <CardHeader>
+                    <div className="mb-4 text-primary">{React.cloneElement(service.icon, { size: 32 })}</div>
+                    <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-400">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </div>
+              {index < services.length - 1 && (
+                  <div className="h-12 w-px bg-gradient-to-b from-primary/0 via-primary/50 to-secondary/0 md:hidden" />
+              )}
+            </React.Fragment>
           ))}
         </div>
       </section>
