@@ -81,7 +81,13 @@ export default {
         typing: {
           from: { width: '0' },
           to: { width: '100%' },
-        }
+        },
+        'ping-slow': {
+          '75%, 100%': {
+            transform: 'scale(1.5)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -89,6 +95,7 @@ export default {
         float: 'float 6s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 4s infinite',
         typing: 'typing 1.5s steps(30, end)',
+        'ping-slow': 'ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
     },
   },

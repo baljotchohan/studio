@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, TrendingUp, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Stethoscope, Utensils, Workflow, Zap, Briefcase, BarChart, Users, Store } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap, Briefcase, BarChart, Users } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
@@ -175,11 +175,14 @@ export default function Home() {
         </div>
 
         {/* Desktop View */}
-        <div className="mt-24 hidden md:grid grid-cols-3 grid-rows-3 items-center justify-items-center gap-x-8 gap-y-4 lg:gap-x-16 lg:gap-y-12 relative">
+        <div className="mt-24 hidden md:grid grid-cols-3 grid-rows-3 items-center justify-items-center gap-x-16 gap-y-12 lg:gap-x-24 lg:gap-y-20 relative">
             {/* Connecting Lines in background */}
-            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-30">
-                <div className="h-[90%] w-px bg-gradient-to-b from-primary/0 via-primary to-primary/0"></div>
-                <div className="w-[70%] h-px bg-gradient-to-r from-secondary/0 via-secondary to-secondary/0"></div>
+            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-50">
+                <div className="absolute h-[300px] w-[300px] rounded-full border border-primary/30 animate-ping-slow [animation-delay:-2s]"></div>
+                <div className="absolute h-[500px] w-[500px] rounded-full border border-primary/30 animate-ping-slow [animation-delay:-1s]"></div>
+                <div className="absolute h-[700px] w-[700px] rounded-full border border-secondary/30 animate-ping-slow"></div>
+                 <div className="absolute h-full w-px bg-gradient-to-b from-primary/0 via-primary/50 to-primary/0"></div>
+                <div className="absolute w-full h-px bg-gradient-to-r from-secondary/0 via-secondary/50 to-secondary/0"></div>
             </div>
             
             <div className="col-start-1 row-start-1"></div>
@@ -188,36 +191,36 @@ export default function Home() {
             <div className="col-start-3 row-start-3"></div>
 
             <div className="col-start-2 row-start-2 flex flex-col items-center gap-3 text-center p-4">
-                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-primary/20 text-primary ring-8 ring-primary/30 animate-pulse-glow">
-                    <BrainCircuit size={48} />
+                <div className="flex h-32 w-32 items-center justify-center rounded-full bg-primary/20 text-primary ring-8 ring-primary/30 animate-pulse-glow">
+                    <BrainCircuit size={56} />
                 </div>
                 <h3 className="text-xl font-bold text-white"><span className="text-gradient">AI</span> Assistant</h3>
             </div>
 
             <div className="col-start-2 row-start-1 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <MessageSquare size={32} className="text-primary"/>
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <MessageSquare size={40} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Customer Message</p>
             </div>
 
             <div className="col-start-2 row-start-3 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <PackagePlus size={32} className="text-primary"/>
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <PackagePlus size={40} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Lead Saved</p>
             </div>
 
             <div className="col-start-1 row-start-2 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <Zap size={32} className="text-primary"/>
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <Zap size={40} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Instant Reply</p>
             </div>
 
             <div className="col-start-3 row-start-2 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <TrendingUp size={32} className="text-primary"/>
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <TrendingUp size={40} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Business Growth</p>
             </div>

@@ -37,18 +37,6 @@ export default function AboutPage() {
                 <span className="sr-only">Twitter</span>
               </Link>
             </Button>
-            <Button asChild variant="ghost" size="icon" className="text-gray-400 hover:text-primary">
-              <Link href="#" target="_blank">
-                <Github />
-                <span className="sr-only">GitHub</span>
-              </Link>
-            </Button>
-            <Button asChild variant="ghost" size="icon" className="text-gray-400 hover:text-primary">
-              <Link href="#" target="_blank">
-                <Linkedin />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-            </Button>
           </div>
         </div>
       </div>
