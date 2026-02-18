@@ -1,57 +1,55 @@
-
-
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, TrendingUp, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Stethoscope, Utensils, Workflow, Zap, Briefcase, BarChart, Users } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
-  {
-    icon: <Bot />,
-    title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
-    description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
-  },
-  {
-    icon: <MessagesSquare />,
-    title: 'WhatsApp & Instagram Automation',
-    description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
-  },
-  {
-    icon: <TrendingUp />,
-    title: 'Lead Generation Automation',
-    description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
-  },
-  {
-    icon: <Headset />,
-    title: <><span className="text-gradient">AI</span> Customer Support Systems</>,
-    description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
-  },
-  {
-    icon: <Workflow />,
-    title: 'Custom Automation Tools',
-    description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
-  },
     {
-    icon: <Zap />,
-    title: 'Workflow Automation',
-    description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
-  },
-];
+      icon: <Bot size={32} className="text-primary" />,
+      title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
+      description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
+    },
+    {
+      icon: <MessagesSquare size={32} className="text-primary" />,
+      title: 'WhatsApp & Instagram Automation',
+      description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
+    },
+    {
+      icon: <TrendingUp size={32} className="text-primary" />,
+      title: 'Lead Generation Automation',
+      description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
+    },
+    {
+      icon: <Headset size={32} className="text-primary" />,
+      title: <><span className="text-gradient">AI</span> Customer Support Systems</>,
+      description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
+    },
+    {
+      icon: <Workflow size={32} className="text-primary" />,
+      title: 'Custom Automation Tools',
+      description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
+    },
+    {
+      icon: <Zap size={32} className="text-primary" />,
+      title: 'Workflow Automation',
+      description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
+    },
+  ];
 
-const industries = [
-    { icon: <Scissors />, name: 'Salons & Spas' },
-    { icon: <Dumbbell />, name: 'Gyms & Fitness' },
-    { icon: <ClipboardList />, name: 'Coaching Centers' },
-    { icon: <Stethoscope />, name: 'Clinics & Doctors' },
-    { icon: <HomeIcon />, name: 'Real Estate' },
-    { icon: <ShoppingCart />, name: 'E-commerce' },
-    { icon: <Utensils />, name: 'Restaurants' },
-    { icon: <Code />, name: 'Small Businesses' },
-];
+  const industries = [
+      { icon: <Scissors />, name: 'Salons & Spas' },
+      { icon: <Dumbbell />, name: 'Gyms & Fitness' },
+      { icon: <ClipboardList />, name: 'Coaching' },
+      { icon: <Stethoscope />, name: 'Clinics' },
+      { icon: <HomeIcon />, name: 'Real Estate' },
+      { icon: <ShoppingCart />, name: 'E-commerce' },
+      { icon: <Utensils />, name: 'Restaurants' },
+      { icon: <Briefcase />, name: 'Small Businesses' },
+  ];
 
 function useScrollReveal() {
   useEffect(() => {
@@ -158,7 +156,7 @@ export default function Home() {
                 <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-70"></div>
                 <Card className="glass-card relative h-full transform-gpu transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:translateZ(20px)_rotateY(10deg)]">
                   <CardHeader>
-                    <div className="mb-4 text-primary">{React.cloneElement(service.icon, { size: 32 })}</div>
+                    <div className="mb-4">{service.icon}</div>
                     <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -234,11 +232,11 @@ export default function Home() {
         <div className="mt-16 flex flex-col items-center gap-12 md:hidden relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary/30 via-secondary/30 to-background -z-10"></div>
             {[
-                { icon: MessageSquare, label: 'Customer Message' },
+                { icon: Users, label: 'Customer Message' },
                 { icon: BrainCircuit, label: 'AI Assistant' },
                 { icon: Zap, label: 'Instant Reply' },
                 { icon: PackagePlus, label: 'Lead Saved' },
-                { icon: TrendingUp, label: 'Business Growth' },
+                { icon: BarChart, label: 'Business Growth' },
             ].map((item, index) => (
                 <div key={index} className="flex flex-col items-center gap-3 text-center p-2 bg-background z-10">
                     <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 text-primary ring-4 ring-border backdrop-blur-sm">
@@ -367,7 +365,7 @@ export default function Home() {
               <Link href="#demo">Get a Free Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
-              <Link href="https://wa.me/1234567890" target="_blank">Contact on WhatsApp</Link>
+              <Link href="https://wa.me/919465661767" target="_blank">Contact on WhatsApp</Link>
             </Button>
           </div>
         </div>

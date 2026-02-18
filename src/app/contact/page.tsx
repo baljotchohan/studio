@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -12,21 +11,21 @@ const contactMethods = [
     icon: <MessageSquare />,
     title: "WhatsApp",
     description: "For a quick chat or consultation.",
-    href: "https://wa.me/1234567890", // Replace with your WhatsApp link
+    href: "https://wa.me/919465661767",
     cta: "Chat Now",
   },
   {
     icon: <Mail />,
     title: "Email",
     description: "For detailed inquiries and proposals.",
-    href: "mailto:baljotchohan23@gmail.com", // Replace with your email
+    href: "mailto:baljotchohan23@gmail.com",
     cta: "Send Email",
   },
   {
     icon: <Phone />,
     title: "Book a Call",
     description: "Schedule a free discovery call.",
-    href: "#", // Replace with your Calendly or booking link
+    href: "#",
     cta: "Schedule Call",
   },
 ];

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Instagram, Linkedin, Mail, MessageSquare } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <MessageSquare />, href: 'https://wa.me/1234567890', label: 'WhatsApp' },
+  { icon: <MessageSquare />, href: 'https://wa.me/919465661767', label: 'WhatsApp' },
   { icon: <Mail />, href: 'mailto:baljotchohan23@gmail.com', label: 'Email' },
   { icon: <Instagram />, href: 'https://instagram.com/baljotchohan01', label: 'Instagram' },
   { icon: <Linkedin />, href: '#', label: 'LinkedIn' },
