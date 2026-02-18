@@ -8,31 +8,37 @@ const services = [
   {
     icon: <Bot />,
     title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
+    slug: 'ai-chatbots-for-businesses',
     description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
   },
   {
     icon: <MessageSquare />,
     title: 'WhatsApp & Instagram Automation',
+    slug: 'whatsapp-instagram-automation',
     description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
   },
   {
     icon: <TrendingUp />,
     title: 'Lead Generation Automation',
+    slug: 'lead-generation-automation',
     description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
   },
   {
     icon: <HeartHandshake />,
     title: <><span className="text-gradient">AI</span> Customer Support Systems</>,
+    slug: 'ai-customer-support-systems',
     description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
   },
   {
     icon: <Code />,
     title: 'Custom Automation Tools',
+    slug: 'custom-automation-tools',
     description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
   },
     {
     icon: <Zap />,
     title: 'Workflow Automation',
+    slug: 'workflow-automation',
     description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
   },
 ];
@@ -64,7 +70,7 @@ export default function ServicesPage() {
                 </CardContent>
                  <CardContent>
                   <Button asChild variant="link" className="p-0 text-primary hover:text-primary/80">
-                    <Link href={`/services/${(typeof service.title === 'string' ? service.title : 'ai-service').toLowerCase().replace(/ /g, '-')}`}>
+                    <Link href={`/services/${service.slug}`}>
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>

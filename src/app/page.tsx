@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, FilePlus, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, FilePlus, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
@@ -135,7 +135,7 @@ export default function Home() {
             I build intelligent chatbots and automation systems that save time and increase customer engagement.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button asChild size="lg" className="glow-button transition-shadow">
+            <Button asChild size="lg" className="glow-button">
               <Link href="#demo">View Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
@@ -363,7 +363,7 @@ export default function Home() {
           <h2 className="mt-8 section-heading">Ready to automate your business?</h2>
           <p className="section-subheading mx-auto">Let's discuss how <span className="text-gradient">AI</span> can transform your operations and drive growth.</p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button asChild size="lg" className="glow-button transition-shadow">
+            <Button asChild size="lg" className="glow-button">
               <Link href="#demo">Get a Free Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
