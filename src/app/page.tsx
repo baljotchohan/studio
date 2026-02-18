@@ -281,10 +281,22 @@ export default function Home() {
                  <Avatar className="h-8 w-8"><AvatarFallback><span className="text-gradient">AI</span></AvatarFallback></Avatar>
               </div>
             </div>
-            <div className="mt-6 flex items-center gap-2 rounded-full border border-primary/20 bg-card/50 p-1">
-                <input type="text" placeholder="Type..." className="flex-1 bg-transparent text-sm text-white outline-none placeholder:text-gray-400 pl-4" />
-                <Button size="icon" variant="ghost" className="h-8 w-8 shrink-0 text-primary hover:text-primary/80"><Mic /></Button>
-                <Button size="icon" className="h-8 w-8 shrink-0 rounded-full"><Send /></Button>
+            <div className="relative mt-6">
+              <input 
+                type="text" 
+                placeholder="Type your message..." 
+                className="w-full rounded-full border border-primary/20 bg-card/50 py-3 pl-5 pr-28 text-sm text-white outline-none placeholder:text-gray-400 transition-colors focus:border-primary" 
+              />
+              <div className="absolute inset-y-0 right-2 flex items-center gap-1">
+                <Button size="icon" variant="ghost" className="h-8 w-8 shrink-0 rounded-full text-primary hover:bg-primary/10 hover:text-primary/80">
+                  <Mic />
+                  <span className="sr-only">Use Microphone</span>
+                </Button>
+                <Button size="icon" className="h-9 w-9 shrink-0 rounded-full">
+                  <Send />
+                  <span className="sr-only">Send Message</span>
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>
