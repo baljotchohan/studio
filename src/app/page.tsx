@@ -376,7 +376,7 @@ export default function Home() {
               <Link href="#demo">Get a Free Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
-              <Link href="https://wa.me/919465661767" target="_blank">Contact on WhatsApp</Link>
+              <Link href="/contact">Get Service</Link>
             </Button>
           </div>
         </div>

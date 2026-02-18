@@ -1,9 +1,9 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Instagram, Mail, MessageSquare } from 'lucide-react';
+import { Instagram, Mail } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <MessageSquare />, href: 'https://wa.me/919465661767', label: 'WhatsApp' },
   { icon: <Mail />, href: 'mailto:baljotchohan23@gmail.com', label: 'Email' },
   { icon: <Instagram />, href: 'https://instagram.com/baljotchohan01', label: 'Instagram' },
 ];

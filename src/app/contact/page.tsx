@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -7,13 +8,6 @@ import { Mail, MessageSquare, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 const contactMethods = [
-  {
-    icon: <MessageSquare />,
-    title: "WhatsApp",
-    description: "For a quick chat or consultation.",
-    href: "https://wa.me/919465661767",
-    cta: "Chat Now",
-  },
   {
     icon: <Mail />,
     title: "Email",
@@ -42,7 +36,7 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
         {contactMethods.map((method) => (
           <div key={method.title} className="relative group">
             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-secondary opacity-50 blur transition duration-500 group-hover:opacity-75"></div>
