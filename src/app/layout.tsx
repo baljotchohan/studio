@@ -7,8 +7,8 @@ import SpaceBackground from '@/components/space-background';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'Elaratech | AI Automation Solutions',
-  description: 'We build intelligent chatbots and AI automation systems that save time and increase customer engagement.',
+  title: 'AI Automation Solutions',
+  description: 'I build intelligent chatbots and AI automation systems that save time and increase customer engagement.',
 };
 
 export default function RootLayout({

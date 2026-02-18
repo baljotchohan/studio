@@ -1,5 +1,4 @@
 
-
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -129,17 +128,17 @@ export default function Home() {
       <section className="flex h-[calc(100vh-56px)] w-full flex-col items-center justify-center text-center">
         <div className="relative z-10 p-4">
           <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-6xl md:text-7xl">
-            Automate Your Business with <span className="text-gradient">Elaratech</span>
+            Automate Your Business with <span className="text-gradient">AI</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
-            We build intelligent chatbots and automation systems that save time and increase customer engagement.
+            I build intelligent chatbots and automation systems that save time and increase customer engagement.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="glow-button">
               <Link href="#demo">View Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
-              <Link href="/contact">Hire Us</Link>
+              <Link href="/contact">Get Service</Link>
             </Button>
           </div>
         </div>
@@ -148,8 +147,8 @@ export default function Home() {
       {/* Section 2: What I Build */}
       <section id="services" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
-          <h2 className="section-heading">What We Build</h2>
-          <p className="section-subheading mx-auto">From intelligent chatbots to complete automation systems, we create solutions that drive growth.</p>
+          <h2 className="section-heading">What I Build</h2>
+          <p className="section-subheading mx-auto">From intelligent chatbots to complete automation systems, I create solutions that drive growth.</p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
@@ -318,7 +317,7 @@ export default function Home() {
       {/* Section 6: Industries I Serve */}
       <section className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
-          <h2 className="section-heading">Industries We Serve</h2>
+          <h2 className="section-heading">Industries I Serve</h2>
           <p className="section-subheading mx-auto">Providing <span className="text-gradient">AI</span> solutions for a wide range of businesses, both big and small.</p>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
@@ -339,12 +338,12 @@ export default function Home() {
          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:gap-12 md:text-left">
             <Avatar className="h-32 w-32 flex-shrink-0 border-4 border-primary/20">
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback><span className="text-gradient">ET</span></AvatarFallback>
+              <AvatarFallback><span className="text-gradient">AI</span></AvatarFallback>
             </Avatar>
             <div>
-              <h2 className="section-heading">About Elaratech</h2>
+              <h2 className="section-heading">About Me</h2>
               <p className="mt-4 text-lg text-gray-300">
-                We’re a team specializing in <span className="text-gradient">AI</span> automation and smart chat systems. We help businesses save time, capture leads, and grow using intelligent technology.
+                I’m a developer specializing in <span className="text-gradient">AI</span> automation and smart chat systems. I help businesses save time, capture leads, and grow using intelligent technology.
               </p>
                <Button asChild variant="link" className="mt-4 px-0 text-lg text-primary">
                 <Link href="/about">Learn More &rarr;</Link>

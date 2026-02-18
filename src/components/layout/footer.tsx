@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="relative z-10 w-full border-t border-primary/10 bg-transparent py-2 md:py-4">
       <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 sm:flex-row md:gap-6">
         <div className="text-center sm:text-left">
-          <h3 className="text-sm font-bold text-white">Elaratech</h3>
+          <h3 className="text-sm font-bold text-white">AI Dev</h3>
           <p className="mt-1 text-xs text-gray-400">
             &copy; {new Date().getFullYear()}. Built for the future.
           </p>
