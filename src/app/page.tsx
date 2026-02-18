@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, TrendingUp, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Stethoscope, Utensils, Workflow, Zap, Briefcase, BarChart, Users } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, TrendingUp, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Stethoscope, Utensils, Workflow, Zap, Briefcase, BarChart, Users, Store } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
@@ -41,9 +41,9 @@ const services = [
   ];
 
   const industries = [
-      { icon: <Scissors />, name: 'Salons & Spas' },
+      { icon: <Store />, name: 'Local Businesses' },
       { icon: <Dumbbell />, name: 'Gyms & Fitness' },
-      { icon: <ClipboardList />, name: 'Coaching' },
+      { icon: <ClipboardList />, name: 'Coaching Centers' },
       { icon: <Stethoscope />, name: 'Clinics' },
       { icon: <HomeIcon />, name: 'Real Estate' },
       { icon: <ShoppingCart />, name: 'E-commerce' },
@@ -127,17 +127,17 @@ export default function Home() {
       <section className="flex h-[calc(100vh-56px)] w-full flex-col items-center justify-center text-center">
         <div className="relative z-10 p-4">
           <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-6xl md:text-7xl">
-            Automate Your Business with <span className="text-gradient">AI</span>
+            Automate Your Business with <span className="text-gradient">Elaratech</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
-            I build intelligent chatbots and automation systems that save time and increase customer engagement.
+            We build intelligent chatbots and automation systems that save time and increase customer engagement.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="glow-button">
               <Link href="#demo">View Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
-              <Link href="/contact">Hire Me</Link>
+              <Link href="/contact">Hire Us</Link>
             </Button>
           </div>
         </div>
@@ -146,45 +146,40 @@ export default function Home() {
       {/* Section 2: What I Build */}
       <section id="services" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
-          <h2 className="section-heading">What I Build</h2>
-          <p className="section-subheading mx-auto">From intelligent chatbots to complete automation systems, I create solutions that drive growth.</p>
+          <h2 className="section-heading">What We Build</h2>
+          <p className="section-subheading mx-auto">From intelligent chatbots to complete automation systems, we create solutions that drive growth.</p>
         </div>
-        <div className="mt-12 flex flex-col items-center gap-y-4 [perspective:1000px] md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <React.Fragment key={index}>
-              <div className="group relative h-full w-full">
+              <div key={index} className="relative group h-full">
                 <div className="absolute -inset-px rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-70"></div>
-                <Card className="glass-card relative h-full transform-gpu transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:translateZ(20px)_rotateY(10deg)]">
-                  <CardHeader>
-                    <div className="mb-4">{service.icon}</div>
-                    <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400">{service.description}</p>
-                  </CardContent>
-                </Card>
+                  <Card className="glass-card relative h-full transform transition-transform duration-300 group-hover:-translate-y-2 flex flex-col [transform-style:preserve-3d] group-hover:[transform:translateZ(20px)_rotateY(5deg)]">
+                    <CardHeader>
+                      <div className="mb-4">{service.icon}</div>
+                      <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-gray-400">{service.description}</p>
+                    </CardContent>
+                  </Card>
               </div>
-              {index < services.length - 1 && (
-                  <div className="h-12 w-px bg-gradient-to-b from-primary/0 via-primary/50 to-secondary/0 md:hidden" />
-              )}
-            </React.Fragment>
           ))}
         </div>
       </section>
 
       {/* Section 3: How AI Helps */}
-      <section id="process" className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
+      <section id="process" className="w-full max-w-7xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
             <h2 className="section-heading">How <span className="text-gradient">AI</span> Connects Everything</h2>
             <p className="section-subheading mx-auto">An automated ecosystem turning inquiries into opportunities, 24/7.</p>
         </div>
 
         {/* Desktop View */}
-        <div className="mt-24 hidden md:grid grid-cols-3 grid-rows-3 items-center justify-items-center gap-x-8 gap-y-4 relative">
+        <div className="mt-24 hidden md:grid grid-cols-3 grid-rows-3 items-center justify-items-center gap-x-8 gap-y-4 lg:gap-x-16 lg:gap-y-12 relative">
             {/* Connecting Lines in background */}
             <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-30">
-                <div className="h-[80%] w-px bg-gradient-to-b from-primary/0 via-primary to-primary/0"></div>
-                <div className="w-[60%] h-px bg-gradient-to-r from-secondary/0 via-secondary to-secondary/0"></div>
+                <div className="h-[90%] w-px bg-gradient-to-b from-primary/0 via-primary to-primary/0"></div>
+                <div className="w-[70%] h-px bg-gradient-to-r from-secondary/0 via-secondary to-secondary/0"></div>
             </div>
             
             <div className="col-start-1 row-start-1"></div>
@@ -193,36 +188,36 @@ export default function Home() {
             <div className="col-start-3 row-start-3"></div>
 
             <div className="col-start-2 row-start-2 flex flex-col items-center gap-3 text-center p-4">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary/20 text-primary ring-8 ring-primary/30 animate-pulse-glow">
-                    <BrainCircuit size={40} />
+                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-primary/20 text-primary ring-8 ring-primary/30 animate-pulse-glow">
+                    <BrainCircuit size={48} />
                 </div>
                 <h3 className="text-xl font-bold text-white"><span className="text-gradient">AI</span> Assistant</h3>
             </div>
 
             <div className="col-start-2 row-start-1 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <MessageSquare size={28} className="text-primary"/>
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <MessageSquare size={32} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Customer Message</p>
             </div>
 
             <div className="col-start-2 row-start-3 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <PackagePlus size={28} className="text-primary"/>
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <PackagePlus size={32} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Lead Saved</p>
             </div>
 
             <div className="col-start-1 row-start-2 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <Zap size={28} className="text-primary"/>
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <Zap size={32} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Instant Reply</p>
             </div>
 
             <div className="col-start-3 row-start-2 flex flex-col items-center gap-2 text-center group">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <TrendingUp size={28} className="text-primary"/>
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
+                    <TrendingUp size={32} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Business Growth</p>
             </div>
@@ -316,7 +311,7 @@ export default function Home() {
       {/* Section 6: Industries I Serve */}
       <section className="w-full max-w-6xl px-4 py-16 md:py-24 scroll-reveal">
         <div className="text-center">
-          <h2 className="section-heading">Industries I Serve</h2>
+          <h2 className="section-heading">Industries We Serve</h2>
           <p className="section-subheading mx-auto">Providing <span className="text-gradient">AI</span> solutions for a wide range of businesses, both big and small.</p>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
@@ -337,12 +332,12 @@ export default function Home() {
          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:gap-12 md:text-left">
             <Avatar className="h-32 w-32 flex-shrink-0 border-4 border-primary/20">
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback><span className="text-gradient">AI</span></AvatarFallback>
+              <AvatarFallback><span className="text-gradient">ET</span></AvatarFallback>
             </Avatar>
             <div>
-              <h2 className="section-heading">About Me</h2>
+              <h2 className="section-heading">About Elaratech</h2>
               <p className="mt-4 text-lg text-gray-300">
-                I’m a developer specializing in <span className="text-gradient">AI</span> automation and smart chat systems. I help businesses save time, capture leads, and grow using intelligent technology.
+                We’re a team specializing in <span className="text-gradient">AI</span> automation and smart chat systems. We help businesses save time, capture leads, and grow using intelligent technology.
               </p>
                <Button asChild variant="link" className="mt-4 px-0 text-lg text-primary">
                 <Link href="/about">Learn More &rarr;</Link>
