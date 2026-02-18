@@ -1,10 +1,11 @@
+
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, Briefcase, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap, BarChart, Users, ClipboardList, Scissors, HeartHandshake } from 'lucide-react';
+import { Bot, BrainCircuit, Briefcase, ClipboardList, Code, Dumbbell, HeartHandshake, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap, BarChart, Users } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
@@ -20,7 +21,7 @@ const services = [
     },
     {
       icon: <TrendingUp size={32} className="text-primary" />,
-      title: 'Lead Generation',
+      title: 'Lead Generation Automation',
       description: 'Capture and qualify leads automatically, sending them directly to your CRM.',
     },
     {
@@ -41,15 +42,15 @@ const services = [
   ];
 
   const industries = [
-      { icon: <Store />, name: 'Local Businesses' },
-      { icon: <Dumbbell />, name: 'Gyms & Fitness' },
-      { icon: <ClipboardList />, name: 'Coaching' },
-      { icon: <Stethoscope />, name: 'Clinics' },
-      { icon: <HomeIcon />, name: 'Real Estate' },
-      { icon: <ShoppingCart />, name: 'E-commerce' },
-      { icon: <Utensils />, name: 'Restaurants' },
-      { icon: <Briefcase />, name: 'Small Businesses' },
-  ];
+    { icon: <Store />, name: 'Local Businesses' },
+    { icon: <Dumbbell />, name: 'Gyms & Fitness' },
+    { icon: <ClipboardList />, name: 'Coaching Centers' },
+    { icon: <Stethoscope />, name: 'Clinics' },
+    { icon: <HomeIcon />, name: 'Real Estate' },
+    { icon: <ShoppingCart />, name: 'E-commerce' },
+    { icon: <Utensils />, name: 'Restaurants' },
+    { icon: <Briefcase />, name: 'Small Businesses' },
+];
 
 function useScrollReveal() {
   useEffect(() => {
@@ -199,7 +200,7 @@ export default function Home() {
 
             <div className="col-start-2 row-start-1 flex flex-col items-center gap-2 text-center group">
                 <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <MessageSquare size={40} className="text-primary"/>
+                    <Users size={40} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Customer Message</p>
             </div>
@@ -220,7 +221,7 @@ export default function Home() {
 
             <div className="col-start-3 row-start-2 flex flex-col items-center gap-2 text-center group">
                 <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <TrendingUp size={40} className="text-primary"/>
+                    <BarChart size={40} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Business Growth</p>
             </div>
@@ -253,7 +254,7 @@ export default function Home() {
           <p className="section-subheading mx-auto">See how an <span className="text-gradient">AI</span> chatbot can interact with your customers in real-time.</p>
         </div>
         <Card className="glass-card mt-12">
-          <CardContent className="p-4 md:p-6">
+          <CardContent className="p-4">
             <div className="space-y-4">
               <div className="flex items-end gap-2">
                 <Avatar className="h-8 w-8"><AvatarFallback>U</AvatarFallback></Avatar>
@@ -280,10 +281,10 @@ export default function Home() {
                  <Avatar className="h-8 w-8"><AvatarFallback><span className="text-gradient">AI</span></AvatarFallback></Avatar>
               </div>
             </div>
-            <div className="mt-6 flex items-center gap-1 rounded-lg border border-primary/20 bg-card/50 p-1">
-              <input type="text" placeholder="Type a message..." className="flex-1 bg-transparent px-2 text-sm text-white outline-none placeholder:text-gray-400" />
-              <Button size="icon" variant="ghost" className="h-8 w-8 flex-shrink-0 text-primary hover:text-primary/80"><Mic /></Button>
-              <Button size="icon" className="h-8 w-8 flex-shrink-0 rounded-md"><Send /></Button>
+            <div className="mt-6 flex items-center gap-2 rounded-full border border-primary/20 bg-card/50 py-1 pl-4 pr-2">
+              <input type="text" placeholder="Type a message..." className="flex-1 bg-transparent text-sm text-white outline-none placeholder:text-gray-400" />
+              <Button size="icon" variant="ghost" className="h-8 w-8 shrink-0 text-primary hover:text-primary/80"><Mic /></Button>
+              <Button size="icon" className="h-9 w-9 shrink-0 rounded-full"><Send /></Button>
             </div>
           </CardContent>
         </Card>
