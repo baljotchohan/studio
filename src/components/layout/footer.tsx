@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Github, Instagram, Linkedin, Mail, MessageSquare } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MessageSquare } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <MessageSquare />, href: '#', label: 'WhatsApp' },
-  { icon: <Mail />, href: 'mailto:email@example.com', label: 'Email' },
-  { icon: <Instagram />, href: '#', label: 'Instagram' },
+  { icon: <MessageSquare />, href: 'https://wa.me/1234567890', label: 'WhatsApp' },
+  { icon: <Mail />, href: 'mailto:baljotchohan23@gmail.com', label: 'Email' },
+  { icon: <Instagram />, href: 'https://instagram.com/baljotchohan01', label: 'Instagram' },
   { icon: <Linkedin />, href: '#', label: 'LinkedIn' },
-  { icon: <Github />, href: '#', label: 'GitHub' },
 ];
 
 export function Footer() {

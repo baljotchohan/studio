@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, FilePlus, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
+import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Scissors, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
@@ -43,7 +43,7 @@ const services = [
 ];
 
 const industries = [
-    { icon: <Store />, name: 'Salons & Spas' },
+    { icon: <Scissors />, name: 'Salons & Spas' },
     { icon: <Dumbbell />, name: 'Gyms & Fitness' },
     { icon: <ClipboardList />, name: 'Coaching Centers' },
     { icon: <Stethoscope />, name: 'Clinics & Doctors' },
@@ -198,7 +198,7 @@ export default function Home() {
                 <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary/20 text-primary ring-8 ring-primary/30 animate-pulse-glow">
                     <BrainCircuit size={40} />
                 </div>
-                <h3 className="text-xl font-bold text-white">AI Assistant</h3>
+                <h3 className="text-xl font-bold text-white"><span className="text-gradient">AI</span> Assistant</h3>
             </div>
 
             <div className="col-start-2 row-start-1 flex flex-col items-center gap-2 text-center group">
@@ -210,7 +210,7 @@ export default function Home() {
 
             <div className="col-start-2 row-start-3 flex flex-col items-center gap-2 text-center group">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-card/80 backdrop-blur-sm ring-4 ring-border transition-all duration-300 group-hover:ring-primary">
-                    <FilePlus size={28} className="text-primary"/>
+                    <PackagePlus size={28} className="text-primary"/>
                 </div>
                 <p className="font-semibold text-white">Lead Saved</p>
             </div>
@@ -237,7 +237,7 @@ export default function Home() {
                 { icon: MessageSquare, label: 'Customer Message' },
                 { icon: BrainCircuit, label: 'AI Assistant' },
                 { icon: Zap, label: 'Instant Reply' },
-                { icon: FilePlus, label: 'Lead Saved' },
+                { icon: PackagePlus, label: 'Lead Saved' },
                 { icon: TrendingUp, label: 'Business Growth' },
             ].map((item, index) => (
                 <div key={index} className="flex flex-col items-center gap-3 text-center p-2 bg-background z-10">
@@ -367,7 +367,7 @@ export default function Home() {
               <Link href="#demo">Get a Free Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary/50 text-white hover:bg-primary/10 hover:text-white">
-              <Link href="/contact">Contact on WhatsApp</Link>
+              <Link href="https://wa.me/1234567890" target="_blank">Contact on WhatsApp</Link>
             </Button>
           </div>
         </div>

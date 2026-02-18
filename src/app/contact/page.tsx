@@ -19,7 +19,7 @@ const contactMethods = [
     icon: <Mail />,
     title: "Email",
     description: "For detailed inquiries and proposals.",
-    href: "mailto:your-email@example.com", // Replace with your email
+    href: "mailto:baljotchohan23@gmail.com", // Replace with your email
     cta: "Send Email",
   },
   {
