@@ -4,46 +4,46 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, BrainCircuit, ClipboardList, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap, Briefcase, BarChart, Users } from 'lucide-react';
+import { Bot, BrainCircuit, Briefcase, Code, Dumbbell, Headset, Home as HomeIcon, MessageSquare, MessagesSquare, Mic, PackagePlus, Send, ShoppingCart, Store, Stethoscope, TrendingUp, Utensils, Workflow, Zap, BarChart, Users, ClipboardList, Scissors, HeartHandshake } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const services = [
     {
       icon: <Bot size={32} className="text-primary" />,
-      title: <><span className="text-gradient">AI</span> Chatbots for Businesses</>,
-      description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support on your website.',
+      title: <><span className="text-gradient">AI</span> Chatbots</>,
+      description: 'Custom chatbots that handle queries, qualify leads, and provide 24/7 support.',
     },
     {
       icon: <MessagesSquare size={32} className="text-primary" />,
-      title: 'WhatsApp & Instagram Automation',
-      description: 'Engage customers instantly on their favorite platforms with automated replies and workflows.',
+      title: 'Social Media Automation',
+      description: 'Engage customers on WhatsApp & Instagram with automated replies and workflows.',
     },
     {
       icon: <TrendingUp size={32} className="text-primary" />,
-      title: 'Lead Generation Automation',
-      description: 'Capture and qualify leads automatically, sending them directly to your CRM or sales team.',
+      title: 'Lead Generation',
+      description: 'Capture and qualify leads automatically, sending them directly to your CRM.',
     },
     {
-      icon: <Headset size={32} className="text-primary" />,
-      title: <><span className="text-gradient">AI</span> Customer Support Systems</>,
-      description: 'Reduce support tickets and improve customer satisfaction with intelligent, automated helpdesks.',
+      icon: <HeartHandshake size={32} className="text-primary" />,
+      title: <><span className="text-gradient">AI</span> Customer Support</>,
+      description: 'Reduce support tickets and improve satisfaction with intelligent, automated helpdesks.',
     },
     {
       icon: <Workflow size={32} className="text-primary" />,
-      title: 'Custom Automation Tools',
-      description: <>Bespoke <span className="text-gradient">AI</span>-powered tools and workflows designed to solve your unique business challenges.</>,
+      title: 'Custom Workflows',
+      description: <>Bespoke <span className="text-gradient">AI</span>-powered tools designed to solve your unique business challenges.</>,
     },
     {
-      icon: <Zap size={32} className="text-primary" />,
-      title: 'Workflow Automation',
-      description: 'Streamline repetitive tasks and connect your apps to create seamless, automated processes.',
+      icon: <Scissors size={32} className="text-primary" />,
+      title: 'Content Creation',
+      description: 'Generate engaging and high-quality content for your brand automatically.',
     },
   ];
 
   const industries = [
       { icon: <Store />, name: 'Local Businesses' },
       { icon: <Dumbbell />, name: 'Gyms & Fitness' },
-      { icon: <ClipboardList />, name: 'Coaching Centers' },
+      { icon: <ClipboardList />, name: 'Coaching' },
       { icon: <Stethoscope />, name: 'Clinics' },
       { icon: <HomeIcon />, name: 'Real Estate' },
       { icon: <ShoppingCart />, name: 'E-commerce' },
@@ -280,10 +280,10 @@ export default function Home() {
                  <Avatar className="h-8 w-8"><AvatarFallback><span className="text-gradient">AI</span></AvatarFallback></Avatar>
               </div>
             </div>
-            <div className="mt-6 flex items-center rounded-lg border border-primary/20 bg-card/50 p-2">
-              <input type="text" placeholder="Type your message..." className="flex-1 bg-transparent px-2 text-white outline-none" />
-              <Button size="icon" variant="ghost" className="text-primary hover:text-primary/80"><Mic/></Button>
-              <Button size="icon" className="rounded-md"><Send/></Button>
+            <div className="mt-6 flex items-center gap-1 rounded-lg border border-primary/20 bg-card/50 p-1">
+              <input type="text" placeholder="Type a message..." className="flex-1 bg-transparent px-2 text-sm text-white outline-none placeholder:text-gray-400" />
+              <Button size="icon" variant="ghost" className="h-8 w-8 flex-shrink-0 text-primary hover:text-primary/80"><Mic /></Button>
+              <Button size="icon" className="h-8 w-8 flex-shrink-0 rounded-md"><Send /></Button>
             </div>
           </CardContent>
         </Card>
