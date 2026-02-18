@@ -281,12 +281,10 @@ export default function Home() {
                  <Avatar className="h-8 w-8"><AvatarFallback><span className="text-gradient">AI</span></AvatarFallback></Avatar>
               </div>
             </div>
-            <div className="mt-6 flex items-center gap-2">
-              <div className="flex flex-1 items-center gap-2 rounded-full border border-primary/20 bg-card/50 py-1 pl-4 pr-1">
-                <input type="text" placeholder="Type..." className="flex-1 bg-transparent text-sm text-white outline-none placeholder:text-gray-400" />
+            <div className="mt-6 flex items-center gap-2 rounded-full border border-primary/20 bg-card/50 p-1">
+                <input type="text" placeholder="Type..." className="flex-1 bg-transparent text-sm text-white outline-none placeholder:text-gray-400 pl-4" />
                 <Button size="icon" variant="ghost" className="h-8 w-8 shrink-0 text-primary hover:text-primary/80"><Mic /></Button>
-              </div>
-              <Button size="icon" className="h-9 w-9 shrink-0 rounded-full"><Send /></Button>
+                <Button size="icon" className="h-8 w-8 shrink-0 rounded-full"><Send /></Button>
             </div>
           </CardContent>
         </Card>
