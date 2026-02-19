@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Instagram, Mail } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <Mail />, href: 'mailto:baljotchohan23@gmail.com', label: 'Email' },
-  { icon: <Instagram />, href: 'https://instagram.com/baljotchohan01', label: 'Instagram' },
+  { icon: <Mail />, href: 'mailto:studiq21@gmail.com', label: 'Email' },
+  { icon: <Instagram />, href: 'https://instagram.com/elaratechlabs', label: 'Instagram' },
 ];
 
 export function Footer() {

@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -12,7 +11,7 @@ const contactMethods = [
     icon: <Mail />,
     title: "Email",
     description: "For detailed inquiries and proposals.",
-    href: "mailto:baljotchohan23@gmail.com",
+    href: "mailto:studiq21@gmail.com",
     cta: "Send Email",
   },
   {
