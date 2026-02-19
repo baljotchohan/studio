@@ -17,7 +17,7 @@ const services = [
     {
       icon: <MessagesSquare size={32} className="text-primary" />,
       title: 'Social Media Automation',
-      description: 'Engage customers on WhatsApp & Instagram with automated replies and workflows.',
+      description: 'Engage customers with automated replies and workflows.',
     },
     {
       icon: <TrendingUp size={32} className="text-primary" />,
@@ -121,6 +121,11 @@ const AnimatedCounter = ({ finalValue, duration = 2000 } : { finalValue: number,
 
 export default function Home() {
   useScrollReveal();
+
+  useEffect(() => {
+    // This will run when the component mounts, ensuring the page starts at the top.
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="flex flex-col items-center overflow-x-hidden">
