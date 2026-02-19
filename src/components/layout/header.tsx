@@ -23,7 +23,7 @@ export function Header() {
       <div className="container flex h-12 max-w-screen-2xl items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <span className="font-bold text-lg">
-            <span className="text-gradient">AI Dev</span>
+            <span className="text-gradient">ETlabs</span>
           </span>
         </Link>
         <div className="hidden md:flex items-center space-x-2">
